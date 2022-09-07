@@ -27,9 +27,9 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="banner-img">
-                                <img data-cfsrc="assets_backend/images/home-bg-1-img.png" alt="banner-img"
+                                <img data-cfsrc="assets_frontend/images/home-bg-1-img.png" alt="banner-img"
                                     style="display:none;visibility:hidden;" /><noscript><img
-                                        src="assets_backend/images/home-bg-1-img.png" alt="banner-img" /></noscript>
+                                        src="assets_frontend/images/home-bg-1-img.png" alt="banner-img" /></noscript>
                             </div>
                         </div>
                     </div>
@@ -38,33 +38,33 @@
         </div>
         <div class="home-shape">
             <div class="shape1">
-                <img data-cfsrc="assets_backend/images/shape/1.png" alt="shape"
-                    style="display:none;visibility:hidden;"><noscript><img src="assets_backend/images/shape/1.png"
+                <img data-cfsrc="assets_frontend/images/shape/1.png" alt="shape"
+                    style="display:none;visibility:hidden;"><noscript><img src="assets_frontend/images/shape/1.png"
                         alt="shape"></noscript>
             </div>
             <div class="shape2">
-                <img data-cfsrc="assets_backend/images/shape/2.png" alt="shape"
-                    style="display:none;visibility:hidden;"><noscript><img src="assets_backend/images/shape/2.png"
+                <img data-cfsrc="assets_frontend/images/shape/2.png" alt="shape"
+                    style="display:none;visibility:hidden;"><noscript><img src="assets_frontend/images/shape/2.png"
                         alt="shape"></noscript>
             </div>
             <div class="shape3">
-                <img data-cfsrc="assets_backend/images/shape/3.png" alt="shape"
-                    style="display:none;visibility:hidden;"><noscript><img src="assets_backend/images/shape/3.png"
+                <img data-cfsrc="assets_frontend/images/shape/3.png" alt="shape"
+                    style="display:none;visibility:hidden;"><noscript><img src="assets_frontend/images/shape/3.png"
                         alt="shape"></noscript>
             </div>
             <div class="shape4">
-                <img data-cfsrc="assets_backend/images/shape/4.png" alt="shape"
-                    style="display:none;visibility:hidden;"><noscript><img src="assets_backend/images/shape/4.png"
+                <img data-cfsrc="assets_frontend/images/shape/4.png" alt="shape"
+                    style="display:none;visibility:hidden;"><noscript><img src="assets_frontend/images/shape/4.png"
                         alt="shape"></noscript>
             </div>
             <div class="shape5">
-                <img data-cfsrc="assets_backend/images/shape/5.png" alt="shape"
-                    style="display:none;visibility:hidden;"><noscript><img src="assets_backend/images/shape/5.png"
+                <img data-cfsrc="assets_frontend/images/shape/5.png" alt="shape"
+                    style="display:none;visibility:hidden;"><noscript><img src="assets_frontend/images/shape/5.png"
                         alt="shape"></noscript>
             </div>
             <div class="shape6">
-                <img data-cfsrc="assets_backend/images/shape/6.png" alt="shape"
-                    style="display:none;visibility:hidden;"><noscript><img src="assets_backend/images/shape/6.png"
+                <img data-cfsrc="assets_frontend/images/shape/6.png" alt="shape"
+                    style="display:none;visibility:hidden;"><noscript><img src="assets_frontend/images/shape/6.png"
                         alt="shape"></noscript>
             </div>
         </div>
@@ -83,9 +83,9 @@
                 <div class="col-lg-4 col-sm-6">
                     <div class="single-service">
                         <div class="service-img">
-                            <img data-cfsrc="assets_backend/images/service/s1.png" alt="service"
+                            <img data-cfsrc="assets_frontend/images/service/s1.png" alt="service"
                                 style="display:none;visibility:hidden;" /><noscript><img
-                                    src="assets_backend/images/service/s1.png" alt="service" /></noscript>
+                                    src="assets_frontend/images/service/s1.png" alt="service" /></noscript>
                         </div>
                         <div class="service-content">
                             <h3>Visual Design</h3>
@@ -100,9 +100,9 @@
                 <div class="col-lg-4 col-sm-6">
                     <div class="single-service">
                         <div class="service-img">
-                            <img data-cfsrc="assets_backend/images/service/s2.png" alt="service"
+                            <img data-cfsrc="assets_frontend/images/service/s2.png" alt="service"
                                 style="display:none;visibility:hidden;" /><noscript><img
-                                    src="assets_backend/images/service/s2.png" alt="service" /></noscript>
+                                    src="assets_frontend/images/service/s2.png" alt="service" /></noscript>
                         </div>
                         <div class="service-content">
                             <h3>Development</h3>
@@ -117,9 +117,9 @@
                 <div class="col-lg-4 col-sm-6">
                     <div class="single-service">
                         <div class="service-img">
-                            <img data-cfsrc="assets_backend/images/service/s3.png" alt="service"
+                            <img data-cfsrc="assets_frontend/images/service/s3.png" alt="service"
                                 style="display:none;visibility:hidden;" /><noscript><img
-                                    src="assets_backend/images/service/s3.png" alt="service" /></noscript>
+                                    src="assets_frontend/images/service/s3.png" alt="service" /></noscript>
                         </div>
                         <div class="service-content">
                             <h3>QA Testing</h3>
@@ -134,9 +134,9 @@
                 <div class="col-lg-4 col-sm-6">
                     <div class="single-service">
                         <div class="service-img">
-                            <img data-cfsrc="assets_backend/images/service/s4.png" alt="service"
+                            <img data-cfsrc="assets_frontend/images/service/s4.png" alt="service"
                                 style="display:none;visibility:hidden;" /><noscript><img
-                                    src="assets_backend/images/service/s4.png" alt="service" /></noscript>
+                                    src="assets_frontend/images/service/s4.png" alt="service" /></noscript>
                         </div>
                         <div class="service-content">
                             <h3>IT Management</h3>
@@ -151,9 +151,9 @@
                 <div class="col-lg-4 col-sm-6">
                     <div class="single-service">
                         <div class="service-img">
-                            <img data-cfsrc="assets_backend/images/service/s5.png" alt="service"
+                            <img data-cfsrc="assets_frontend/images/service/s5.png" alt="service"
                                 style="display:none;visibility:hidden;" /><noscript><img
-                                    src="assets_backend/images/service/s5.png" alt="service" /></noscript>
+                                    src="assets_frontend/images/service/s5.png" alt="service" /></noscript>
                         </div>
                         <div class="service-content">
                             <h3> Cyber Security</h3>
@@ -168,9 +168,9 @@
                 <div class="col-lg-4 col-sm-6">
                     <div class="single-service">
                         <div class="service-img">
-                            <img data-cfsrc="assets_backend/images/service/s6.png" alt="service"
+                            <img data-cfsrc="assets_frontend/images/service/s6.png" alt="service"
                                 style="display:none;visibility:hidden;" /><noscript><img
-                                    src="assets_backend/images/service/s6.png" alt="service" /></noscript>
+                                    src="assets_frontend/images/service/s6.png" alt="service" /></noscript>
                         </div>
                         <div class="service-content">
                             <h3> Wireless Connectivity</h3>
@@ -209,9 +209,9 @@
                 </div>
                 <div class="col-lg-6 col-md-12">
                     <div class="company-img">
-                        <img data-cfsrc="assets_backend/images/company/company-img.jpg" alt="company"
+                        <img data-cfsrc="assets_frontend/images/company/company-img.jpg" alt="company"
                             style="display:none;visibility:hidden;" /><noscript><img
-                                src="assets_backend/images/company/company-img.jpg" alt="company" /></noscript>
+                                src="assets_frontend/images/company/company-img.jpg" alt="company" /></noscript>
                     </div>
                 </div>
             </div>
@@ -230,9 +230,9 @@
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <div class="choose-img">
-                        <img data-cfsrc="assets_backend/images/choose-img.png" alt="choose"
+                        <img data-cfsrc="assets_frontend/images/choose-img.png" alt="choose"
                             style="display:none;visibility:hidden;" /><noscript><img
-                                src="assets_backend/images/choose-img.png" alt="choose" /></noscript>
+                                src="assets_frontend/images/choose-img.png" alt="choose" /></noscript>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -308,13 +308,13 @@
                 <div class="col-lg-3 col-sm-6">
                     <div class="single-process">
                         <div class="icon">
-                            <img data-cfsrc="assets_backend/images/process/p1.png" alt="process"
+                            <img data-cfsrc="assets_frontend/images/process/p1.png" alt="process"
                                 style="display:none;visibility:hidden;" /><noscript><img
-                                    src="assets_backend/images/process/p1.png" alt="process" /></noscript>
+                                    src="assets_frontend/images/process/p1.png" alt="process" /></noscript>
                             <span>
-                                <img data-cfsrc="assets_backend/images/process/next.png" alt="shape"
+                                <img data-cfsrc="assets_frontend/images/process/next.png" alt="shape"
                                     style="display:none;visibility:hidden;" /><noscript><img
-                                        src="assets_backend/images/process/next.png" alt="shape" /></noscript>
+                                        src="assets_frontend/images/process/next.png" alt="shape" /></noscript>
                             </span>
                         </div>
                         <div class="content">
@@ -329,13 +329,13 @@
                 <div class="col-lg-3 col-sm-6">
                     <div class="single-process">
                         <div class="icon">
-                            <img data-cfsrc="assets_backend/images/process/p2.png" alt="process"
+                            <img data-cfsrc="assets_frontend/images/process/p2.png" alt="process"
                                 style="display:none;visibility:hidden;" /><noscript><img
-                                    src="assets_backend/images/process/p2.png" alt="process" /></noscript>
+                                    src="assets_frontend/images/process/p2.png" alt="process" /></noscript>
                             <span class="pro-span">
-                                <img data-cfsrc="assets_backend/images/process/next.png" alt="shape"
+                                <img data-cfsrc="assets_frontend/images/process/next.png" alt="shape"
                                     style="display:none;visibility:hidden;" /><noscript><img
-                                        src="assets_backend/images/process/next.png" alt="shape" /></noscript>
+                                        src="assets_frontend/images/process/next.png" alt="shape" /></noscript>
                             </span>
                         </div>
                         <div class="content">
@@ -350,13 +350,13 @@
                 <div class="col-lg-3 col-sm-6">
                     <div class="single-process">
                         <div class="icon">
-                            <img data-cfsrc="assets_backend/images/process/p3.png" alt="process"
+                            <img data-cfsrc="assets_frontend/images/process/p3.png" alt="process"
                                 style="display:none;visibility:hidden;" /><noscript><img
-                                    src="assets_backend/images/process/p3.png" alt="process" /></noscript>
+                                    src="assets_frontend/images/process/p3.png" alt="process" /></noscript>
                             <span>
-                                <img data-cfsrc="assets_backend/images/process/next.png" alt="shape"
+                                <img data-cfsrc="assets_frontend/images/process/next.png" alt="shape"
                                     style="display:none;visibility:hidden;" /><noscript><img
-                                        src="assets_backend/images/process/next.png" alt="shape" /></noscript>
+                                        src="assets_frontend/images/process/next.png" alt="shape" /></noscript>
                             </span>
                         </div>
                         <div class="content">
@@ -371,9 +371,9 @@
                 <div class="col-lg-3 col-sm-6">
                     <div class="single-process">
                         <div class="icon">
-                            <img data-cfsrc="assets_backend/images/process/p4.png" alt="process"
+                            <img data-cfsrc="assets_frontend/images/process/p4.png" alt="process"
                                 style="display:none;visibility:hidden;" /><noscript><img
-                                    src="assets_backend/images/process/p4.png" alt="process" /></noscript>
+                                    src="assets_frontend/images/process/p4.png" alt="process" /></noscript>
                         </div>
                         <div class="content">
                             <h3>Product Handover</h3>
@@ -410,9 +410,9 @@
                     <div class="single-case">
                         <div class="case-img">
                             <a href="case-details.html">
-                                <img data-cfsrc="assets_backend/images/case/c1.jpg" alt="case"
+                                <img data-cfsrc="assets_frontend/images/case/c1.jpg" alt="case"
                                     style="display:none;visibility:hidden;" /><noscript><img
-                                        src="assets_backend/images/case/c1.jpg" alt="case" /></noscript>
+                                        src="assets_frontend/images/case/c1.jpg" alt="case" /></noscript>
                             </a>
                         </div>
                         <div class="content">
@@ -431,9 +431,9 @@
                     <div class="single-case">
                         <div class="case-img">
                             <a href="case-details.html">
-                                <img data-cfsrc="assets_backend/images/case/c2.jpg" alt="case"
+                                <img data-cfsrc="assets_frontend/images/case/c2.jpg" alt="case"
                                     style="display:none;visibility:hidden;" /><noscript><img
-                                        src="assets_backend/images/case/c2.jpg" alt="case" /></noscript>
+                                        src="assets_frontend/images/case/c2.jpg" alt="case" /></noscript>
                             </a>
                         </div>
                         <div class="content">
@@ -452,9 +452,9 @@
                     <div class="single-case">
                         <div class="case-img">
                             <a href="case-details.html">
-                                <img data-cfsrc="assets_backend/images/case/c3.jpg" alt="case"
+                                <img data-cfsrc="assets_frontend/images/case/c3.jpg" alt="case"
                                     style="display:none;visibility:hidden;" /><noscript><img
-                                        src="assets_backend/images/case/c3.jpg" alt="case" /></noscript>
+                                        src="assets_frontend/images/case/c3.jpg" alt="case" /></noscript>
                             </a>
                         </div>
                         <div class="content">
@@ -473,9 +473,9 @@
                     <div class="single-case">
                         <div class="case-img">
                             <a href="case-details.html">
-                                <img data-cfsrc="assets_backend/images/case/c4.jpg" alt="case"
+                                <img data-cfsrc="assets_frontend/images/case/c4.jpg" alt="case"
                                     style="display:none;visibility:hidden;" /><noscript><img
-                                        src="assets_backend/images/case/c4.jpg" alt="case" /></noscript>
+                                        src="assets_frontend/images/case/c4.jpg" alt="case" /></noscript>
                             </a>
                         </div>
                         <div class="content">
@@ -494,9 +494,9 @@
                     <div class="single-case">
                         <div class="case-img">
                             <a href="case-details.html">
-                                <img data-cfsrc="assets_backend/images/case/c5.jpg" alt="case"
+                                <img data-cfsrc="assets_frontend/images/case/c5.jpg" alt="case"
                                     style="display:none;visibility:hidden;" /><noscript><img
-                                        src="assets_backend/images/case/c5.jpg" alt="case" /></noscript>
+                                        src="assets_frontend/images/case/c5.jpg" alt="case" /></noscript>
                             </a>
                         </div>
                         <div class="content">
@@ -515,9 +515,9 @@
                     <div class="single-case">
                         <div class="case-img">
                             <a href="case-details.html">
-                                <img data-cfsrc="assets_backend/images/case/c6.jpg" alt="case"
+                                <img data-cfsrc="assets_frontend/images/case/c6.jpg" alt="case"
                                     style="display:none;visibility:hidden;" /><noscript><img
-                                        src="assets_backend/images/case/c6.jpg" alt="case" /></noscript>
+                                        src="assets_frontend/images/case/c6.jpg" alt="case" /></noscript>
                             </a>
                         </div>
                         <div class="content">
@@ -574,9 +574,9 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="feature-img">
-                        <img data-cfsrc="assets_backend/images/feature-img.png" alt="feature"
+                        <img data-cfsrc="assets_frontend/images/feature-img.png" alt="feature"
                             style="display:none;visibility:hidden;" /><noscript><img
-                                src="assets_backend/images/feature-img.png" alt="feature" /></noscript>
+                                src="assets_frontend/images/feature-img.png" alt="feature" /></noscript>
                     </div>
                 </div>
             </div>
@@ -595,9 +595,9 @@
             <div class="home-team-slider owl-carousel owl-theme">
                 <div class="single-team">
                     <div class="team-img">
-                        <img data-cfsrc="assets_backend/images/team/t1.jpg" alt="team"
+                        <img data-cfsrc="assets_frontend/images/team/t1.jpg" alt="team"
                             style="display:none;visibility:hidden;" /><noscript><img
-                                src="assets_backend/images/team/t1.jpg" alt="team" /></noscript>
+                                src="assets_frontend/images/team/t1.jpg" alt="team" /></noscript>
                         <ul class="social">
                             <li>
                                 <a href="#" target="_blank"><i class='bx bxl-linkedin'></i></a>
@@ -620,9 +620,9 @@
                 </div>
                 <div class="single-team">
                     <div class="team-img">
-                        <img data-cfsrc="assets_backend/images/team/t2.jpg" alt="team"
+                        <img data-cfsrc="assets_frontend/images/team/t2.jpg" alt="team"
                             style="display:none;visibility:hidden;" /><noscript><img
-                                src="assets_backend/images/team/t2.jpg" alt="team" /></noscript>
+                                src="assets_frontend/images/team/t2.jpg" alt="team" /></noscript>
                         <ul class="social">
                             <li>
                                 <a href="#" target="_blank"><i class='bx bxl-linkedin'></i></a>
@@ -645,9 +645,9 @@
                 </div>
                 <div class="single-team">
                     <div class="team-img">
-                        <img data-cfsrc="assets_backend/images/team/t3.jpg" alt="team"
+                        <img data-cfsrc="assets_frontend/images/team/t3.jpg" alt="team"
                             style="display:none;visibility:hidden;" /><noscript><img
-                                src="assets_backend/images/team/t3.jpg" alt="team" /></noscript>
+                                src="assets_frontend/images/team/t3.jpg" alt="team" /></noscript>
                         <ul class="social">
                             <li>
                                 <a href="#" target="_blank"><i class='bx bxl-linkedin'></i></a>
@@ -670,9 +670,9 @@
                 </div>
                 <div class="single-team">
                     <div class="team-img">
-                        <img data-cfsrc="assets_backend/images/team/t4.jpg" alt="team"
+                        <img data-cfsrc="assets_frontend/images/team/t4.jpg" alt="team"
                             style="display:none;visibility:hidden;" /><noscript><img
-                                src="assets_backend/images/team/t4.jpg" alt="team" /></noscript>
+                                src="assets_frontend/images/team/t4.jpg" alt="team" /></noscript>
                         <ul class="social">
                             <li>
                                 <a href="#" target="_blank"><i class='bx bxl-linkedin'></i></a>
@@ -695,9 +695,9 @@
                 </div>
                 <div class="single-team">
                     <div class="team-img">
-                        <img data-cfsrc="assets_backend/images/team/t1.jpg" alt="team"
+                        <img data-cfsrc="assets_frontend/images/team/t1.jpg" alt="team"
                             style="display:none;visibility:hidden;" /><noscript><img
-                                src="assets_backend/images/team/t1.jpg" alt="team" /></noscript>
+                                src="assets_frontend/images/team/t1.jpg" alt="team" /></noscript>
                         <ul class="social">
                             <li>
                                 <a href="#" target="_blank"><i class='bx bxl-linkedin'></i></a>
@@ -720,9 +720,9 @@
                 </div>
                 <div class="single-team">
                     <div class="team-img">
-                        <img data-cfsrc="assets_backend/images/team/t2.jpg" alt="team"
+                        <img data-cfsrc="assets_frontend/images/team/t2.jpg" alt="team"
                             style="display:none;visibility:hidden;" /><noscript><img
-                                src="assets_backend/images/team/t2.jpg" alt="team" /></noscript>
+                                src="assets_frontend/images/team/t2.jpg" alt="team" /></noscript>
                         <ul class="social">
                             <li>
                                 <a href="#" target="_blank"><i class='bx bxl-linkedin'></i></a>
@@ -745,9 +745,9 @@
                 </div>
                 <div class="single-team">
                     <div class="team-img">
-                        <img data-cfsrc="assets_backend/images/team/t3.jpg" alt="team"
+                        <img data-cfsrc="assets_frontend/images/team/t3.jpg" alt="team"
                             style="display:none;visibility:hidden;" /><noscript><img
-                                src="assets_backend/images/team/t3.jpg" alt="team" /></noscript>
+                                src="assets_frontend/images/team/t3.jpg" alt="team" /></noscript>
                         <ul class="social">
                             <li>
                                 <a href="#" target="_blank"><i class='bx bxl-linkedin'></i></a>
@@ -770,9 +770,9 @@
                 </div>
                 <div class="single-team">
                     <div class="team-img">
-                        <img data-cfsrc="assets_backend/images/team/t4.jpg" alt="team"
+                        <img data-cfsrc="assets_frontend/images/team/t4.jpg" alt="team"
                             style="display:none;visibility:hidden;" /><noscript><img
-                                src="assets_backend/images/team/t4.jpg" alt="team" /></noscript>
+                                src="assets_frontend/images/team/t4.jpg" alt="team" /></noscript>
                         <ul class="social">
                             <li>
                                 <a href="#" target="_blank"><i class='bx bxl-linkedin'></i></a>
@@ -808,8 +808,8 @@
             </div>
             <div class="client-wrap owl-carousel owl-theme">
                 <div class="single-client">
-                    <img data-cfsrc="assets_backend/images/client/1.jpg" alt="img"
-                        style="display:none;visibility:hidden;"><noscript><img src="assets_backend/images/client/1.jpg"
+                    <img data-cfsrc="assets_frontend/images/client/1.jpg" alt="img"
+                        style="display:none;visibility:hidden;"><noscript><img src="assets_frontend/images/client/1.jpg"
                             alt="img"></noscript>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna aliqua. Lorem Ipsum is simply dummy text of the printing Quis suspendisse
@@ -818,8 +818,8 @@
                     <span>CEO of Company</span>
                 </div>
                 <div class="single-client">
-                    <img data-cfsrc="assets_backend/images/client/2.jpg" alt="img"
-                        style="display:none;visibility:hidden;"><noscript><img src="assets_backend/images/client/2.jpg"
+                    <img data-cfsrc="assets_frontend/images/client/2.jpg" alt="img"
+                        style="display:none;visibility:hidden;"><noscript><img src="assets_frontend/images/client/2.jpg"
                             alt="img"></noscript>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna aliqua. Lorem Ipsum is simply dummy text of the printing Quis suspendisse
@@ -845,9 +845,9 @@
                     <div class="single-blog">
                         <div class="blog-img">
                             <a href="blog-details.html">
-                                <img data-cfsrc="assets_backend/images/blog/1.jpg" alt="blog"
+                                <img data-cfsrc="assets_frontend/images/blog/1.jpg" alt="blog"
                                     style="display:none;visibility:hidden;"><noscript><img
-                                        src="assets_backend/images/blog/1.jpg" alt="blog"></noscript>
+                                        src="assets_frontend/images/blog/1.jpg" alt="blog"></noscript>
                             </a>
                         </div>
                         <div class="content">
@@ -872,9 +872,9 @@
                     <div class="single-blog">
                         <div class="blog-img">
                             <a href="blog-details.html">
-                                <img data-cfsrc="assets_backend/images/blog/5.jpg" alt="blog"
+                                <img data-cfsrc="assets_frontend/images/blog/5.jpg" alt="blog"
                                     style="display:none;visibility:hidden;"><noscript><img
-                                        src="assets_backend/images/blog/5.jpg" alt="blog"></noscript>
+                                        src="assets_frontend/images/blog/5.jpg" alt="blog"></noscript>
                             </a>
                         </div>
                         <div class="content">
@@ -899,9 +899,9 @@
                     <div class="single-blog">
                         <div class="blog-img">
                             <a href="blog-details.html">
-                                <img data-cfsrc="assets_backend/images/blog/3.jpg" alt="blog"
+                                <img data-cfsrc="assets_frontend/images/blog/3.jpg" alt="blog"
                                     style="display:none;visibility:hidden;"><noscript><img
-                                        src="assets_backend/images/blog/3.jpg" alt="blog"></noscript>
+                                        src="assets_frontend/images/blog/3.jpg" alt="blog"></noscript>
                             </a>
                         </div>
                         <div class="content">
@@ -941,9 +941,9 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-6">
                     <div class="contact-img">
-                        <img data-cfsrc="assets_backend/images/contact-img.png" alt="contact"
+                        <img data-cfsrc="assets_frontend/images/contact-img.png" alt="contact"
                             style="display:none;visibility:hidden;"><noscript><img
-                                src="assets_backend/images/contact-img.png" alt="contact"></noscript>
+                                src="assets_frontend/images/contact-img.png" alt="contact"></noscript>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">

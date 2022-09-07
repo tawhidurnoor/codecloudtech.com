@@ -4,9 +4,9 @@
             <div class="col-lg-4 col-md-6">
                 <div class="content">
                     <div class="logo">
-                        <a href="index.html"><img data-cfsrc="assets_backend/images/logo2.png" alt="logo"
+                        <a href="index.html"><img data-cfsrc="assets_frontend/images/logo2.png" alt="logo"
                                 style="display:none;visibility:hidden;" /><noscript><img
-                                    src="assets_backend/images/logo2.png" alt="logo" /></noscript></a>
+                                    src="assets_frontend/images/logo2.png" alt="logo" /></noscript></a>
                     </div>
                     <p>
                         Lorem ipsum dolor sit amet, mattetur adipiscing elit, sed do eiusmod.

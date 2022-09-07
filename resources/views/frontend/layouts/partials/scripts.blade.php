@@ -1,22 +1,22 @@
-<script data-cfasync="false" src="assets_backend/js/email-decode.min.js"></script>
-<script src="assets_backend/js/jquery.min.js"></script>
+<script data-cfasync="false" src="assets_frontend/js/email-decode.min.js"></script>
+<script src="assets_frontend/js/jquery.min.js"></script>
 
-<script src="assets_backend/js/bootstrap.bundle.min.js"></script>
+<script src="assets_frontend/js/bootstrap.bundle.min.js"></script>
 
-<script src="assets_backend/js/meanmenu.min.js"></script>
+<script src="assets_frontend/js/meanmenu.min.js"></script>
 
-<script src="assets_backend/js/magnific-popup.min.js"></script>
+<script src="assets_frontend/js/magnific-popup.min.js"></script>
 
-<script src="assets_backend/js/owl.carousel.min.js"></script>
+<script src="assets_frontend/js/owl.carousel.min.js"></script>
 
-<script src="assets_backend/js/wow.min.js"></script>
+<script src="assets_frontend/js/wow.min.js"></script>
 
-<script src="assets_backend/js/isotope.pkgd.min.js"></script>
+<script src="assets_frontend/js/isotope.pkgd.min.js"></script>
 
-<script src="assets_backend/js/ajaxchimp.min.js"></script>
+<script src="assets_frontend/js/ajaxchimp.min.js"></script>
 
-<script src="assets_backend/js/form-validator.min.js"></script>
+<script src="assets_frontend/js/form-validator.min.js"></script>
 
-<script src="assets_backend/js/contact-form-script.js"></script>
+<script src="assets_frontend/js/contact-form-script.js"></script>
 
-<script src="assets_backend/js/main.js"></script>
+<script src="assets_frontend/js/main.js"></script>

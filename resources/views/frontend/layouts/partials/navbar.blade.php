@@ -1,8 +1,8 @@
 <div class="navbar-area">
     <div class="mobile-nav">
         <a href="index.html" class="logo">
-            <img data-cfsrc="assets_backend/images/logo.png" alt="logo"
-                style="display:none;visibility:hidden;" /><noscript><img src="assets_backend/images/logo.png"
+            <img data-cfsrc="assets_frontend/images/logo.png" alt="logo"
+                style="display:none;visibility:hidden;" /><noscript><img src="assets_frontend/images/logo.png"
                     alt="logo" /></noscript>
         </a>
     </div>
