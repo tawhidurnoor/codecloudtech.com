@@ -22,7 +22,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="index2.html" class="sidebar-link">
+                            <a href="{{ route('admin.setup.meta.index') }}" class="sidebar-link">
                                 <i class="mdi mdi-adjust"></i>
                                 <span class="hide-menu"> Global SEO </span>
                             </a>

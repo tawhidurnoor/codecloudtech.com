@@ -25,17 +25,21 @@
 <script src="{{ asset('assets_backend/dist/js/pages/dashboards/dashboard1.js') }}"></script>
 
 
+<script src="{{ asset('assets_backend/extra-libs/toastr/dist/build/toastr.min.js') }}"></script>
+<script src="{{ asset('assets_backend/extra-libs/toastr/toastr-init.js') }}"></script>
+
+
 <!-- Toaster -->
 
 @if (Session::has('success'))
     <script>
         // Slide Down / Slide Up
         toastr.success(
-            "{{ Session::get('warning') }}",
+            "{{ Session::get('success') }}",
             "Success!", {
                 showMethod: "slideDown",
                 hideMethod: "slideUp",
-                timeOut: 2000
+                timeOut: 3000
             }
         );
     </script>
@@ -43,6 +47,14 @@
 
 @if (Session::has('warning'))
     <script>
-        toastr.warning("{{ Session::get('warning') }}");
+        // Slide Down / Slide Up
+        toastr.warning(
+            "{{ Session::get('warning') }}",
+            "Warning!", {
+                showMethod: "slideDown",
+                hideMethod: "slideUp",
+                timeOut: 3000
+            }
+        );
     </script>
 @endif

@@ -5,6 +5,8 @@
 @endsection
 
 @section('styles')
+    <!-- Toastr CSS -->
+    <link href="{{ asset('assets_backend/extra-libs/toastr/dist/build/toastr.min.css') }}" rel="stylesheet" />
 @endsection
 
 @section('page-title')

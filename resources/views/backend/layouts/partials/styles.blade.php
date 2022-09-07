@@ -7,3 +7,6 @@
 <link href="{{ asset('assets_backend/dist/css/style.min.css') }}" rel="stylesheet" />
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+
+<!-- Toastr CSS -->
+<link href="{{ asset('assets_backend/extra-libs/toastr/dist/build/toastr.min.css') }}" rel="stylesheet" />
