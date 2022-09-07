@@ -23,3 +23,26 @@
 <script src="{{ asset('assets_backend/extra-libs/jvector/jquery-jvectormap-world-mill-en.js') }}"></script>
 <script src="{{ asset('assets_backend/libs/apexcharts/dist/apexcharts.min.js') }}"></script>
 <script src="{{ asset('assets_backend/dist/js/pages/dashboards/dashboard1.js') }}"></script>
+
+
+<!-- Toaster -->
+
+@if (Session::has('success'))
+    <script>
+        // Slide Down / Slide Up
+        toastr.success(
+            "{{ Session::get('warning') }}",
+            "Success!", {
+                showMethod: "slideDown",
+                hideMethod: "slideUp",
+                timeOut: 2000
+            }
+        );
+    </script>
+@endif
+
+@if (Session::has('warning'))
+    <script>
+        toastr.warning("{{ Session::get('warning') }}");
+    </script>
+@endif
