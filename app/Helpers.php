@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Meta;
+use App\Models\Script;
 
 if (!function_exists('getBaseURL')) {
     function getBaseURL()
@@ -44,5 +45,17 @@ if (!function_exists('getMetaImage')) {
     {
         $meta = Meta::findOrFail(1);
         return $meta->meta_image;
+    }
+}
+
+if (!function_exists('getScripts')) {
+    function getScripts($script_name)
+    {
+        $script = Script::findOrFail(1);
+        if ($script_name == 'head') {
+            return $script->head_scripts;
+        } else {
+            return $script->body_scripts;
+        }
     }
 }

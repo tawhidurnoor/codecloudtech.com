@@ -8,6 +8,8 @@
     @include('frontend.layouts.partials.styles')
 
     @yield('title')
+
+    {!! getScripts('head') !!}
 </head>
 
 <body>
@@ -25,6 +27,8 @@
     @include('frontend.layouts.partials.scripts')
 
     @yield('scripts')
+
+    {!! getScripts('body') !!}
 </body>
 
 </html>
