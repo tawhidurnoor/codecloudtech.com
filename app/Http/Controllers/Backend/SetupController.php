@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Meta;
+use App\Models\Script;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -42,8 +43,6 @@ class SetupController extends Controller
     public function metaInformation()
     {
         $meta = Meta::findOrFail(1);
-
-        $meta->save();
 
         return view('backend.website_setup.meta_information', [
             'meta' => $meta,
@@ -84,6 +83,30 @@ class SetupController extends Controller
         }
 
 
+
+        return redirect()->back();
+    }
+
+    public function customScripts()
+    {
+        $script = Script::findOrFail(1);
+
+        return view('backend.website_setup.scripts', [
+            'script' => $script,
+        ]);
+    }
+
+    public function updateCustomScripts(Request $request)
+    {
+        $script = Script::findOrFail(1);
+        $script->head_scripts = $request->head_scripts;
+        $script->body_scripts = $request->body_scripts;
+
+        if ($script->save()) {
+            session()->flash('success', 'Information updated succesfully!');
+        } else {
+            session()->flash('warning', 'Error updating information!');
+        }
 
         return redirect()->back();
     }

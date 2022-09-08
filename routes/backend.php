@@ -21,4 +21,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
     Route::get('/meta_information', [App\Http\Controllers\Backend\SetupController::class, 'metaInformation'])->name('setup.meta.index');
     Route::put('/meta_information', [App\Http\Controllers\Backend\SetupController::class, 'updateMetaInformation'])->name('setup.meta.update');
+
+    Route::get('/custom_scripts', [App\Http\Controllers\Backend\SetupController::class, 'customScripts'])->name('setup.custom_scripts.index');
+    Route::put('/custom_scripts', [App\Http\Controllers\Backend\SetupController::class, 'updateCustomScripts'])->name('setup.custom_scripts.update');
 });

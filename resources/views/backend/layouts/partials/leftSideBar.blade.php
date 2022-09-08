@@ -28,7 +28,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="index3.html" class="sidebar-link">
+                            <a href="{{ route('admin.setup.custom_scripts.index') }}" class="sidebar-link">
                                 <i class="mdi mdi-adjust"></i>
                                 <span class="hide-menu"> Custom Script </span>
                             </a>
