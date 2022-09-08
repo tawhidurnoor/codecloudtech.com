@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('file_original_name');
             $table->string('file_name');
+            $table->int('file_size')->default(0);
             $table->string('file_extension');
             $table->timestamps();
         });

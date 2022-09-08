@@ -28,6 +28,7 @@ class UploadController extends Controller
             $file = $request->file('file');
             $file_original_name = $file->getClientOriginalName();
             $file_extension = $file->getClientOriginalExtension();
+            $file_size = $file->getSize();
 
             //naming file
             $filename = time() . '.' . $file_extension;
@@ -37,6 +38,7 @@ class UploadController extends Controller
             $upload->file_original_name = $file_original_name;
             $upload->file_name = $filename;
             $upload->file_extension = $file_extension;
+            $upload->file_size = $file_size;
             $upload->save();
         }
     }

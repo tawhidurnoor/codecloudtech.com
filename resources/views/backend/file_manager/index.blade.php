@@ -77,7 +77,7 @@
                                         </div>
                                         <div class="el-card-content text-center">
                                             <h4 class="mb-0">{{ $upload->file_original_name }}</h4>
-                                            <span class="text-muted">subtitle of project</span>
+                                            <span class="text-muted">{{ $upload->file_size / 1024 }} kilo bytes</span>
                                         </div>
                                     </div>
                                 </div>

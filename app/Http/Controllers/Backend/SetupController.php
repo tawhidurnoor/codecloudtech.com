@@ -40,6 +40,79 @@ class SetupController extends Controller
         return redirect()->back();
     }
 
+
+    public function updateLogoAndFavicon(Request $request)
+    {
+        $settings = Setting::findOrFail(1);
+
+        if ($request->hasFile('logo_light')) {
+            if (File::exists(public_path('uploads/' . $settings->logo_light))) {
+                // dd('File does exists.');
+                File::delete(public_path('uploads/' . $settings->logo_light));
+            } else {
+                // dd('File does not exists.');
+            }
+
+            $file = $request->file('logo_light');
+            $extention = $file->getClientOriginalExtension();
+
+            //naming file
+            $filename = time() . '.' . $extention;
+            $file->move('uploads/', $filename);
+
+            $settings->logo_light = $filename;
+        }
+
+
+        if ($request->hasFile('logo_dark')) {
+
+            if (File::exists(public_path('uploads/' . $settings->logo_dark))) {
+                // dd('File does exists.');
+                File::delete(public_path('uploads/' . $settings->logo_dark));
+            } else {
+                // dd('File does not exists.');
+            }
+
+            $file = $request->file('logo_dark');
+            $extention = $file->getClientOriginalExtension();
+
+            //naming file
+            $filename = time() . '.' . $extention;
+            $file->move('uploads/', $filename);
+
+            $settings->logo_dark = $filename;
+        }
+
+        if ($request->hasFile('favicon')) {
+
+            if (File::exists(public_path('uploads/' . $settings->favicon))) {
+                // dd('File does exists.');
+                File::delete(public_path('uploads/' . $settings->favicon));
+            } else {
+                // dd('File does not exists.');
+            }
+
+            $file = $request->file('favicon');
+            $extention = $file->getClientOriginalExtension();
+
+            //naming file
+            $filename = time() . '.' . $extention;
+            $file->move('uploads/', $filename);
+
+            $settings->favicon = $filename;
+        }
+
+        if ($settings->save()) {
+            session()->flash('success', 'Information updated succesfully!');
+        } else {
+            session()->flash('warning', 'Error updating information!');
+        }
+
+
+
+        return redirect()->back();
+    }
+
     public function metaInformation()
     {
         $meta = Meta::findOrFail(1);
