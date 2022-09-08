@@ -1,0 +1,43 @@
+<?php
+
+namespace App\Http\Controllers\Backend;
+
+use App\Http\Controllers\Controller;
+use App\Models\Upload;
+use Illuminate\Http\Request;
+
+class UploadController extends Controller
+{
+    public function index()
+    {
+        $uploads = Upload::all();
+        return view('backend.file_manager.index', [
+            'uploads' => $uploads,
+        ]);
+    }
+
+    public function uploadIndex()
+    {
+        return view('backend.file_manager.upload');
+    }
+
+    public function upload(Request $request)
+    {
+        if ($request->hasFile('file')) {
+
+            $file = $request->file('file');
+            $file_original_name = $file->getClientOriginalName();
+            $file_extension = $file->getClientOriginalExtension();
+
+            //naming file
+            $filename = time() . '.' . $file_extension;
+            $file->move('uploads/', $filename);
+
+            $upload = new Upload();
+            $upload->file_original_name = $file_original_name;
+            $upload->file_name = $filename;
+            $upload->file_extension = $file_extension;
+            $upload->save();
+        }
+    }
+}

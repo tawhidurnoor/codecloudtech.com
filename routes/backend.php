@@ -24,4 +24,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
     Route::get('/custom_scripts', [App\Http\Controllers\Backend\SetupController::class, 'customScripts'])->name('setup.custom_scripts.index');
     Route::put('/custom_scripts', [App\Http\Controllers\Backend\SetupController::class, 'updateCustomScripts'])->name('setup.custom_scripts.update');
+
+    Route::get('/uploads/files', [App\Http\Controllers\Backend\UploadController::class, 'index'])->name('upload.index');
+    Route::get('/uploads/upload', [App\Http\Controllers\Backend\UploadController::class, 'uploadIndex'])->name('upload.upload');
+    Route::post('/uploads/upload', [App\Http\Controllers\Backend\UploadController::class, 'upload'])->name('upload.upload.store');
 });

@@ -12,7 +12,6 @@
                         aria-expanded="false">
                         <i class="mdi mdi-settings"></i>
                         <span class="hide-menu">Website Setup </span>
-                        <span class="badge rounded-pill bg-info ms-auto mr-3">3</span>
                     </a>
                     <ul aria-expanded="false" class="collapse first-level">
                         <li class="sidebar-item">
@@ -31,6 +30,28 @@
                             <a href="{{ route('admin.setup.custom_scripts.index') }}" class="sidebar-link">
                                 <i class="mdi mdi-adjust"></i>
                                 <span class="hide-menu"> Custom Script </span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)"
+                        aria-expanded="false">
+                        <i class="mdi mdi-file"></i>
+                        <span class="hide-menu">Files </span>
+                    </a>
+                    <ul aria-expanded="false" class="collapse first-level">
+                        <li class="sidebar-item">
+                            <a href="{{ route('admin.upload.index') }}" class="sidebar-link">
+                                <i class="mdi mdi-adjust"></i>
+                                <span class="hide-menu"> All Files </span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="{{ route('admin.upload.upload') }}" class="sidebar-link">
+                                <i class="mdi mdi-adjust"></i>
+                                <span class="hide-menu"> Upload Fle </span>
                             </a>
                         </li>
                     </ul>
