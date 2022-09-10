@@ -3,7 +3,7 @@
         <div class="row align-items-center">
             <div class="col-lg-2 col-sm-0">
                 <div class="logo">
-                    <a href="index.html">
+                    <a href="{{ route('index') }}">
                         <script type="text/javascript" style="display:none">
                             //<![CDATA[
                             window.__mirage2 = {
