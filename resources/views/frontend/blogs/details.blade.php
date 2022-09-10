@@ -11,7 +11,7 @@
     <div class="page-title-area">
         <div class="container">
             <div class="page-title-content">
-                <h2>Blog Details</h2>
+                <h2>{{ $blog->title }}</h2>
                 <ul>
                     <li>
                         <a href="index.html">
@@ -19,7 +19,7 @@
                         </a>
                     </li>
                     <li>Blog</li>
-                    <li class="active">Blog Details</li>
+                    <li class="active">{{ $blog->title }}</li>
                 </ul>
             </div>
         </div>
