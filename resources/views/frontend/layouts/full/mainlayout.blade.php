@@ -7,6 +7,8 @@
 
     @include('frontend.layouts.partials.styles')
 
+    @yield('styles')
+
     @yield('title')
 
     {!! getScripts('head') !!}

@@ -7,4 +7,4 @@
 
 <meta name="description" content="{{ getMetaDescription() }}" />
 <meta name="keywords" content="{{ getMetaKeywords() }}">
-<meta property="og:image" content="{{ URL::asset('daynamic_files/' . getMetaImage()) }}" />
+<meta property="og:image" content="{{ URL::asset('uploads/images/' . getMetaImage()) }}" />

@@ -29,4 +29,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/uploads/files', [App\Http\Controllers\Backend\UploadController::class, 'index'])->name('upload.index');
     Route::get('/uploads/upload', [App\Http\Controllers\Backend\UploadController::class, 'uploadIndex'])->name('upload.upload');
     Route::post('/uploads/upload', [App\Http\Controllers\Backend\UploadController::class, 'upload'])->name('upload.upload.store');
+
+    Route::resource('blog', App\Http\Controllers\Backend\BlogController::class);
 });

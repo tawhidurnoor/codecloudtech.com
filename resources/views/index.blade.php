@@ -1,7 +1,20 @@
 @extends('frontend.layouts.full.mainlayout')
 
+@section('styles')
+    <style>
+        .banner-area .banner-content h1 {
+            color: #fff;
+            margin: 0 0 0px;
+        }
+
+        .banner-area .banner-content h2 {
+            font-size: 45px;
+        }
+    </style>
+@endsection
+
 @section('title')
-    <title>Code CLoud Technology | Mane?</title>
+    <title>Code CLoud Technology</title>
 @endsection
 
 @section('body')
@@ -13,15 +26,16 @@
                         <div class="col-lg-6">
                             <div class="banner-content">
                                 <h1>
-                                    Trusted Effective Service and Solutions
+                                    A Custom Software Development Company
                                 </h1>
+                                <h2>for Your Business Growth</h2>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, et sed do eiusmod tempor
-                                    incididunt labore dolore magna aliqua. Quis ipsum suspendisse.
+                                    Since our inception in 2012, Codecloud Technology has been Delivering Software
+                                    Development and related IT services in the world. And slowly established as one of the
+                                    top-class Software Development companies in the world market.
                                 </p>
                                 <div class="banner-btn">
-                                    <a href="contact.html" class="box-btn">Contact Us</a>
-                                    <a href="about.html" class="box-btn border-btn">Know More</a>
+                                    <a href="#home-service-area" class="box-btn">Get Start</a>
                                 </div>
                             </div>
                         </div>
@@ -71,13 +85,15 @@
     </section>
 
 
-    <section class="home-service-area pt-100 pb-70">
+    <section id="home-service-area" class="home-service-area pt-100 pb-70">
         <div class="container">
             <div class="section-title">
-                <span>Smart Services</span>
-                <h2>Paso Provide All Kind of Tech Solutions</h2>
-                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Quis ipsum suspendisse.</p>
+                <span>Our Services and Solutions</span>
+                <h2>What Do You Need? </h2>
+                <p>We use an Iterative Agile Software & Web Development Process with Strategically Planned Development
+                    Cycles that Adapt to Customer's Changing Needs. We Specialized in Manufacturing Customized Software
+                    Solutions & Development service.
+                </p>
             </div>
             <div class="row">
                 <div class="col-lg-4 col-sm-6">
@@ -88,9 +104,11 @@
                                     src="assets_frontend/images/service/s1.png" alt="service" /></noscript>
                         </div>
                         <div class="service-content">
-                            <h3>Visual Design</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque vel sit maxime assumenda.
-                                maiores, magnam</p>
+                            <h3>Mobile App Development
+                            </h3>
+                            <p>A Mobile App is a direct means of communication with a loyal consumer. CodeCloud Technology
+                                is an experienced Mobile App Development Company and an ideal partner for iOS and Android
+                                app Development</p>
                             <a href="solutions-details.html" class="line-bnt">
                                 Read More
                             </a>
@@ -105,9 +123,10 @@
                                     src="assets_frontend/images/service/s2.png" alt="service" /></noscript>
                         </div>
                         <div class="service-content">
-                            <h3>Development</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque vel sit maxime assumenda.
-                                maiores, magnam</p>
+                            <h3>Software Development</h3>
+                            <p>We have been Providing Practical, Customer-focused Business Software Solutions. Our solutions
+                                for Developing Custom Software are supported by Original Concepts and Effective Techniques
+                            </p>
                             <a href="solutions-details.html" class="line-bnt">
                                 Read More
                             </a>
@@ -122,9 +141,11 @@
                                     src="assets_frontend/images/service/s3.png" alt="service" /></noscript>
                         </div>
                         <div class="service-content">
-                            <h3>QA Testing</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque vel sit maxime assumenda.
-                                maiores, magnam</p>
+                            <h3>Website Design & Development</h3>
+                            <p>Top-notch web Solution for Your Business.
+                                Codecloud Technology is a leading Web Development Company, With years of Experience. We are
+                                providing Custom, Flexible and Inexpensive Web Development Services
+                            </p>
                             <a href="solutions-details.html" class="line-bnt">
                                 Read More
                             </a>
@@ -139,9 +160,15 @@
                                     src="assets_frontend/images/service/s4.png" alt="service" /></noscript>
                         </div>
                         <div class="service-content">
-                            <h3>IT Management</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque vel sit maxime assumenda.
-                                maiores, magnam</p>
+                            <h3>eCommerce Development & Management
+                            </h3>
+                            <p>We use cutting-edge technology to create feature-rich and advanced eCommerce Solutions that
+                                work to retain users and increase their attention. We can provide you with an expertly
+                                Developed, Powerful, and Custom element that is ready to help you achieve your company's
+                                objectives. And Our Developer can focus on improving these rates, along with user experience
+                                targeted at a specific audience.
+
+                            </p>
                             <a href="solutions-details.html" class="line-bnt">
                                 Read More
                             </a>
@@ -156,9 +183,13 @@
                                     src="assets_frontend/images/service/s5.png" alt="service" /></noscript>
                         </div>
                         <div class="service-content">
-                            <h3> Cyber Security</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque vel sit maxime assumenda.
-                                maiores, magnam</p>
+                            <h3>UI/UX & Graphics Design
+                            </h3>
+                            <p>We can make your First Impression Visually Attractive to Your Customer with the Help of our
+                                UI/UX & Graphics Design Service. Our experts use a Broad Spectrum of UI/UX Benefits to Help
+                                Businesses Establish True, User Identities that Connect and Gain Trust, as Eell as to Build
+                                Effective Strategies to Retain.
+                            </p>
                             <a href="solutions-details.html" class="line-bnt">
                                 Read More
                             </a>
@@ -173,9 +204,11 @@
                                     src="assets_frontend/images/service/s6.png" alt="service" /></noscript>
                         </div>
                         <div class="service-content">
-                            <h3> Wireless Connectivity</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque vel sit maxime assumenda.
-                                maiores, magnam</p>
+                            <h3>Software Quality Assurance and Testing</h3>
+                            <p>CodeCloude Technology overlooks the complex and demanding prospects in quality assurance (QA)
+                                services. Our QA testing tools & services make a difference while differentiating from other
+                                products. We have various sets of testing services such as Automation testing, Functional
+                                testing, Performance testing and etc. as per need</p>
                             <a href="solutions-details.html" class="line-bnt">
                                 Read More
                             </a>
@@ -187,45 +220,113 @@
     </section>
 
 
-    <section class="home-company-area bg-color">
+    <section class="home-process-area pt-100 pb-70">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 col-md-12">
-                    <div class="company-content">
-                        <div class="company-tittle">
-                            <span>Our Company</span>
-                            <h2>Innovative It Helping Service All Over the World</h2>
-                            <p>It is a long established fact that a reader will be distracted by the rea dable content
-                                of a page when looking at its layout. The point of using Lorem Ipsum is that it has a
-                                more or less normal distribution of letters, as opposed
-                                to using Content here,content here normal distribution looking at its.</p>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                                suffered alteration in some form variations passages.</p>
+            <div class="section-title">
+                <h2>How We Work?</h2>
+                <h3>In our process we always focus on quality, testing and want to deliver good product & service on time.
+                </h3>
+
+                <p>Our team works tirelessly till we are able to convert our clients' visions into reality. We offer service
+                    assurance as well as a re-do option. We'll make changes to your work until you're fully happy as client
+                    satisfaction is our satisfaction.
+                </p>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-process">
+                        <div class="icon">
+                            <img data-cfsrc="assets_frontend/images/process/p1.png" alt="process"
+                                style="display:none;visibility:hidden;" /><noscript><img
+                                    src="assets_frontend/images/process/p1.png" alt="process" /></noscript>
+                            <span>
+                                <img data-cfsrc="assets_frontend/images/process/next.png" alt="shape"
+                                    style="display:none;visibility:hidden;" /><noscript><img
+                                        src="assets_frontend/images/process/next.png" alt="shape" /></noscript>
+                            </span>
                         </div>
-                        <a href="#" class="box-btn">
-                            Know More
-                        </a>
+                        <div class="content">
+                            <h3>Analysis</h3>
+                            <p>
+                                First, we understand the goal of your Product or Service. We have to know your requirements,
+                                brand and business identity to discover an ideal strategy for your success.
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-12">
-                    <div class="company-img">
-                        <img data-cfsrc="assets_frontend/images/company/company-img.jpg" alt="company"
-                            style="display:none;visibility:hidden;" /><noscript><img
-                                src="assets_frontend/images/company/company-img.jpg" alt="company" /></noscript>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-process">
+                        <div class="icon">
+                            <img data-cfsrc="assets_frontend/images/process/p2.png" alt="process"
+                                style="display:none;visibility:hidden;" /><noscript><img
+                                    src="assets_frontend/images/process/p2.png" alt="process" /></noscript>
+                            <span class="pro-span">
+                                <img data-cfsrc="assets_frontend/images/process/next.png" alt="shape"
+                                    style="display:none;visibility:hidden;" /><noscript><img
+                                        src="assets_frontend/images/process/next.png" alt="shape" /></noscript>
+                            </span>
+                        </div>
+                        <div class="content">
+                            <h3>Planning</h3>
+                            <p>
+                                Proper planning concentrates on everything needed to complete the project successfully. This
+                                will assist us to figure out your requirement.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-process">
+                        <div class="icon">
+                            <img data-cfsrc="assets_frontend/images/process/p3.png" alt="process"
+                                style="display:none;visibility:hidden;" /><noscript><img
+                                    src="assets_frontend/images/process/p3.png" alt="process" /></noscript>
+                            <span>
+                                <img data-cfsrc="assets_frontend/images/process/next.png" alt="shape"
+                                    style="display:none;visibility:hidden;" /><noscript><img
+                                        src="assets_frontend/images/process/next.png" alt="shape" /></noscript>
+                            </span>
+                        </div>
+                        <div class="content">
+                            <h3>Execute & Testing</h3>
+                            <p>
+                                Our Expert Developers use the most up-to-date methods while they begin to develop your
+                                System and Testing. The Web Aplication or Software is next tested for functionality.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-process">
+                        <div class="icon">
+                            <img data-cfsrc="assets_frontend/images/process/p4.png" alt="process"
+                                style="display:none;visibility:hidden;" /><noscript><img
+                                    src="assets_frontend/images/process/p4.png" alt="process" /></noscript>
+                        </div>
+                        <div class="content">
+                            <h3>Delivery</h3>
+                            <p>
+                                We deliver what we promise and are accountable for our actions. Every one of us places high
+                                value on delivering the greatest levels of integrity in our work.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-
     <section class="choose-area ptb-100">
         <div class="container">
             <div class="section-title">
-                <span>Choose Paso</span>
-                <h2>We Achieved People’s Trust by Our Great Service</h2>
-                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Quis ipsum suspendisse.</p>
+
+                <h2>Why Choose Us</h2>
+                <h3>We Achieved People’s Trust by Our Great Service</h3>
+                <p> We have highly skilled developer with excellent technical knowledge and experience in using the latest
+                    software standards. We have built a large pool of knowledge that we apply to deliver solutions that meet
+                    client's needs, expectations and budget. By putting our clients at the heart of everything we do, we are
+                    proud that we are still supporting our very first business client.</p>
             </div>
             <div class="row align-items-center">
                 <div class="col-lg-6">
@@ -244,11 +345,16 @@
                                         <i class="flaticon-friends"></i>
                                     </div>
                                     <a class="accordion-title active" href="javascript:void(0)">
-                                        <i class="bx bx-plus"></i> Great Understanding
+                                        <i class="bx bx-plus"></i>RESEARCH &
+                                        PLANNING
                                     </a>
                                     <p class="accordion-content show">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                        incididunt sit amet consectetur adipiscing.
+                                        Doing what has never been done before is common practice at CodeCloud Technology. We
+                                        develop solutions by analyzing and synthesizing R&D (Research and Development),
+                                        defining business and audience goals, establishing a clear vision and identifying
+                                        success metrics. These allow our project plans to become very thorough and highly
+                                        stable, with our sincere intent to quickly deliver the highest quality project
+                                        within an effective cost.
                                     </p>
                                 </li>
                                 <li class="accordion-item">
@@ -259,8 +365,9 @@
                                         <i class="bx bx-plus"></i>Update Technology
                                     </a>
                                     <p class="accordion-content">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                        incididunt sit amet consectetur adipiscing.
+                                        Our code crafters plan for progressive solutions placed on the right platforms to
+                                        enhance your business's user experience. They focus on building top-quality and
+                                        high-performing custom solutions and update technology that are easily scalable.
                                     </p>
                                 </li>
                                 <li class="accordion-item">
@@ -271,20 +378,33 @@
                                         <i class="bx bx-plus"></i>Experienced Team
                                     </a>
                                     <p class="accordion-content">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                        incididunt sit amet consectetur adipiscing.
+                                        Solve complex problems with digital solutions. We provide scalable software,
+                                        dedicated experts, and user validated products integrating easily into your business
+                                        model.
                                     </p>
                                 </li>
+
                                 <li class="accordion-item">
                                     <div class="icon">
                                         <i class="flaticon-award"></i>
                                     </div>
                                     <a class="accordion-title" href="javascript:void(0)">
-                                        <i class="bx bx-plus"></i>Best Quality Service
+                                        <i class="bx bx-plus"></i>Worldwide Clients
                                     </a>
                                     <p class="accordion-content">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                        incididunt sit amet consectetur adipiscing.
+                                        We are trusted by 100+ clients from worldwide.
+                                    </p>
+                                </li>
+
+                                <li class="accordion-item">
+                                    <div class="icon">
+                                        <i class="flaticon-award"></i>
+                                    </div>
+                                    <a class="accordion-title" href="javascript:void(0)">
+                                        <i class="bx bx-plus"></i>Support
+                                    </a>
+                                    <p class="accordion-content">
+                                        24*7 support from our expertise to your business.
                                     </p>
                                 </li>
                             </ul>
@@ -296,509 +416,7 @@
     </section>
 
 
-    <section class="home-process-area pt-100 pb-70">
-        <div class="container">
-            <div class="section-title">
-                <span>Working Process</span>
-                <h2>We are popular because of our way of working</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Quis ipsum suspendisse.</p>
-            </div>
-            <div class="row">
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-process">
-                        <div class="icon">
-                            <img data-cfsrc="assets_frontend/images/process/p1.png" alt="process"
-                                style="display:none;visibility:hidden;" /><noscript><img
-                                    src="assets_frontend/images/process/p1.png" alt="process" /></noscript>
-                            <span>
-                                <img data-cfsrc="assets_frontend/images/process/next.png" alt="shape"
-                                    style="display:none;visibility:hidden;" /><noscript><img
-                                        src="assets_frontend/images/process/next.png" alt="shape" /></noscript>
-                            </span>
-                        </div>
-                        <div class="content">
-                            <h3>Research Product</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, co nsectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-process">
-                        <div class="icon">
-                            <img data-cfsrc="assets_frontend/images/process/p2.png" alt="process"
-                                style="display:none;visibility:hidden;" /><noscript><img
-                                    src="assets_frontend/images/process/p2.png" alt="process" /></noscript>
-                            <span class="pro-span">
-                                <img data-cfsrc="assets_frontend/images/process/next.png" alt="shape"
-                                    style="display:none;visibility:hidden;" /><noscript><img
-                                        src="assets_frontend/images/process/next.png" alt="shape" /></noscript>
-                            </span>
-                        </div>
-                        <div class="content">
-                            <h3>User Testing</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, co nsectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-process">
-                        <div class="icon">
-                            <img data-cfsrc="assets_frontend/images/process/p3.png" alt="process"
-                                style="display:none;visibility:hidden;" /><noscript><img
-                                    src="assets_frontend/images/process/p3.png" alt="process" /></noscript>
-                            <span>
-                                <img data-cfsrc="assets_frontend/images/process/next.png" alt="shape"
-                                    style="display:none;visibility:hidden;" /><noscript><img
-                                        src="assets_frontend/images/process/next.png" alt="shape" /></noscript>
-                            </span>
-                        </div>
-                        <div class="content">
-                            <h3>Development</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, co nsectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-process">
-                        <div class="icon">
-                            <img data-cfsrc="assets_frontend/images/process/p4.png" alt="process"
-                                style="display:none;visibility:hidden;" /><noscript><img
-                                    src="assets_frontend/images/process/p4.png" alt="process" /></noscript>
-                        </div>
-                        <div class="content">
-                            <h3>Product Handover</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, co nsectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="home-case ptb-100">
-        <div class="container">
-            <div class="section-title">
-                <span>Case Studies</span>
-                <h2>Have a Look Our Work Showcase</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Quis ipsum suspendisse.</p>
-            </div>
-            <div class="case">
-                <ul class="all-case">
-                    <li class="active" data-filter="*"><span>All</span></li>
-                    <li data-filter=".design"><span>Design</span></li>
-                    <li data-filter=".dev"><span>Development</span></li>
-                    <li data-filter=".cyber"><span>Cyber Security</span></li>
-                </ul>
-            </div>
-            <div class="row case-list">
-                <div class="col-lg-4 col-sm-6 item cyber">
-                    <div class="single-case">
-                        <div class="case-img">
-                            <a href="case-details.html">
-                                <img data-cfsrc="assets_frontend/images/case/c1.jpg" alt="case"
-                                    style="display:none;visibility:hidden;" /><noscript><img
-                                        src="assets_frontend/images/case/c1.jpg" alt="case" /></noscript>
-                            </a>
-                        </div>
-                        <div class="content">
-                            <a href="case-details.html">
-                                <h3>Joe’s Company Software Development Case</h3>
-                            </a>
-                            <p>Lorem ipsum dolor sit amet, coloni is to nsectetur adipiscing elit, sed do eiudvi smod
-                                tempor incididunt ipsum dolor.</p>
-                            <a href="case-details.html" class="line-bnt">
-                                View Project Details
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 item dev design">
-                    <div class="single-case">
-                        <div class="case-img">
-                            <a href="case-details.html">
-                                <img data-cfsrc="assets_frontend/images/case/c2.jpg" alt="case"
-                                    style="display:none;visibility:hidden;" /><noscript><img
-                                        src="assets_frontend/images/case/c2.jpg" alt="case" /></noscript>
-                            </a>
-                        </div>
-                        <div class="content">
-                            <a href="case-details.html">
-                                <h3>Ride Share App UX Studies & Development Case</h3>
-                            </a>
-                            <p>Lorem ipsum dolor sit amet, coloni is to nsectetur adipiscing elit, sed do eiudvi smod
-                                tempor incididunt ipsum dolor.</p>
-                            <a href="case-details.html" class="line-bnt">
-                                View Project Details
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 item dev">
-                    <div class="single-case">
-                        <div class="case-img">
-                            <a href="case-details.html">
-                                <img data-cfsrc="assets_frontend/images/case/c3.jpg" alt="case"
-                                    style="display:none;visibility:hidden;" /><noscript><img
-                                        src="assets_frontend/images/case/c3.jpg" alt="case" /></noscript>
-                            </a>
-                        </div>
-                        <div class="content">
-                            <a href="case-details.html">
-                                <h3>Restaurant Management & Web Developing</h3>
-                            </a>
-                            <p>Lorem ipsum dolor sit amet, coloni is to nsectetur adipiscing elit, sed do eiudvi smod
-                                tempor incididunt ipsum dolor.</p>
-                            <a href="case-details.html" class="line-bnt">
-                                View Project Details
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 item dev cyber">
-                    <div class="single-case">
-                        <div class="case-img">
-                            <a href="case-details.html">
-                                <img data-cfsrc="assets_frontend/images/case/c4.jpg" alt="case"
-                                    style="display:none;visibility:hidden;" /><noscript><img
-                                        src="assets_frontend/images/case/c4.jpg" alt="case" /></noscript>
-                            </a>
-                        </div>
-                        <div class="content">
-                            <a href="case-details.html">
-                                <h3>IT Software Company Development Case</h3>
-                            </a>
-                            <p>Lorem ipsum dolor sit amet, coloni is to nsectetur adipiscing elit, sed do eiudvi smod
-                                tempor incididunt ipsum dolor.</p>
-                            <a href="case-details.html" class="line-bnt">
-                                View Project Details
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 item dev design">
-                    <div class="single-case">
-                        <div class="case-img">
-                            <a href="case-details.html">
-                                <img data-cfsrc="assets_frontend/images/case/c5.jpg" alt="case"
-                                    style="display:none;visibility:hidden;" /><noscript><img
-                                        src="assets_frontend/images/case/c5.jpg" alt="case" /></noscript>
-                            </a>
-                        </div>
-                        <div class="content">
-                            <a href="case-details.html">
-                                <h3>Parking Management & Web Developing</h3>
-                            </a>
-                            <p>Lorem ipsum dolor sit amet, coloni is to nsectetur adipiscing elit, sed do eiudvi smod
-                                tempor incididunt ipsum dolor.</p>
-                            <a href="case-details.html" class="line-bnt">
-                                View Project Details
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 item dev cyber design">
-                    <div class="single-case">
-                        <div class="case-img">
-                            <a href="case-details.html">
-                                <img data-cfsrc="assets_frontend/images/case/c6.jpg" alt="case"
-                                    style="display:none;visibility:hidden;" /><noscript><img
-                                        src="assets_frontend/images/case/c6.jpg" alt="case" /></noscript>
-                            </a>
-                        </div>
-                        <div class="content">
-                            <a href="case-details.html">
-                                <h3>Temperature App UX Studies & Development Case</h3>
-                            </a>
-                            <p>Lorem ipsum dolor sit amet, coloni is to nsectetur adipiscing elit, sed do eiudvi smod
-                                tempor incididunt ipsum dolor.</p>
-                            <a href="case-details.html" class="line-bnt">
-                                View Project Details
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="case-btn text-center">
-                <p>We Have More Amazing Cases. <a href="#">View More</a></p>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="feature-area bg-color ptb-100">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="contnet">
-                        <div class="feature-tittle">
-                            <span>Features</span>
-                            <h2>We Have Also Some Features That Provided by Paso</h2>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt consectetur, beatae
-                                quod eaque reprehenderit non ab quibusdam doloribus voluptatibus! Voluptatum aspernatur
-                                quasi id dolore doloremque quo vero</p>
-                        </div>
-                        <ul>
-                            <li>
-                                <i class="flaticon-correct"></i> Freelancing Traning Course
-                            </li>
-                            <li>
-                                <i class="flaticon-correct"></i> Technological Consultation
-                            </li>
-                            <li>
-                                <i class="flaticon-correct"></i> Monthly Paid Workspace
-                            </li>
-                            <li>
-                                <i class="flaticon-correct"></i> IT Learning Institute
-                            </li>
-                            <li>
-                                <i class="flaticon-correct"></i> Digital Marketing
-                            </li>
-                        </ul>
-                        <a href="#" class="box-btn">Lets Talk!</a>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="feature-img">
-                        <img data-cfsrc="assets_frontend/images/feature-img.png" alt="feature"
-                            style="display:none;visibility:hidden;" /><noscript><img
-                                src="assets_frontend/images/feature-img.png" alt="feature" /></noscript>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="home-team-area ptb-100">
-        <div class="container">
-            <div class="section-title">
-                <span>Team Members</span>
-                <h2>People Who are Behind the Achievements</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Quis ipsum suspendisse.</p>
-            </div>
-            <div class="home-team-slider owl-carousel owl-theme">
-                <div class="single-team">
-                    <div class="team-img">
-                        <img data-cfsrc="assets_frontend/images/team/t1.jpg" alt="team"
-                            style="display:none;visibility:hidden;" /><noscript><img
-                                src="assets_frontend/images/team/t1.jpg" alt="team" /></noscript>
-                        <ul class="social">
-                            <li>
-                                <a href="#" target="_blank"><i class='bx bxl-linkedin'></i></a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank"><i class="bx bxl-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank"><i class="bx bxl-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank"><i class="bx bxs-envelope"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="content text-center">
-                        <h3>John Smith</h3>
-                        <p>Full Stack Developer</p>
-                    </div>
-                </div>
-                <div class="single-team">
-                    <div class="team-img">
-                        <img data-cfsrc="assets_frontend/images/team/t2.jpg" alt="team"
-                            style="display:none;visibility:hidden;" /><noscript><img
-                                src="assets_frontend/images/team/t2.jpg" alt="team" /></noscript>
-                        <ul class="social">
-                            <li>
-                                <a href="#" target="_blank"><i class='bx bxl-linkedin'></i></a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank"><i class="bx bxl-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank"><i class="bx bxl-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank"><i class="bx bxs-envelope"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="content text-center">
-                        <h3>Evana Doe</h3>
-                        <p>Web Developer</p>
-                    </div>
-                </div>
-                <div class="single-team">
-                    <div class="team-img">
-                        <img data-cfsrc="assets_frontend/images/team/t3.jpg" alt="team"
-                            style="display:none;visibility:hidden;" /><noscript><img
-                                src="assets_frontend/images/team/t3.jpg" alt="team" /></noscript>
-                        <ul class="social">
-                            <li>
-                                <a href="#" target="_blank"><i class='bx bxl-linkedin'></i></a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank"><i class="bx bxl-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank"><i class="bx bxl-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank"><i class="bx bxs-envelope"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="content text-center">
-                        <h3>Bread Mc</h3>
-                        <p>IT Consulting</p>
-                    </div>
-                </div>
-                <div class="single-team">
-                    <div class="team-img">
-                        <img data-cfsrc="assets_frontend/images/team/t4.jpg" alt="team"
-                            style="display:none;visibility:hidden;" /><noscript><img
-                                src="assets_frontend/images/team/t4.jpg" alt="team" /></noscript>
-                        <ul class="social">
-                            <li>
-                                <a href="#" target="_blank"><i class='bx bxl-linkedin'></i></a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank"><i class="bx bxl-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank"><i class="bx bxl-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank"><i class="bx bxs-envelope"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="content text-center">
-                        <h3>Maria Fread</h3>
-                        <p>UI/UX Designer</p>
-                    </div>
-                </div>
-                <div class="single-team">
-                    <div class="team-img">
-                        <img data-cfsrc="assets_frontend/images/team/t1.jpg" alt="team"
-                            style="display:none;visibility:hidden;" /><noscript><img
-                                src="assets_frontend/images/team/t1.jpg" alt="team" /></noscript>
-                        <ul class="social">
-                            <li>
-                                <a href="#" target="_blank"><i class='bx bxl-linkedin'></i></a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank"><i class="bx bxl-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank"><i class="bx bxl-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank"><i class="bx bxs-envelope"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="content text-center">
-                        <h3>John Smith</h3>
-                        <p>Full Stack Developer</p>
-                    </div>
-                </div>
-                <div class="single-team">
-                    <div class="team-img">
-                        <img data-cfsrc="assets_frontend/images/team/t2.jpg" alt="team"
-                            style="display:none;visibility:hidden;" /><noscript><img
-                                src="assets_frontend/images/team/t2.jpg" alt="team" /></noscript>
-                        <ul class="social">
-                            <li>
-                                <a href="#" target="_blank"><i class='bx bxl-linkedin'></i></a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank"><i class="bx bxl-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank"><i class="bx bxl-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank"><i class="bx bxs-envelope"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="content text-center">
-                        <h3>Evana Doe</h3>
-                        <p>Web Developer</p>
-                    </div>
-                </div>
-                <div class="single-team">
-                    <div class="team-img">
-                        <img data-cfsrc="assets_frontend/images/team/t3.jpg" alt="team"
-                            style="display:none;visibility:hidden;" /><noscript><img
-                                src="assets_frontend/images/team/t3.jpg" alt="team" /></noscript>
-                        <ul class="social">
-                            <li>
-                                <a href="#" target="_blank"><i class='bx bxl-linkedin'></i></a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank"><i class="bx bxl-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank"><i class="bx bxl-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank"><i class="bx bxs-envelope"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="content text-center">
-                        <h3>Bread Mc</h3>
-                        <p>IT Consulting</p>
-                    </div>
-                </div>
-                <div class="single-team">
-                    <div class="team-img">
-                        <img data-cfsrc="assets_frontend/images/team/t4.jpg" alt="team"
-                            style="display:none;visibility:hidden;" /><noscript><img
-                                src="assets_frontend/images/team/t4.jpg" alt="team" /></noscript>
-                        <ul class="social">
-                            <li>
-                                <a href="#" target="_blank"><i class='bx bxl-linkedin'></i></a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank"><i class="bx bxl-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank"><i class="bx bxl-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" target="_blank"><i class="bx bxs-envelope"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="content text-center">
-                        <h3>Maria Fread</h3>
-                        <p>UI/UX Designer</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="client-area ptb-100 bg-color">
+    {{-- <section class="client-area ptb-100 bg-color">
         <div class="container">
             <div class="section-title">
                 <span>Testimonials</span>
@@ -829,175 +447,5 @@
                 </div>
             </div>
         </div>
-    </section>
-
-
-    <section class="home-blog-area ptb-100">
-        <div class="container">
-            <div class="section-title">
-                <span>Blog Post</span>
-                <h2>Our Regular Blogs</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A facilis vel consequatur tempora atque
-                    blanditiis exercitationem incidunt, alias corporis quam assumenda dicta.</p>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-blog">
-                        <div class="blog-img">
-                            <a href="blog-details.html">
-                                <img data-cfsrc="assets_frontend/images/blog/1.jpg" alt="blog"
-                                    style="display:none;visibility:hidden;"><noscript><img
-                                        src="assets_frontend/images/blog/1.jpg" alt="blog"></noscript>
-                            </a>
-                        </div>
-                        <div class="content">
-                            <ul>
-                                <li>
-                                    10 April 2020
-                                </li>
-                                <li>
-                                    <a href="#">By Admin</a>
-                                </li>
-                            </ul>
-                            <a href="blog-details.html">
-                                <h3>Joe’s Company Software Development Case</h3>
-                            </a>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas in fugit minima modi
-                                perspiciatis nam aspernatur porro</p>
-                            <a href="blog-details.html" class="line-bnt">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-blog">
-                        <div class="blog-img">
-                            <a href="blog-details.html">
-                                <img data-cfsrc="assets_frontend/images/blog/5.jpg" alt="blog"
-                                    style="display:none;visibility:hidden;"><noscript><img
-                                        src="assets_frontend/images/blog/5.jpg" alt="blog"></noscript>
-                            </a>
-                        </div>
-                        <div class="content">
-                            <ul>
-                                <li>
-                                    10 April 2020
-                                </li>
-                                <li>
-                                    <a href="#">By Admin</a>
-                                </li>
-                            </ul>
-                            <a href="blog-details.html">
-                                <h3>Temperature App UX Studies & Development Case</h3>
-                            </a>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas in fugit minima modi
-                                perspiciatis nam aspernatur porro</p>
-                            <a href="blog-details.html" class="line-bnt">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0">
-                    <div class="single-blog">
-                        <div class="blog-img">
-                            <a href="blog-details.html">
-                                <img data-cfsrc="assets_frontend/images/blog/3.jpg" alt="blog"
-                                    style="display:none;visibility:hidden;"><noscript><img
-                                        src="assets_frontend/images/blog/3.jpg" alt="blog"></noscript>
-                            </a>
-                        </div>
-                        <div class="content">
-                            <ul>
-                                <li>
-                                    10 April 2020
-                                </li>
-                                <li>
-                                    <a href="#">By Admin</a>
-                                </li>
-                            </ul>
-                            <a href="blog-details.html">
-                                <h3>IT Software Company Development Case</h3>
-                            </a>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas in fugit minima modi
-                                perspiciatis nam aspernatur porro</p>
-                            <a href="blog-details.html" class="line-bnt">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="blog-btn text-center">
-                <p>We Have More Usefull Blogs For You. <a href="blog.html">View More</a></p>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="home-contact-area bg-color ptb-100">
-        <div class="container">
-            <div class="section-title">
-                <span>Contact Us</span>
-                <h2>Let Us Know About Your Project Idea!</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A facilis vel consequatur tempora atque
-                    blanditiis exercitationem incidunt, alias corporis quam assumenda dicta.</p>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-lg-6 col-md-6">
-                    <div class="contact-img">
-                        <img data-cfsrc="assets_frontend/images/contact-img.png" alt="contact"
-                            style="display:none;visibility:hidden;"><noscript><img
-                                src="assets_frontend/images/contact-img.png" alt="contact"></noscript>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="content">
-                        <form id="contactForm">
-                            <div class="row">
-                                <div class="col-lg-12 col-sm-12">
-                                    <div class="form-group">
-                                        <input type="text" name="name" id="name" class="form-control"
-                                            required data-error="Please enter your name" placeholder="Your Name" />
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-sm-12">
-                                    <div class="form-group">
-                                        <input type="email" name="email" id="email" class="form-control"
-                                            required data-error="Please enter your email" placeholder="Your Email" />
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-sm-12">
-                                    <div class="form-group">
-                                        <input type="text" name="phone_number" id="phone_number" required
-                                            data-error="Please enter your number" class="form-control"
-                                            placeholder="Your Phone" />
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-sm-12">
-                                    <div class="form-group">
-                                        <input type="text" name="msg_subject" id="msg_subject" class="form-control"
-                                            required data-error="Please enter your subject" placeholder="Subject" />
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12">
-                                    <div class="form-group">
-                                        <textarea name="message" class="form-control" id="message" cols="30" rows="5" required
-                                            data-error="Write your message" placeholder="Your Message"></textarea>
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12">
-                                    <button type="submit" class="default-btn page-btn box-btn">
-                                        Submit
-                                    </button>
-                                    <div id="msgSubmit" class="h3 text-center hidden"></div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    </section> --}}
 @endsection

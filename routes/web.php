@@ -15,10 +15,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('index');
 
 
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/blogs', [App\Http\Controllers\Frontend\BlogController::class, 'index'])->name('blog.index');
+
+Route::get('/{blog_slug}', [App\Http\Controllers\Frontend\BlogController::class, 'details'])->name('blog.details');
