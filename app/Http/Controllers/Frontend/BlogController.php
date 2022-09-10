@@ -18,7 +18,8 @@ class BlogController extends Controller
 
     public function details($blog_slug)
     {
-        $blog = Blog::where('slug', $blog_slug)->first();
+        $blog = Blog::where('slug', $blog_slug)->firstOrFail();
+
         return view('frontend.blogs.details', [
             'blog' => $blog,
         ]);

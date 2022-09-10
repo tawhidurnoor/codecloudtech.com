@@ -67,23 +67,28 @@
                             <div class="blog-img">
                                 <a href="{{ route('blog.details', $blog->slug) }}">
                                     <img data-cfsrc="{{ asset('uploads/images/' . $blog->banner) }}" alt="blog"
-                                        style="display:none;visibility:hidden;"><noscript><img
-                                            src="{{ asset('uploads/images/' . $blog->banner) }}" alt="blog"></noscript>
+                                        style="display:none;visibility:hidden;">
+                                    <noscript>
+                                        <img src="{{ asset('uploads/images/' . $blog->banner) }}" width="570px"
+                                            alt="blog">
+                                    </noscript>
                                 </a>
                             </div>
                             <div class="content">
                                 <ul>
                                     <li>
-                                        10 April 2020
+                                        {{ \Carbon\Carbon::parse($blog->updated_at)->diffForHumans() }}
                                     </li>
                                     <li>
                                         <a href="#">By Admin</a>
                                     </li>
                                 </ul>
-                                <a href="blog-details.html">
+                                <a href="{{ route('blog.details', $blog->slug) }}">
                                     <h3>{{ $blog->title }}</h3>
                                 </a>
-                                <p>{{ $blog->summary }}</p>
+                                <p>
+                                    {!! Str::limit($blog->summary, 100) !!}
+                                </p>
                                 <a href="{{ route('blog.details', $blog->slug) }}" class="line-bnt">Read More</a>
                             </div>
                         </div>
