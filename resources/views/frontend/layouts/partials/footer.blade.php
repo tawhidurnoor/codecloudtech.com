@@ -4,9 +4,10 @@
             <div class="col-lg-4 col-md-6">
                 <div class="content">
                     <div class="logo">
-                        <a href="index.html"><img data-cfsrc="assets_frontend/images/logo2.png" alt="logo"
-                                style="display:none;visibility:hidden;" /><noscript><img
-                                    src="assets_frontend/images/logo2.png" alt="logo" /></noscript></a>
+                        <a href="index.html"><img data-cfsrc="{{ asset('uploads/images/' . getLogo('light')) }}"
+                                alt="logo" style="display:none;visibility:hidden;" /><noscript><img
+                                    src="{{ asset('uploads/images/' . getLogo('light')) }}"
+                                    alt="logo" /></noscript></a>
                     </div>
                     <p>
                         Lorem ipsum dolor sit amet, mattetur adipiscing elit, sed do eiusmod.
@@ -68,19 +69,20 @@
                 <div class="content contacts">
                     <h3 class="ml-40">Contact</h3>
                     <ul class="footer-list foot-social">
-                        <li><a href="tel:+1123456789"><i class="bx bx-mobile-alt"></i> +1 123 456 789</a></li>
-                        <li><a href="tel:+1975456789"><i class="bx bx-phone"></i> +1 975 456 789</a></li>
-                        <li><a
-                                href="https://templates.hibootstrap.com/cdn-cgi/l/email-protection#fe969b929291be8e9f8d91d09d9193"><i
-                                    class="bx bxs-envelope"></i> <span class="__cf_email__"
-                                    data-cfemail="85ede0e9e9eac5f5e4f6eaabe6eae8">[email&#160;protected]</span></a>
+                        <li>
+                            <a href="tel:{{ getSettings('phone') }}">
+                                <i class="bx bx-phone"></i> {{ getSettings('phone') }}
+                            </a>
                         </li>
-                        <li><a
-                                href="https://templates.hibootstrap.com/cdn-cgi/l/email-protection#9ae9efeaeaf5e8eedaeafbe9f5b4f9f5f7"><i
-                                    class="bx bxs-envelope"></i> <span class="__cf_email__"
-                                    data-cfemail="f98a8c8989968b8db989988a96d79a9694">[email&#160;protected]</span></a>
+                        <li>
+                            <a href="mailto:{{ getSettings('email') }}">
+                                <i class="bx bxs-envelope"></i>
+                                <span class="__cf_email__">{{ getSettings('email') }}</span>
+                            </a>
                         </li>
-                        <li><i class="bx bxs-map"></i> 28/A street, New York, USA</li>
+                        <li>
+                            <i class="bx bxs-map"></i> {{ getSettings('address') }}
+                        </li>
                     </ul>
                 </div>
             </div>

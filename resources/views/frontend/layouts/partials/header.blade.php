@@ -12,9 +12,9 @@
                             //]]>
                         </script>
                         <script type="text/javascript" src="assets_frontend/js/mirage2.min.js"></script>
-                        <img data-cfsrc="assets_frontend/images/logo.png" alt="logo"
-                            style="display:none;visibility:hidden;" /><noscript><img src="assets_frontend/images/logo.png"
-                                alt="logo" /></noscript>
+                        <img data-cfsrc="{{ asset('uploads/images/' . getLogo('dark')) }}" alt="logo"
+                            style="display:none;visibility:hidden;" /><noscript><img
+                                src="{{ asset('uploads/images/' . getLogo('dark')) }}" alt="logo" /></noscript>
                     </a>
                 </div>
             </div>

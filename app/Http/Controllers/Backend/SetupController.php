@@ -46,9 +46,9 @@ class SetupController extends Controller
         $settings = Setting::findOrFail(1);
 
         if ($request->hasFile('logo_light')) {
-            if (File::exists(public_path('uploads/' . $settings->logo_light))) {
+            if (File::exists(public_path('uploads/images/' . $settings->logo_light))) {
                 // dd('File does exists.');
-                File::delete(public_path('uploads/' . $settings->logo_light));
+                File::delete(public_path('uploads/images/' . $settings->logo_light));
             } else {
                 // dd('File does not exists.');
             }
@@ -58,7 +58,7 @@ class SetupController extends Controller
 
             //naming file
             $filename = time() . '.' . $extention;
-            $file->move('uploads/', $filename);
+            $file->move('uploads/images/', $filename);
 
             $settings->logo_light = $filename;
         }
@@ -66,9 +66,9 @@ class SetupController extends Controller
 
         if ($request->hasFile('logo_dark')) {
 
-            if (File::exists(public_path('uploads/' . $settings->logo_dark))) {
+            if (File::exists(public_path('uploads/images/' . $settings->logo_dark))) {
                 // dd('File does exists.');
-                File::delete(public_path('uploads/' . $settings->logo_dark));
+                File::delete(public_path('uploads/images/' . $settings->logo_dark));
             } else {
                 // dd('File does not exists.');
             }
@@ -78,16 +78,16 @@ class SetupController extends Controller
 
             //naming file
             $filename = time() . '.' . $extention;
-            $file->move('uploads/', $filename);
+            $file->move('uploads/images/', $filename);
 
             $settings->logo_dark = $filename;
         }
 
         if ($request->hasFile('favicon')) {
 
-            if (File::exists(public_path('uploads/' . $settings->favicon))) {
+            if (File::exists(public_path('uploads/images/' . $settings->favicon))) {
                 // dd('File does exists.');
-                File::delete(public_path('uploads/' . $settings->favicon));
+                File::delete(public_path('uploads/images/' . $settings->favicon));
             } else {
                 // dd('File does not exists.');
             }
@@ -97,7 +97,7 @@ class SetupController extends Controller
 
             //naming file
             $filename = time() . '.' . $extention;
-            $file->move('uploads/', $filename);
+            $file->move('uploads/images/', $filename);
 
             $settings->favicon = $filename;
         }

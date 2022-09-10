@@ -34,14 +34,14 @@
                                     <div class="el-card-item pb-3">
                                         <div
                                             class="el-card-avatar mb-3 el-overlay-1 w-100 overflow-hidden position-relative text-center">
-                                            <img src="{{ URL::to('uploads/' . $upload->file_name) }}"
+                                            <img src="{{ URL::to('uploads/images/' . $upload->file_name) }}"
                                                 class="d-block position-relative w-100" alt="user">
                                             <div class="el-overlay w-100 overflow-hidden">
                                                 <ul
                                                     class="list-style-none el-info text-white text-uppercase d-inline-block p-0">
                                                     <li class="el-item d-inline-block my-0 mx-1">
                                                         <a class="btn default btn-outline image-popup-vertical-fit el-link text-white border-white"
-                                                            href="{{ URL::to('uploads/' . $upload->file_name) }}">
+                                                            href="{{ URL::to('uploads/images/' . $upload->file_name) }}">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="24"
                                                                 height="24" viewBox="0 0 24 24" fill="none"
                                                                 stroke="currentColor" stroke-width="2"
@@ -57,7 +57,7 @@
                                                     <li class="el-item d-inline-block my-0 mx-1">
                                                         <a class="btn default btn-outline el-link text-white border-white"
                                                             href="javascript:void(0);" onclick="copyUrl(this)"
-                                                            data-url="{{ URL::to('uploads/' . $upload->file_name) }}">
+                                                            data-url="{{ URL::to('uploads/images/' . $upload->file_name) }}">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="24"
                                                                 height="24" viewBox="0 0 24 24" fill="none"
                                                                 stroke="currentColor" stroke-width="2"

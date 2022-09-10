@@ -2,6 +2,7 @@
 
 use App\Models\Meta;
 use App\Models\Script;
+use App\Models\Setting;
 
 if (!function_exists('getBaseURL')) {
     function getBaseURL()
@@ -56,6 +57,32 @@ if (!function_exists('getScripts')) {
             return $script->head_scripts;
         } else {
             return $script->body_scripts;
+        }
+    }
+}
+
+if (!function_exists('getLogo')) {
+    function getLogo($logo_name)
+    {
+        $setting = Setting::findOrFail(1);
+        if ($logo_name == 'light') {
+            return $setting->logo_light;
+        } else {
+            return $setting->logo_dark;
+        }
+    }
+}
+
+if (!function_exists('getSettings')) {
+    function getSettings($setting_name)
+    {
+        $setting = Setting::findOrFail(1);
+        if ($setting_name == 'phone') {
+            return $setting->phone;
+        } elseif ($setting_name == 'email') {
+            return $setting->email;
+        } elseif ($setting_name == 'address') {
+            return $setting->address;
         }
     }
 }

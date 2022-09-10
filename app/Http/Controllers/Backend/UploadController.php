@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\Upload;
 use Illuminate\Http\Request;
+use Image;
 
 class UploadController extends Controller
 {
@@ -32,13 +33,16 @@ class UploadController extends Controller
 
             //naming file
             $filename = time() . '.' . $file_extension;
-            $file->move('uploads/', $filename);
+            $file->move('uploads/images/', $filename);
 
             $upload = new Upload();
             $upload->file_original_name = $file_original_name;
             $upload->file_name = $filename;
             $upload->file_extension = $file_extension;
             $upload->file_size = $file_size;
+
+            //thumbnailing
+
             $upload->save();
         }
     }
