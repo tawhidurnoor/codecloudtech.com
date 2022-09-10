@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use App\Models\Blog;
+use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
-class BlogController extends Controller
+class ServiceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +16,9 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $blogs = Blog::all();
-        return view('backend.blog.index', [
-            'blogs' => $blogs,
+        $services = Service::all();
+        return view('backend.service.index', [
+            'services' => $services,
         ]);
     }
 
@@ -29,7 +29,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        return view('backend.blog.create');
+        return view('backend.service.create');
     }
 
     /**
@@ -40,45 +40,44 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        $blog = new Blog();
-        $blog->title = $request->title;
+        $service = new Service();
+        $service->title = $request->title;
+        $service->meta_title = $request->meta_title;
+        $service->meta_description = $request->meta_description;
+        $service->keywords = $request->keywords;
+        $service->slug = Str::slug($request->title, '-');
 
-        if ($request->hasFile('banner')) {
+        if ($request->hasFile('icon')) {
 
-            $file = $request->file('banner');
+            $file = $request->file('icon');
             $extention = $file->getClientOriginalExtension();
 
             //naming file
             $filename = time() . '.' . $extention;
             $file->move('uploads/images/', $filename);
 
-            $blog->banner = $filename;
+            $service->icon = $filename;
         }
 
-        $blog->meta_title = $request->meta_title;
-        $blog->meta_description = $request->meta_description;
-        $blog->keywords = $request->keywords;
-        $blog->slug = Str::slug($request->title, '-');
-        $blog->summary = $request->summary;
-        $blog->content = $request->content;
-        $blog->is_published = 1;
+        $service->short_description = $request->short_description;
+        $service->description = $request->description;
 
-        if ($blog->save()) {
-            session()->flash('success', 'Blog created succesfully!');
+        if ($service->save()) {
+            session()->flash('success', 'Service created succesfully!');
         } else {
-            session()->flash('warning', 'Error creating blog!');
+            session()->flash('warning', 'Error creating service!');
         }
 
-        return redirect()->route('admin.blog.index');
+        return redirect()->route('admin.service.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Blog  $blog
+     * @param  \App\Models\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function show(Blog $blog)
+    public function show(Service $service)
     {
         //
     }
@@ -86,10 +85,10 @@ class BlogController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Blog  $blog
+     * @param  \App\Models\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function edit(Blog $blog)
+    public function edit(Service $service)
     {
         //
     }
@@ -98,10 +97,10 @@ class BlogController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Blog  $blog
+     * @param  \App\Models\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Blog $blog)
+    public function update(Request $request, Service $service)
     {
         //
     }
@@ -109,10 +108,10 @@ class BlogController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Blog  $blog
+     * @param  \App\Models\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Blog $blog)
+    public function destroy(Service $service)
     {
         //
     }

@@ -96,125 +96,25 @@
                 </p>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single-service">
-                        <div class="service-img">
-                            <img data-cfsrc="assets_frontend/images/service/s1.png" alt="service"
-                                style="display:none;visibility:hidden;" /><noscript><img
-                                    src="assets_frontend/images/service/s1.png" alt="service" /></noscript>
-                        </div>
-                        <div class="service-content">
-                            <h3>Mobile App Development
-                            </h3>
-                            <p>A Mobile App is a direct means of communication with a loyal consumer. CodeCloud Technology
-                                is an experienced Mobile App Development Company and an ideal partner for iOS and Android
-                                app Development</p>
-                            <a href="solutions-details.html" class="line-bnt">
-                                Read More
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single-service">
-                        <div class="service-img">
-                            <img data-cfsrc="assets_frontend/images/service/s2.png" alt="service"
-                                style="display:none;visibility:hidden;" /><noscript><img
-                                    src="assets_frontend/images/service/s2.png" alt="service" /></noscript>
-                        </div>
-                        <div class="service-content">
-                            <h3>Software Development</h3>
-                            <p>We have been Providing Practical, Customer-focused Business Software Solutions. Our solutions
-                                for Developing Custom Software are supported by Original Concepts and Effective Techniques
-                            </p>
-                            <a href="solutions-details.html" class="line-bnt">
-                                Read More
-                            </a>
+                @foreach ($services as $service)
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="single-service">
+                            <div class="service-img">
+                                <img data-cfsrc="{{ asset('uploads/images/' . $service->icon) }}" alt="service"
+                                    style="display:none;visibility:hidden;" /><noscript><img
+                                        src="{{ asset('uploads/images/' . $service->icon) }}" alt="service" /></noscript>
+                            </div>
+                            <div class="service-content">
+                                <h3>{{ $service->title }}
+                                </h3>
+                                <p>{{ $service->short_description }}</p>
+                                <a href="{{ route('service.details', $service->slug) }}" class="line-bnt">
+                                    Read More
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single-service">
-                        <div class="service-img">
-                            <img data-cfsrc="assets_frontend/images/service/s3.png" alt="service"
-                                style="display:none;visibility:hidden;" /><noscript><img
-                                    src="assets_frontend/images/service/s3.png" alt="service" /></noscript>
-                        </div>
-                        <div class="service-content">
-                            <h3>Website Design & Development</h3>
-                            <p>Top-notch web Solution for Your Business.
-                                Codecloud Technology is a leading Web Development Company, With years of Experience. We are
-                                providing Custom, Flexible and Inexpensive Web Development Services
-                            </p>
-                            <a href="solutions-details.html" class="line-bnt">
-                                Read More
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single-service">
-                        <div class="service-img">
-                            <img data-cfsrc="assets_frontend/images/service/s4.png" alt="service"
-                                style="display:none;visibility:hidden;" /><noscript><img
-                                    src="assets_frontend/images/service/s4.png" alt="service" /></noscript>
-                        </div>
-                        <div class="service-content">
-                            <h3>eCommerce Development & Management
-                            </h3>
-                            <p>We use cutting-edge technology to create feature-rich and advanced eCommerce Solutions that
-                                work to retain users and increase their attention. We can provide you with an expertly
-                                Developed, Powerful, and Custom element that is ready to help you achieve your company's
-                                objectives. And Our Developer can focus on improving these rates, along with user experience
-                                targeted at a specific audience.
-
-                            </p>
-                            <a href="solutions-details.html" class="line-bnt">
-                                Read More
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single-service">
-                        <div class="service-img">
-                            <img data-cfsrc="assets_frontend/images/service/s5.png" alt="service"
-                                style="display:none;visibility:hidden;" /><noscript><img
-                                    src="assets_frontend/images/service/s5.png" alt="service" /></noscript>
-                        </div>
-                        <div class="service-content">
-                            <h3>UI/UX & Graphics Design
-                            </h3>
-                            <p>We can make your First Impression Visually Attractive to Your Customer with the Help of our
-                                UI/UX & Graphics Design Service. Our experts use a Broad Spectrum of UI/UX Benefits to Help
-                                Businesses Establish True, User Identities that Connect and Gain Trust, as Eell as to Build
-                                Effective Strategies to Retain.
-                            </p>
-                            <a href="solutions-details.html" class="line-bnt">
-                                Read More
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single-service">
-                        <div class="service-img">
-                            <img data-cfsrc="assets_frontend/images/service/s6.png" alt="service"
-                                style="display:none;visibility:hidden;" /><noscript><img
-                                    src="assets_frontend/images/service/s6.png" alt="service" /></noscript>
-                        </div>
-                        <div class="service-content">
-                            <h3>Software Quality Assurance and Testing</h3>
-                            <p>CodeCloude Technology overlooks the complex and demanding prospects in quality assurance (QA)
-                                services. Our QA testing tools & services make a difference while differentiating from other
-                                products. We have various sets of testing services such as Automation testing, Functional
-                                testing, Performance testing and etc. as per need</p>
-                            <a href="solutions-details.html" class="line-bnt">
-                                Read More
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>

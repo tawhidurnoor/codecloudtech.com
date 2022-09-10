@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::prefix('admin')->name('admin.')->group(function () {
+Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     //all route name has a prefix of admin.
 
     Route::get('/dashboard', function () {
@@ -31,4 +31,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::post('/uploads/upload', [App\Http\Controllers\Backend\UploadController::class, 'upload'])->name('upload.upload.store');
 
     Route::resource('blog', App\Http\Controllers\Backend\BlogController::class);
+
+    Route::resource('service', App\Http\Controllers\Backend\ServiceController::class);
 });

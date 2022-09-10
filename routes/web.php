@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-})->name('index');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 
 
 
@@ -25,4 +23,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/blogs', [App\Http\Controllers\Frontend\BlogController::class, 'index'])->name('blog.index');
 
-Route::get('/{blog_slug}', [App\Http\Controllers\Frontend\BlogController::class, 'details'])->name('blog.details');
+Route::get('/blog/{blog_slug}', [App\Http\Controllers\Frontend\BlogController::class, 'details'])->name('blog.details');
+
+Route::get('/{service_slug}', [App\Http\Controllers\HomeController::class, 'serviceDetails'])->name('service.details');
