@@ -61,18 +61,6 @@ if (!function_exists('getScripts')) {
     }
 }
 
-if (!function_exists('getLogo')) {
-    function getLogo($logo_name)
-    {
-        $setting = Setting::findOrFail(1);
-        if ($logo_name == 'light') {
-            return $setting->logo_light;
-        } else {
-            return $setting->logo_dark;
-        }
-    }
-}
-
 if (!function_exists('getSettings')) {
     function getSettings($setting_name)
     {
@@ -83,6 +71,10 @@ if (!function_exists('getSettings')) {
             return $setting->email;
         } elseif ($setting_name == 'address') {
             return $setting->address;
+        } elseif ($setting_name == 'logo_light') {
+            return $setting->logo_light;
+        } elseif ($setting_name == 'logo_dark') {
+            return $setting->logo_dark;
         }
     }
 }

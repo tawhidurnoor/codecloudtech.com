@@ -32,7 +32,7 @@
                         {{-- <img src="{{ asset('assets_backend/images/logo-text.png') }}" alt="homepage"
                             class="dark-logo" /> --}}
                         <!-- Light Logo text -->
-                        <img src="{{ asset('uploads/images/' . getLogo('light')) }}" class="light-logo"
+                        <img src="{{ asset('uploads/images/' . getSettings('logo_light')) }}" class="light-logo"
                             alt="homepage" />
                     </span>
                 </a>

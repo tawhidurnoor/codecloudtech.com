@@ -12,20 +12,20 @@
                             //]]>
                         </script>
                         <script type="text/javascript" src="assets_frontend/js/mirage2.min.js"></script>
-                        <img data-cfsrc="{{ asset('uploads/images/' . getLogo('dark')) }}" alt="logo"
+                        <img data-cfsrc="{{ asset('uploads/images/' . getSettings('logo_dark')) }}" alt="logo"
                             style="display:none;visibility:hidden;" /><noscript><img
-                                src="{{ asset('uploads/images/' . getLogo('dark')) }}" alt="logo" /></noscript>
+                                src="{{ asset('uploads/images/' . getSettings('logo_dark')) }}"
+                                alt="logo" /></noscript>
                     </a>
                 </div>
             </div>
             <div class="col-lg-8 col-sm-8 text-right pr-0">
                 <div class="header-content-right">
                     <ul class="header-contact">
-                        <li><a href="tel:+1123456789"><i class="bx bxs-phone-call"></i> +1 123 456 789</a></li>
-                        <li><a
-                                href="https://templates.hibootstrap.com/cdn-cgi/l/email-protection#4b232e2727240b3b2a382465282426"><i
-                                    class="bx bxs-envelope"></i> <span class="__cf_email__"
-                                    data-cfemail="9bf3fef7f7f4dbebfae8f4b5f8f4f6">[email&#160;protected]</span></a>
+                        <li><a href="tel:+{{ getSettings('phone') }}"><i class="bx bxs-phone-call"></i>
+                                {{ getSettings('phone') }}</a></li>
+                        <li><a href="mailto:{{ getSettings('email') }}"><i class="bx bxs-envelope"></i> <span
+                                    class="__cf_email__">{{ getSettings('email') }}</span></a>
                         </li>
                     </ul>
                 </div>
