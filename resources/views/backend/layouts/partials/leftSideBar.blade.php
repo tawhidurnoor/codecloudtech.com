@@ -7,6 +7,12 @@
         <!-- Sidebar navigation-->
         <nav class="sidebar-nav">
             <ul id="sidebarnav">
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('admin.home') }}"
+                        aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Home</span></a>
+                </li>
+
                 <li class="sidebar-item">
                     <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)"
                         aria-expanded="false">
@@ -66,6 +72,12 @@
                     <a class="sidebar-link waves-effect waves-dark sidebar-link"
                         href="{{ route('admin.service.index') }}" aria-expanded="false"><i
                             class="mdi mdi-mouse-variant"></i><span class="hide-menu">Services</span></a>
+                </li>
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('admin.page.index') }}"
+                        aria-expanded="false"><i class="mdi mdi-book-open-page-variant"></i><span
+                            class="hide-menu">Pages</span></a>
                 </li>
 
             </ul>

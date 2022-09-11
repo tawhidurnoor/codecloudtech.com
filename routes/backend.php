@@ -12,9 +12,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     //all route name has a prefix of admin.
 
-    Route::get('/dashboard', function () {
-        return view('backend.index');
-    });
+    Route::get('/home', function () {
+        return view('backend.dashboard');
+    })->name('home');
 
     Route::get('/general_information', [App\Http\Controllers\Backend\SetupController::class, 'generalInformation'])->name('setup.general.index');
     Route::put('/general_information', [App\Http\Controllers\Backend\SetupController::class, 'updateGeneralInformation'])->name('setup.general.update');
@@ -33,4 +33,6 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('blog', App\Http\Controllers\Backend\BlogController::class);
 
     Route::resource('service', App\Http\Controllers\Backend\ServiceController::class);
+
+    Route::resource('page', App\Http\Controllers\Backend\PageController::class);
 });
