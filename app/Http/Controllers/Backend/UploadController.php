@@ -44,6 +44,12 @@ class UploadController extends Controller
             //thumbnailing
 
             $upload->save();
+
+            return response()->json([
+                'fileName' => $filename,
+                'uploaded' => 1,
+                'url' => 'uploads/images/' . $filename
+            ]);
         }
     }
 }

@@ -10,11 +10,31 @@
         href="{{ asset('assets_backend/ajax/libs/codemirror/5.41.0/codemirror.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets_backend/ajax/libs/codemirror/5.41.0/theme/blackboard.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets_backend/ajax/libs/codemirror/5.41.0/theme/monokai.min.css') }}" />
-    <link rel="stylesheet" type="text/css"
+
+    {{-- <link rel="stylesheet" type="text/css"
         href="{{ asset('assets_backend/extra-libs/summernote/summernote-lite.min.css') }}" />
 
     <link rel="stylesheet" type="text/css"
-        href="{{ asset('assets_backend/extra-libs/summernote/summernote-lite.min.css') }}" />
+        href="{{ asset('assets_backend/extra-libs/summernote/summernote-lite.min.css') }}" /> --}}
+
+
+    <style>
+        #container {
+            width: 1000px;
+            margin: 20px auto;
+        }
+
+        .ck-editor__editable[role="textbox"] {
+            /* editing area */
+            min-height: 500px;
+        }
+
+        .ck-content .image {
+            /* block images */
+            max-width: 80%;
+            margin: 20px auto;
+        }
+    </style>
 @endsection
 
 @section('page-title')
@@ -70,7 +90,8 @@
 
                             <div class="mb-3">
                                 <label>Blog Content</label>
-                                <textarea class="summernote" name="content"></textarea>
+                                {{-- <textarea class="summernote" name="content"></textarea> --}}
+                                <textarea id="editor" name="content"></textarea>
                             </div>
 
 
@@ -99,7 +120,7 @@
     <script type="text/javascript" src="{{ asset('assets_backend/libs/codemirror/5.41.0/codemirror.js') }}"></script>
     <script src="{{ asset('assets_backend/libs/codemirror/5.41.0/mode/xml/xml.min.js') }}"></script>
     <script src="{{ asset('assets_backend/extra-libs/summernote/summernote-lite.min.js') }}"></script>
-    <script>
+    {{-- <script>
         /************************************/
         //default editor
         /************************************/
@@ -144,5 +165,12 @@
         $(".airmode-summer").summernote({
             airMode: true,
         });
+    </script> --}}
+
+
+    <script src="https://cdn.ckeditor.com/4.19.1/standard/ckeditor.js"></script>
+
+    <script>
+        CKEDITOR.replace('editor');
     </script>
 @endsection

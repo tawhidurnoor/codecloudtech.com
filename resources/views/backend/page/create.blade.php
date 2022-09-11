@@ -57,7 +57,7 @@
 
                             <div class="mb-3">
                                 <label>Page Content</label>
-                                <textarea class="summernote" name="content"></textarea>
+                                <textarea id="editor" name="content"></textarea>
                             </div>
 
 
@@ -85,8 +85,9 @@
 
     <script type="text/javascript" src="{{ asset('assets_backend/libs/codemirror/5.41.0/codemirror.js') }}"></script>
     <script src="{{ asset('assets_backend/libs/codemirror/5.41.0/mode/xml/xml.min.js') }}"></script>
-    <script src="{{ asset('assets_backend/extra-libs/summernote/summernote-lite.min.js') }}"></script>
-    <script>
+
+    {{-- <script src="{{ asset('assets_backend/extra-libs/summernote/summernote-lite.min.js') }}"></script> --}}
+    {{-- <script>
         /************************************/
         //default editor
         /************************************/
@@ -131,5 +132,11 @@
         $(".airmode-summer").summernote({
             airMode: true,
         });
+    </script> --}}
+
+    <script src="https://cdn.ckeditor.com/4.19.1/standard/ckeditor.js"></script>
+
+    <script>
+        CKEDITOR.replace('editor');
     </script>
 @endsection

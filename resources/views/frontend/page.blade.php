@@ -48,9 +48,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="services-details-text">
-                        {!! $page->content !!}
-                    </div>
+                    {!! $page->content !!}
                 </div>
             </div>
         </div>
