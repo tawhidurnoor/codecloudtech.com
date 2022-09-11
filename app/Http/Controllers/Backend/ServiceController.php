@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\File;
 
 class ServiceController extends Controller
 {
@@ -90,7 +91,9 @@ class ServiceController extends Controller
      */
     public function edit(Service $service)
     {
-        //
+        return view('backend.service.edit', [
+            'service' => $service,
+        ]);
     }
 
     /**
@@ -102,7 +105,35 @@ class ServiceController extends Controller
      */
     public function update(Request $request, Service $service)
     {
-        //
+        $service->title = $request->title;
+        $service->meta_title = $request->meta_title;
+        $service->meta_description = $request->meta_description;
+        $service->keywords = $request->keywords;
+
+        if ($request->hasFile('icon')) {
+
+            $file = $request->file('icon');
+            $extention = $file->getClientOriginalExtension();
+
+            //naming file
+            $filename = time() . '.' . $extention;
+            $file->move('uploads/images/', $filename);
+
+            File::delete(public_path('uploads/images/' . $service->icon));
+
+            $service->icon = $filename;
+        }
+
+        $service->short_description = $request->short_description;
+        $service->description = $request->description;
+
+        if ($service->save()) {
+            session()->flash('success', 'Service updated succesfully!');
+        } else {
+            session()->flash('warning', 'Error updating service!');
+        }
+
+        return redirect()->back();
     }
 
     /**

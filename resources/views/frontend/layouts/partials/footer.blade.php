@@ -91,21 +91,12 @@
     <div class="copy-area">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
-                    <ul class="menu">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="solutions.html">Solutions</a></li>
-                        <li><a href="case.html">Case Studies</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-6">
-                    <p class="right">
-                        Copyright @2022 Paso. Designed By
-                        <a href="https://hibootstrap.com/" target="_blank">HiBootstrap.com</a>
-                    </p>
+                <div class="col-lg-12">
+                    <center>
+                        <p>
+                            Copyright @2022 CodeCloud Technology Ltd.
+                        </p>
+                    </center>
                 </div>
             </div>
         </div>

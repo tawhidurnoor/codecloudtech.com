@@ -49,7 +49,10 @@
                                             </td>
                                             <td>{{ $service->title }}</td>
                                             <td>{{ $service->slug }}</td>
-                                            <td></td>
+                                            <td>
+                                                <a href="{{ route('admin.service.edit', $service->id) }}"
+                                                    class="btn btn-success">Edit</a>
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>

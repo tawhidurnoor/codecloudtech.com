@@ -11,7 +11,7 @@
     <div class="page-title-area">
         <div class="container">
             <div class="page-title-content">
-                <h2>Service Details</h2>
+                <h2>{{ $service->title }}</h2>
                 <ul>
                     <li>
                         <a href="index.html">
@@ -19,7 +19,7 @@
                         </a>
                     </li>
                     <li>Services</li>
-                    <li class="active">Services Details</li>
+                    <li class="active">{{ $service->title }}</li>
                 </ul>
             </div>
         </div>
