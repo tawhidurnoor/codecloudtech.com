@@ -9,9 +9,10 @@
                                     src="{{ asset('uploads/images/' . getSettings('logo_light')) }}"
                                     alt="logo" /></noscript></a>
                     </div>
-                    <p>
+                    <br>
+                    {{-- <p>
                         Lorem ipsum dolor sit amet, mattetur adipiscing elit, sed do eiusmod.
-                    </p>
+                    </p> --}}
                     <div class="subscribe">
                         <h4>Join Newsletter</h4>
                         <form class="newsletter-form" data-toggle="validator">
@@ -43,12 +44,10 @@
                 <div class="content ml-15">
                     <h3>Our Service</h3>
                     <ul class="footer-list">
-                        <li><a href="#">Visual Design</a></li>
-                        <li><a href="#"> Development</a></li>
-                        <li><a href="#">QA & Testing</a></li>
-                        <li><a href="#">IT Management</a></li>
-                        <li><a href="#">Cyber Security</a></li>
-                        <li><a href="#">Wireless Connection</a></li>
+                        @foreach (getServices() as $service)
+                            <li><a href="{{ route('slug.details', $service->slug) }}">{{ $service->title }}</a></li>
+                        @endforeach
+
                     </ul>
                 </div>
             </div>
@@ -56,12 +55,14 @@
                 <div class="content">
                     <h3>Quick Links</h3>
                     <ul class="footer-list">
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="solutions.html">Service</a></li>
-                        <li><a href="#">Career</a></li>
-                        <li><a href="privecy.html">Privacy & Policy</a></li>
-                        <li><a href="terms-condition.html">Terms & Conditions</a></li>
-                        <li><a href="#">Data Analysis</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        {{-- <li><a href="/about">Our Clients</a></li> --}}
+                        <li><a href="/portfolio">Portfolio</a></li>
+                        <li><a href="{{ route('blog.index') }}">Blog</a></li>
+                        <li><a href="/privacy-policy">Privacy & Policy</a></li>
+                        <li><a href="/terms-conditions">Terms & Conditions</a></li>
+                        <li><a href="/copyright-policy">Copyright Policy</a></li>
+                        <li><a href="/contact">Help Center</a></li>
                     </ul>
                 </div>
             </div>

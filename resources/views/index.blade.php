@@ -35,7 +35,7 @@
                                     top-class Software Development companies in the world market.
                                 </p>
                                 <div class="banner-btn">
-                                    <a href="#home-service-area" class="box-btn">Get Start</a>
+                                    <a href="/about" class="box-btn border-btn">Know More</a>
                                 </div>
                             </div>
                         </div>

@@ -24,10 +24,10 @@
                             <a href="{{ route('blog.index') }}" class="nav-link">Blog</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">About</a>
+                            <a href="/about" class="nav-link">About</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Contact</a>
+                            <a href="{{ route('contact') }}" class="nav-link">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -42,7 +42,7 @@
                     </form>
                 </div> --}}
                 <div class="nav-btn">
-                    <a href="#" class="box-btn">Get Started</a>
+                    <a href="/services" class="box-btn">Get Started</a>
                 </div>
             </nav>
         </div>

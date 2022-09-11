@@ -2,6 +2,7 @@
 
 use App\Models\Meta;
 use App\Models\Script;
+use App\Models\Service;
 use App\Models\Setting;
 
 if (!function_exists('getBaseURL')) {
@@ -76,5 +77,14 @@ if (!function_exists('getSettings')) {
         } elseif ($setting_name == 'logo_dark') {
             return $setting->logo_dark;
         }
+    }
+}
+
+
+if (!function_exists('getServices')) {
+    function getServices()
+    {
+        $services = Service::all();
+        return $services;
     }
 }

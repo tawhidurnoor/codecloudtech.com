@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="{{ asset('assets_backend/ajax/libs/codemirror/5.41.0/theme/monokai.min.css') }}" />
     <link rel="stylesheet" type="text/css"
         href="{{ asset('assets_backend/extra-libs/summernote/summernote-lite.min.css') }}" />
+
+    <link rel="stylesheet" type="text/css"
+        href="{{ asset('assets_backend/extra-libs/summernote/summernote-lite.min.css') }}" />
 @endsection
 
 @section('page-title')
