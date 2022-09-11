@@ -49,7 +49,10 @@
                                             <td>
                                                 {{ $page->slug }}
                                             </td>
-                                            <td></td>
+                                            <td>
+                                                <a href="{{ route('admin.page.edit', $page->id) }}"
+                                                    class="btn btn-success">Edit</a>
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>

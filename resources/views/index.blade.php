@@ -108,7 +108,7 @@
                                 <h3>{{ $service->title }}
                                 </h3>
                                 <p>{{ $service->short_description }}</p>
-                                <a href="{{ route('service.details', $service->slug) }}" class="line-bnt">
+                                <a href="{{ route('slug.details', $service->slug) }}" class="line-bnt">
                                     Read More
                                 </a>
                             </div>

@@ -1,7 +1,7 @@
 @extends('backend.layouts.full.mainlayout')
 
 @section('title')
-    <title>Create Page | CodeCloud Technology CMS</title>
+    <title>Edit Page | CodeCloud Technology CMS</title>
 @endsection
 
 @section('styles')
@@ -15,7 +15,7 @@
 @endsection
 
 @section('page-title')
-    Create Page
+    Edit Page
 @endsection
 
 @section('body')
@@ -31,33 +31,37 @@
                     </div>
                     <div class="card-body">
 
-                        <form action="{{ route('admin.page.store') }}" method="post">
+                        <form action="{{ route('admin.page.update', $page->id) }}" method="post">
                             @csrf
+                            @method('put')
                             <div class="mb-3">
                                 <label>Page Title</label>
-                                <input type="text" name="title" class="form-control" required>
+                                <input type="text" name="title" class="form-control" value="{{ $page->title }}"
+                                    required>
                             </div>
 
                             <div class="mb-3">
                                 <label>Page Meta Title</label>
-                                <input type="text" name="meta_title" class="form-control" required>
+                                <input type="text" name="meta_title" class="form-control" value="{{ $page->meta_title }}"
+                                    required>
                             </div>
 
                             <div class="mb-3">
                                 <label>Meta Description</label>
-                                <textarea name="meta_description" class="form-control" rows="5" required></textarea>
+                                <textarea name="meta_description" class="form-control" rows="5" required>{{ $page->meta_description }}</textarea>
                             </div>
 
                             <div class="mb-3">
                                 <label>Keywords
                                     <span class="help"> Separate with coma</span>
                                 </label>
-                                <input type="text" name="keywords" class="form-control" required>
+                                <input type="text" name="keywords" value="{{ $page->keywords }}" class="form-control"
+                                    required>
                             </div>
 
                             <div class="mb-3">
                                 <label>Page Content</label>
-                                <textarea class="summernote" name="content"></textarea>
+                                <textarea class="summernote" name="content">{{ $page->content }}</textarea>
                             </div>
 
 

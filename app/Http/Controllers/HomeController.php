@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Page;
 use App\Models\Service;
 use Illuminate\Http\Request;
 
@@ -30,11 +31,19 @@ class HomeController extends Controller
         ]);
     }
 
-    public function serviceDetails($service_slug)
+    public function slugDetails($slug)
     {
-        $service = Service::where('slug', $service_slug)->firstOrFail();
-        return view('frontend.service.details', [
-            'service' => $service,
-        ]);
+        $page = Page::where('slug', $slug)->get();
+        if (count($page) > 0) {
+            $page = $page->first();
+            return view('frontend.page', [
+                'page' => $page,
+            ]);
+        } else {
+            $service = Service::where('slug', $slug)->firstOrFail();
+            return view('frontend.service.details', [
+                'service' => $service,
+            ]);
+        }
     }
 }

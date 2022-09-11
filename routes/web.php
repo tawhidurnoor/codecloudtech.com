@@ -25,4 +25,4 @@ Route::get('/blogs', [App\Http\Controllers\Frontend\BlogController::class, 'inde
 
 Route::get('/blog/{blog_slug}', [App\Http\Controllers\Frontend\BlogController::class, 'details'])->name('blog.details');
 
-Route::get('/{service_slug}', [App\Http\Controllers\HomeController::class, 'serviceDetails'])->name('service.details');
+Route::get('/{slug}', [App\Http\Controllers\HomeController::class, 'slugDetails'])->name('slug.details');
