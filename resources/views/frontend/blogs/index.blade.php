@@ -95,7 +95,7 @@
                     </div>
                 @endforeach
 
-                <div class="col-lg-12">
+                {{-- <div class="col-lg-12">
                     <div class="page-navigation-area">
                         <nav aria-label="Page navigation example text-center">
                             <ul class="pagination">
@@ -121,7 +121,7 @@
                             </ul>
                         </nav>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>

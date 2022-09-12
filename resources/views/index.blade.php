@@ -107,7 +107,9 @@
                             <div class="service-content">
                                 <h3>{{ $service->title }}
                                 </h3>
-                                <p>{{ $service->short_description }}</p>
+                                <p>
+                                    {!! Str::limit($service->short_description, 100) !!}
+                                </p>
                                 <a href="{{ route('slug.details', $service->slug) }}" class="line-bnt">
                                     Read More
                                 </a>
