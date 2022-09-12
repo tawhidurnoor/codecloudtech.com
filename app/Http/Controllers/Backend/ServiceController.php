@@ -144,6 +144,14 @@ class ServiceController extends Controller
      */
     public function destroy(Service $service)
     {
-        //
+        File::delete(public_path('uploads/images/' . $service->icon));
+
+        if ($service->delete()) {
+            session()->flash('success', 'Service deleted succesfully!');
+        } else {
+            session()->flash('warning', 'Error deleting service!');
+        }
+
+        return redirect()->back();
     }
 }

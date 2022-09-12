@@ -146,8 +146,9 @@ class BlogController extends Controller
      */
     public function destroy(Blog $blog)
     {
+        File::delete(public_path('uploads/images/' . $blog->banner));
+
         if ($blog->delete()) {
-            File::delete(public_path('uploads/images/' . $blog->banner));
             session()->flash('success', 'Blog deleted succesfully!');
         } else {
             session()->flash('warning', 'Error deleting blog!');
