@@ -10,8 +10,6 @@
         href="{{ asset('assets_backend/ajax/libs/codemirror/5.41.0/codemirror.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets_backend/ajax/libs/codemirror/5.41.0/theme/blackboard.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets_backend/ajax/libs/codemirror/5.41.0/theme/monokai.min.css') }}" />
-    <link rel="stylesheet" type="text/css"
-        href="{{ asset('assets_backend/extra-libs/summernote/summernote-lite.min.css') }}" />
 @endsection
 
 @section('page-title')
@@ -72,7 +70,7 @@
 
                             <div class="mb-3">
                                 <label>Blog Content</label>
-                                <textarea class="summernote" name="description">{{ $service->description }}</textarea>
+                                <textarea id="editor" name="description">{{ $service->description }}</textarea>
                             </div>
 
 
@@ -100,51 +98,19 @@
 
     <script type="text/javascript" src="{{ asset('assets_backend/libs/codemirror/5.41.0/codemirror.js') }}"></script>
     <script src="{{ asset('assets_backend/libs/codemirror/5.41.0/mode/xml/xml.min.js') }}"></script>
-    <script src="{{ asset('assets_backend/extra-libs/summernote/summernote-lite.min.js') }}"></script>
+
+    <script src="https://cdn.ckeditor.com/4.19.1/standard/ckeditor.js"></script>
+
     <script>
-        /************************************/
-        //default editor
-        /************************************/
-        $(".summernote").summernote({
-            height: 350, // set editor height
-            minHeight: null, // set minimum height of editor
-            maxHeight: null, // set maximum height of editor
-            focus: false, // set focus to editable area after initializing summernote
-        });
+        CKEDITOR.replace('editor');
+    </script>
 
-        /************************************/
-        //inline-editor
-        /************************************/
-        $(".inline-editor").summernote({
-            airMode: true,
-        });
-
-        /************************************/
-        //edit and save mode
-        /************************************/
-        (window.edit = function() {
-            $(".click2edit").summernote();
-        }),
-        (window.save = function() {
-            $(".click2edit").summernote("destroy");
-        });
-
-        var edit = function() {
-            $(".click2edit").summernote({
-                focus: true
-            });
-        };
-
-        var save = function() {
-            var markup = $(".click2edit").summernote("code");
-            $(".click2edit").summernote("destroy");
-        };
-
-        /************************************/
-        //airmode editor
-        /************************************/
-        $(".airmode-summer").summernote({
-            airMode: true,
+    <script>
+        CKEDITOR.plugins.add('example', {
+            init: function(editor) {
+                var pluginDirectory = this.path;
+                editor.addContentsCss(pluginDirectory + 'https://127.0.0.1:8000/assets_frontend/css/style.css');
+            }
         });
     </script>
 @endsection

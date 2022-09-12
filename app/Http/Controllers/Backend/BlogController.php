@@ -91,7 +91,9 @@ class BlogController extends Controller
      */
     public function edit(Blog $blog)
     {
-        //
+        return view('backend.blog.edit', [
+            'blog' => $blog
+        ]);
     }
 
     /**
@@ -103,7 +105,37 @@ class BlogController extends Controller
      */
     public function update(Request $request, Blog $blog)
     {
-        //
+        $blog->title = $request->title;
+
+        if ($request->hasFile('banner')) {
+
+            $file = $request->file('banner');
+            $extention = $file->getClientOriginalExtension();
+
+            //naming file
+            $filename = time() . '.' . $extention;
+            $file->move('uploads/images/', $filename);
+
+            unlink('uploads/images/' . $blog->banner);
+
+            $blog->banner = $filename;
+        }
+
+        $blog->meta_title = $request->meta_title;
+        $blog->meta_description = $request->meta_description;
+        $blog->keywords = $request->keywords;
+        $blog->slug = Str::slug($request->title, '-');
+        $blog->summary = $request->summary;
+        $blog->content = $request->content;
+        $blog->is_published = 1;
+
+        if ($blog->save()) {
+            session()->flash('success', 'Blog updated succesfully!');
+        } else {
+            session()->flash('warning', 'Error updating blog!');
+        }
+
+        return redirect()->back();
     }
 
     /**

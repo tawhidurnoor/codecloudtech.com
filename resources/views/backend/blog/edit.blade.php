@@ -1,7 +1,7 @@
 @extends('backend.layouts.full.mainlayout')
 
 @section('title')
-    <title>Edit Page | CodeCloud Technology CMS</title>
+    <title>Edit Blog | CodeCloud Technology CMS</title>
 @endsection
 
 @section('styles')
@@ -10,10 +10,35 @@
         href="{{ asset('assets_backend/ajax/libs/codemirror/5.41.0/codemirror.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets_backend/ajax/libs/codemirror/5.41.0/theme/blackboard.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets_backend/ajax/libs/codemirror/5.41.0/theme/monokai.min.css') }}" />
+
+    {{-- <link rel="stylesheet" type="text/css"
+        href="{{ asset('assets_backend/extra-libs/summernote/summernote-lite.min.css') }}" />
+
+    <link rel="stylesheet" type="text/css"
+        href="{{ asset('assets_backend/extra-libs/summernote/summernote-lite.min.css') }}" /> --}}
+
+
+    <style>
+        #container {
+            width: 1000px;
+            margin: 20px auto;
+        }
+
+        .ck-editor__editable[role="textbox"] {
+            /* editing area */
+            min-height: 500px;
+        }
+
+        .ck-content .image {
+            /* block images */
+            max-width: 80%;
+            margin: 20px auto;
+        }
+    </style>
 @endsection
 
 @section('page-title')
-    Edit Page
+    Edit Blogs
 @endsection
 
 @section('body')
@@ -25,41 +50,53 @@
             <div class="col-12">
                 <div class="card">
                     <div class="border-bottom title-part-padding">
-                        <h4 class="card-title mb-0">Page details</h4>
+                        <h4 class="card-title mb-0">Blog details</h4>
                     </div>
                     <div class="card-body">
 
-                        <form action="{{ route('admin.page.update', $page->id) }}" method="post">
+                        <form action="{{ route('admin.blog.update', $blog->id) }}" method="post"
+                            enctype="multipart/form-data">
                             @csrf
                             @method('put')
                             <div class="mb-3">
-                                <label>Page Title</label>
-                                <input type="text" name="title" class="form-control" value="{{ $page->title }}"
+                                <label>Blog Title</label>
+                                <input type="text" name="title" class="form-control" value="{{ $blog->title }}"
                                     required>
                             </div>
 
                             <div class="mb-3">
-                                <label>Page Meta Title</label>
-                                <input type="text" name="meta_title" class="form-control" value="{{ $page->meta_title }}"
+                                <label>Blog Meta Title</label>
+                                <input type="text" name="meta_title" class="form-control" value="{{ $blog->meta_title }}"
                                     required>
                             </div>
 
                             <div class="mb-3">
                                 <label>Meta Description</label>
-                                <textarea name="meta_description" class="form-control" rows="5" required>{{ $page->meta_description }}</textarea>
+                                <textarea name="meta_description" class="form-control" rows="5" required>{{ $blog->meta_description }}</textarea>
                             </div>
 
                             <div class="mb-3">
                                 <label>Keywords
                                     <span class="help"> Separate with coma</span>
                                 </label>
-                                <input type="text" name="keywords" value="{{ $page->keywords }}" class="form-control"
+                                <input type="text" name="keywords" class="form-control" value="{{ $blog->keywords }}"
                                     required>
                             </div>
 
                             <div class="mb-3">
-                                <label>Page Content</label>
-                                <textarea id="editor" name="content">{{ $page->content }}</textarea>
+                                <label>Banner</label>
+                                <input type="file" name="banner" accept="image/*" class="form-control" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label>Summary</label>
+                                <textarea name="summary" class="form-control" rows="5" required>{{ $blog->summary }}</textarea>
+                            </div>
+
+                            <div class="mb-3">
+                                <label>Blog Content</label>
+                                {{-- <textarea class="summernote" name="content"></textarea> --}}
+                                <textarea id="editor" name="content">{{ $blog->content }}</textarea>
                             </div>
 
 
@@ -87,54 +124,8 @@
 
     <script type="text/javascript" src="{{ asset('assets_backend/libs/codemirror/5.41.0/codemirror.js') }}"></script>
     <script src="{{ asset('assets_backend/libs/codemirror/5.41.0/mode/xml/xml.min.js') }}"></script>
+    <script src="{{ asset('assets_backend/extra-libs/summernote/summernote-lite.min.js') }}"></script>
 
-    {{-- <script src="{{ asset('assets_backend/extra-libs/summernote/summernote-lite.min.js') }}"></script>
-    <script>
-        /************************************/
-        //default editor
-        /************************************/
-        $(".summernote").summernote({
-            height: 350, // set editor height
-            minHeight: null, // set minimum height of editor
-            maxHeight: null, // set maximum height of editor
-            focus: false, // set focus to editable area after initializing summernote
-        });
-
-        /************************************/
-        //inline-editor
-        /************************************/
-        $(".inline-editor").summernote({
-            airMode: true,
-        });
-
-        /************************************/
-        //edit and save mode
-        /************************************/
-        (window.edit = function() {
-            $(".click2edit").summernote();
-        }),
-        (window.save = function() {
-            $(".click2edit").summernote("destroy");
-        });
-
-        var edit = function() {
-            $(".click2edit").summernote({
-                focus: true
-            });
-        };
-
-        var save = function() {
-            var markup = $(".click2edit").summernote("code");
-            $(".click2edit").summernote("destroy");
-        };
-
-        /************************************/
-        //airmode editor
-        /************************************/
-        $(".airmode-summer").summernote({
-            airMode: true,
-        });
-    </script> --}}
 
     <script src="https://cdn.ckeditor.com/4.19.1/standard/ckeditor.js"></script>
 

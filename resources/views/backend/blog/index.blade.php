@@ -50,9 +50,20 @@
                                             </td>
                                             <td>{{ $blog->title }}</td>
                                             <td>{{ $blog->slug }}</td>
-                                            <td>{{ $blog->is_published }}</td>
+                                            <td>
+                                                @if ($blog->is_published = 1)
+                                                    <span class="mb-1 badge rounded-pill bg-success">Published</span>
+                                                @else
+                                                    <span class="mb-1 badge rounded-pill bg-danger">Unpublished</span>
+                                                @endif
+                                            </td>
                                             <td>{{ \Carbon\Carbon::parse($blog->updated_at)->diffForHumans() }}</td>
-                                            <td></td>
+                                            <td>
+                                                <a href="{{ route('admin.blog.edit', $blog->id) }}"
+                                                    class="btn waves-effect waves-light btn-info ">
+                                                    Edit
+                                                </a>
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
