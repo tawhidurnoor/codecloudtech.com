@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\File;
 
 class BlogController extends Controller
 {
@@ -124,7 +125,6 @@ class BlogController extends Controller
         $blog->meta_title = $request->meta_title;
         $blog->meta_description = $request->meta_description;
         $blog->keywords = $request->keywords;
-        $blog->slug = Str::slug($request->title, '-');
         $blog->summary = $request->summary;
         $blog->content = $request->content;
         $blog->is_published = 1;
@@ -146,6 +146,13 @@ class BlogController extends Controller
      */
     public function destroy(Blog $blog)
     {
-        //
+        if ($blog->delete()) {
+            File::delete(public_path('uploads/images/' . $blog->banner));
+            session()->flash('success', 'Blog deleted succesfully!');
+        } else {
+            session()->flash('warning', 'Error deleting blog!');
+        }
+
+        return redirect()->back();
     }
 }

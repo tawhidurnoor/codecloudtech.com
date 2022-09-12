@@ -63,6 +63,8 @@
 
     @include('backend.layouts.partials.scripts')
 
+    @yield('modals')
+
     @yield('scripts')
 </body>
 
