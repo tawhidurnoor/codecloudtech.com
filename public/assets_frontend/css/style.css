@@ -810,11 +810,10 @@ textarea.form-control {
 }
 
 .navbar-area.three .main-nav {
-    background-color: #051242
+    background-color: #fff
 }
 
 .navbar-area .main-nav {
-    background: 0 0;
     -webkit-transition: .4s;
     transition: .4s
 }
@@ -849,7 +848,7 @@ textarea.form-control {
 .navbar-area .main-nav .navbar .navbar-nav .nav-item a {
     font-size: 16px;
     font-weight: 400;
-    color: #fff;
+    color: #051242;
     text-transform: capitalize;
     padding-left: 0;
     padding-right: 0;
@@ -1078,7 +1077,8 @@ textarea.form-control {
     transition: .3s;
     -webkit-box-shadow: 0 1px 10px rgba(221, 221, 221, .2);
     box-shadow: 0 1px 10px rgba(221, 221, 221, .2);
-    background: #051242 !important
+    background: #fff !important;
+    color: #000b2f;
 }
 
 .banner-area {

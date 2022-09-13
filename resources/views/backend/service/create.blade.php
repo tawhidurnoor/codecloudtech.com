@@ -64,8 +64,131 @@
                             </div>
 
                             <div class="mb-3">
-                                <label>Blog Content</label>
+                                <label>Content</label>
                                 <textarea id="editor" name="description"></textarea>
+                            </div>
+
+
+                            <div class="mb-3">
+                                <label>Color</label>
+                                <input type="color" name="div_color" value="#ffffff" class="form-control"
+                                    style="height: 70px" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label>Top right banner</label>
+                                <input type="file" name="right_banner" accept="image/*" class="form-control" required>
+                            </div>
+
+                            <br>
+                            <hr>
+                            <br>
+
+                            <div class="mb-3">
+                                <div class="col-md-4 col-xl-3">
+                                    <label>Enable Bottom Div 1</span>
+                                </div>
+                                <div class="col-md-8 col-xl-9">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input success" type="radio" name="is_bottom_div_1"
+                                            value="1">
+                                        <label class="form-check-label">Yes</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input danger" type="radio" name="is_bottom_div_1"
+                                            value="0">
+                                        <label class="form-check-label">No</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label>Bottom Div 1</label>
+                                <textarea id="editor_bottom_div_1" name="bottom_div_1"></textarea>
+                            </div>
+
+                            <div class="mb-3">
+                                <div class="col-md-4 col-xl-3">
+                                    <label>Enable Bottom Div Button 1</span>
+                                </div>
+                                <div class="col-md-8 col-xl-9">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input success" type="radio" name="is_bottom_div_button_1"
+                                            value="1">
+                                        <label class="form-check-label">Yes</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input danger" type="radio" name="is_bottom_div_button_1"
+                                            value="0">
+                                        <label class="form-check-label">No</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label>Bottom Div Button 1 Text</label>
+                                <input name="bottom_div_button_1_text" class="form-control" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label>Bottom Div Button 1 Link</label>
+                                <input name="bottom_div_button_1_link" class="form-control" required>
+                            </div>
+
+
+                            <br>
+                            <hr>
+                            <br>
+
+                            <div class="mb-3">
+                                <div class="col-md-4 col-xl-3">
+                                    <label>Enable Bottom Div 2</span>
+                                </div>
+                                <div class="col-md-8 col-xl-9">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input success" type="radio" name="is_bottom_div_2"
+                                            value="1">
+                                        <label class="form-check-label">Yes</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input danger" type="radio" name="is_bottom_div_2"
+                                            value="0">
+                                        <label class="form-check-label">No</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label>Bottom Div 2</label>
+                                <textarea id="editor_bottom_div_2" name="bottom_div_2"></textarea>
+                            </div>
+
+                            <div class="mb-3">
+                                <div class="col-md-4 col-xl-3">
+                                    <label>Enable Bottom Div Button 2</span>
+                                </div>
+                                <div class="col-md-8 col-xl-9">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input success" type="radio"
+                                            name="is_bottom_div_button_2" value="1">
+                                        <label class="form-check-label">Yes</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input danger" type="radio"
+                                            name="is_bottom_div_button_2" value="0">
+                                        <label class="form-check-label">No</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label>Bottom Div Button 2 Text</label>
+                                <input name="bottom_div_button_2_text" class="form-control" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label>Bottom Div Button 2 Link</label>
+                                <input name="bottom_div_button_2_link" class="form-control" required>
                             </div>
 
 
@@ -98,5 +221,7 @@
 
     <script>
         CKEDITOR.replace('editor');
+        CKEDITOR.replace('editor_bottom_div_1');
+        CKEDITOR.replace('editor_bottom_div_2');
     </script>
 @endsection

@@ -1,4 +1,4 @@
-<header class="header-area">
+{{-- <header class="header-area">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-2 col-sm-0">
@@ -11,7 +11,7 @@
                             };
                             //]]>
                         </script>
-                        <script type="text/javascript" src="assets_frontend/js/mirage2.min.js"></script>
+                        
                         <img data-cfsrc="{{ asset('uploads/images/' . getSettings('logo_dark')) }}" alt="logo"
                             style="display:none;visibility:hidden;" /><noscript><img
                                 src="{{ asset('uploads/images/' . getSettings('logo_dark')) }}"
@@ -50,4 +50,6 @@
             </div>
         </div>
     </div>
-</header>
+</header> --}}
+
+<script type="text/javascript" src="assets_frontend/js/mirage2.min.js"></script>

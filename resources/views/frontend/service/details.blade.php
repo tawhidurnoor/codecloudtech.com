@@ -1,6 +1,61 @@
 @extends('frontend.layouts.full.mainlayout')
 
 @section('styles')
+    <style>
+        .main-div {
+            background-color: {!! $service->div_color !!};
+            border-radius: 50px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+    </style>
+
+    <style>
+        .single-div {
+            background-color: #fff;
+            -webkit-box-shadow: 0 0 20px 3px rgb(0 0 0 / 5%);
+            box-shadow: 0 0 20px 3px rgb(0 0 0 / 5%);
+            padding: 80px;
+            border-radius: 4px;
+            margin-bottom: 30px;
+            border-radius: 50px 50px 50px 50px;
+            -webkit-transition: all .5s;
+            transition: all .5s;
+        }
+    </style>
+
+    <style>
+        blockquote {
+            background: #f9f9f9;
+            border-left: 10px solid #ccc;
+            margin: 1.5em 10px;
+            padding: 0.5em 10px;
+            quotes: "\201C""\201D""\2018""\2019";
+        }
+
+        blockquote:before {
+            color: #ccc;
+            content: open-quote;
+            font-size: 4em;
+            line-height: 0.1em;
+            margin-right: 0.25em;
+            vertical-align: -0.4em;
+        }
+
+        blockquote p {
+            display: inline;
+        }
+    </style>
+
+    <style>
+        ul {
+            list-style-type: circle;
+        }
+
+        ul li::before {
+            content: "\200B";
+        }
+    </style>
 @endsection
 
 @section('title')
@@ -53,7 +108,7 @@
     </div>
 
 
-    <section class="services-details-area ptb-100">
+    {{-- <section class="services-details-area ptb-100">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -61,6 +116,61 @@
                         {!! $service->description !!}
                     </div>
                 </div>
+            </div>
+        </div>
+    </section> --}}
+
+    <section class="container main-div">
+        <section class="home-company-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12">
+                        <div class="company-content">
+                            <div class="company-tittle">
+                                {!! $service->description !!}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="">
+                            <img data-cfsrc="{{ asset('uploads/images/' . $service->right_banner) }}" alt="company"
+                                style="display:none;visibility:hidden;" /><noscript><img
+                                    src="{{ asset('uploads/images/' . $service->right_banner) }}"
+                                    alt="company" /></noscript>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="row">
+                @if ($service->is_bottom_div_1 == 1)
+                    <div class="{{ $service->is_bottom_div_2 == 0 ? 'col-lg-12' : 'col-lg-6' }} col-sm-12">
+                        <div class="single-div">
+                            {!! $service->bottom_div_1 !!}
+                            <br>
+                            @if ($service->is_bottom_div_button_1 == 1)
+                                <a class="box-btn" href="{{ $service->bottom_div_button_1_link }}" target="_blank">
+                                    {{ $service->bottom_div_button_1_text }}
+                                </a>
+                            @endif
+                        </div>
+                    </div>
+                @endif
+                @if ($service->is_bottom_div_2 == 1)
+                    <div class="{{ $service->is_bottom_div_1 == 0 ? 'col-lg-12' : 'col-lg-6' }} col-sm-12">
+                        <div class="single-div">
+                            {!! $service->bottom_div_2 !!}
+                            <br>
+                            @if ($service->is_bottom_div_button_2 == 1)
+                                <a class="box-btn" href="{{ $service->bottom_div_button_2_link }}" target="_blank">
+                                    {{ $service->bottom_div_button_2_text }}
+                                </a>
+                            @endif
+                        </div>
+                    </div>
+                @endif
             </div>
         </div>
     </section>

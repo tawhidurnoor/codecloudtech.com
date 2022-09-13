@@ -63,6 +63,32 @@ class ServiceController extends Controller
         $service->short_description = $request->short_description;
         $service->description = $request->description;
 
+
+        if ($request->hasFile('right_banner')) {
+
+            $file = $request->file('right_banner');
+            $extention = $file->getClientOriginalExtension();
+
+            //naming file
+            $filename = time() . '.' . $extention;
+            $file->move('uploads/images/', $filename);
+
+            File::delete(public_path('uploads/images/' . $service->icon));
+
+            $service->right_banner = $filename;
+        }
+
+        $service->is_bottom_div_1 = $request->is_bottom_div_1;
+        $service->bottom_div_1 = $request->bottom_div_1;
+        $service->is_bottom_div_button_1 = $request->is_bottom_div_button_1;
+        $service->bottom_div_button_1_text = $request->bottom_div_button_1_text;
+        $service->bottom_div_button_1_link = $request->bottom_div_button_1_link;
+        $service->is_bottom_div_2 = $request->is_bottom_div_2;
+        $service->bottom_div_2 = $request->bottom_div_2;
+        $service->is_bottom_div_button_2 = $request->is_bottom_div_button_2;
+        $service->bottom_div_button_2_text = $request->bottom_div_button_2_text;
+        $service->bottom_div_button_2_link = $request->bottom_div_button_2_link;
+
         if ($service->save()) {
             session()->flash('success', 'Service created succesfully!');
         } else {
@@ -123,9 +149,35 @@ class ServiceController extends Controller
 
             $service->icon = $filename;
         }
-
+        $service->div_color = $request->div_color;
         $service->short_description = $request->short_description;
         $service->description = $request->description;
+
+
+        if ($request->hasFile('right_banner')) {
+
+            $file = $request->file('right_banner');
+            $extention = $file->getClientOriginalExtension();
+
+            //naming file
+            $filename = time() . '.' . $extention;
+            $file->move('uploads/images/', $filename);
+
+            File::delete(public_path('uploads/images/' . $service->icon));
+
+            $service->right_banner = $filename;
+        }
+
+        $service->is_bottom_div_1 = $request->is_bottom_div_1;
+        $service->bottom_div_1 = $request->bottom_div_1;
+        $service->is_bottom_div_button_1 = $request->is_bottom_div_button_1;
+        $service->bottom_div_button_1_text = $request->bottom_div_button_1_text;
+        $service->bottom_div_button_1_link = $request->bottom_div_button_1_link;
+        $service->is_bottom_div_2 = $request->is_bottom_div_2;
+        $service->bottom_div_2 = $request->bottom_div_2;
+        $service->is_bottom_div_button_2 = $request->is_bottom_div_button_2;
+        $service->bottom_div_button_2_text = $request->bottom_div_button_2_text;
+        $service->bottom_div_button_2_link = $request->bottom_div_button_2_link;
 
         if ($service->save()) {
             session()->flash('success', 'Service updated succesfully!');

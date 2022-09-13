@@ -22,7 +22,19 @@ return new class extends Migration
             $table->string('slug');
             $table->string('icon');
             $table->string('short_description');
+            $table->string('div_color', 15)->default('#ffffff');
             $table->longText('description');
+            $table->string('right_banner');
+            $table->boolean('is_bottom_div_1');
+            $table->longText('bottom_div_1');
+            $table->boolean('is_bottom_div_button_1');
+            $table->string('bottom_div_button_1_text');
+            $table->string('bottom_div_button_1_link');
+            $table->boolean('is_bottom_div_2');
+            $table->longText('bottom_div_2');
+            $table->boolean('is_bottom_div_button_2');
+            $table->string('bottom_div_button_2_text');
+            $table->string('bottom_div_button_2_link');
             $table->timestamps();
         });
     }

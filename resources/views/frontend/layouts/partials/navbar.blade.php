@@ -1,9 +1,9 @@
 <div class="navbar-area">
     <div class="mobile-nav">
         <a href="index.html" class="logo">
-            <img data-cfsrc="assets_frontend/images/logo.png" alt="logo"
-                style="display:none;visibility:hidden;" /><noscript><img src="assets_frontend/images/logo.png"
-                    alt="logo" /></noscript>
+            <img data-cfsrc="{{ asset('uploads/images/' . getSettings('logo_dark')) }}" alt="logo"
+                style="display:none;visibility:hidden;" /><noscript><img
+                    src="{{ asset('uploads/images/' . getSettings('logo_dark')) }}" alt="logo" /></noscript>
         </a>
     </div>
     <div class="main-nav">
@@ -11,6 +11,24 @@
             <nav class="navbar navbar-expand-md navbar-light">
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                     <ul class="navbar-nav text-left">
+                        <li class="nav-item">
+                            <div class="logo">
+                                <a href="{{ route('index') }}">
+                                    <script type="text/javascript" style="display:none">
+                                        //<![CDATA[
+                                        window.__mirage2 = {
+                                            petok: "ba344a321c135ff00f5b89431d43414a050761e9-1652165618-1800"
+                                        };
+                                        //]]>
+                                    </script>
+
+                                    <img data-cfsrc="{{ asset('uploads/images/' . getSettings('logo_dark')) }}"
+                                        alt="logo" style="display:none;visibility:hidden;" /><noscript><img
+                                            src="{{ asset('uploads/images/' . getSettings('logo_dark')) }}"
+                                            alt="logo" /></noscript>
+                                </a>
+                            </div>
+                        </li>
                         <li class="nav-item">
                             <a href="{{ route('index') }}" class="nav-link active">Home</a>
                         </li>
