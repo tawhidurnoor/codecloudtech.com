@@ -21,6 +21,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/services', [App\Http\Controllers\Frontend\ServiceController::class, 'index'])->name('service.index');
+
 Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
 
 Route::get('/blogs', [App\Http\Controllers\Frontend\BlogController::class, 'index'])->name('blog.index');

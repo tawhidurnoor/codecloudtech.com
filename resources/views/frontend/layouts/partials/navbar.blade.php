@@ -33,7 +33,7 @@
                             <a href="{{ route('index') }}" class="nav-link active">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Services</a>
+                            <a href="{{ route('service.index') }}" class="nav-link">Services</a>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">Products</a>
@@ -60,7 +60,7 @@
                     </form>
                 </div> --}}
                 <div class="nav-btn">
-                    <a href="/services" class="box-btn">Get Started</a>
+                    <a href="{{ route('service.index') }}" class="box-btn">Get Started</a>
                 </div>
             </nav>
         </div>
