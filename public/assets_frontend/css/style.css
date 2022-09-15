@@ -5610,8 +5610,8 @@ textarea.form-control {
 .page-title-area {
     position: relative;
     overflow: hidden;
-    padding-top: 200px;
-    padding-bottom: 150px;
+    padding-top: 150px;
+    padding-bottom: 50px;
     text-align: center;
     background-color: #051242;
     height: 100%;
