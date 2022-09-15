@@ -1,16 +1,29 @@
+<style>
+    .nav-item {
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+</style>
+
+<style>
+    .main-nav nav .navbar-nav .nav-item {
+        padding: 0px 0px 0px 0px !important;
+    }
+</style>
 <div class="navbar-area">
     <div class="mobile-nav">
-        <a href="index.html" class="logo">
+        <a href="{{ route('index') }}" class="logo">
             <img data-cfsrc="{{ asset('uploads/images/' . getSettings('logo_dark')) }}" alt="logo"
                 style="display:none;visibility:hidden;" /><noscript><img
                     src="{{ asset('uploads/images/' . getSettings('logo_dark')) }}" alt="logo" /></noscript>
         </a>
     </div>
     <div class="main-nav">
-        <div class="container">
+        <div class="container d-flex justify-content-around">
             <nav class="navbar navbar-expand-md navbar-light">
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                     <ul class="navbar-nav text-left">
+
                         <li class="nav-item">
                             <div class="logo">
                                 <a href="{{ route('index') }}">
@@ -29,39 +42,36 @@
                                 </a>
                             </div>
                         </li>
-                        <li class="nav-item">
+
+                        <li class="nav-item" style="padding-top: 20px !important;">
                             <a href="{{ route('index') }}" class="nav-link active">Home</a>
                         </li>
-                        <li class="nav-item">
+
+                        <li class="nav-item" style="padding-top: 20px !important;">
                             <a href="{{ route('service.index') }}" class="nav-link">Services</a>
                         </li>
-                        <li class="nav-item">
+
+                        <li class="nav-item" style="padding-top: 20px !important;">
                             <a href="#" class="nav-link">Products</a>
                         </li>
-                        <li class="nav-item">
+
+                        <li class="nav-item" style="padding-top: 20px !important;">
                             <a href="{{ route('blog.index') }}" class="nav-link">Blog</a>
                         </li>
-                        <li class="nav-item">
+
+                        <li class="nav-item" style="padding-top: 20px !important;">
                             <a href="/about" class="nav-link">About</a>
                         </li>
-                        <li class="nav-item">
+
+                        <li class="nav-item" style="padding-top: 20px !important;">
                             <a href="{{ route('contact') }}" class="nav-link">Contact</a>
                         </li>
+
                     </ul>
                 </div>
-                {{-- <div class="nav-right">
-                    <form>
-                        <div class="input-group">
-                            <input type="text" class="form-control search" placeholder="Search..." />
-                        </div>
-                        <button type="submit">
-                            <i class="bx bx-search"></i>
-                        </button>
-                    </form>
+                {{-- <div class="nav-btn">
+                    <a href="{{ route('contact') }}" class="box-btn">Contact</a>
                 </div> --}}
-                <div class="nav-btn">
-                    <a href="{{ route('service.index') }}" class="box-btn">Get Started</a>
-                </div>
             </nav>
         </div>
     </div>

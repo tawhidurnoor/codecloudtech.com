@@ -17,7 +17,7 @@
     <style>
         .linear-wipe {
             /* text-align: center; */
-            background: linear-gradient(to right, #FFF 20%, #FF0 40%, #FF0 60%, #FFF 80%);
+            background: linear-gradient(to right, #89e3ff 20%, #e6345b 40%, #e6345b 60%, #89e3ff 80%);
             background-size: 200% auto;
             color: #000;
             background-clip: text;
@@ -80,14 +80,14 @@
 
         @media (max-width: 600px) {
             /* h1 {
-                                font-size: 3.4rem;
-                                line-height: 3.6rem;
-                            } */
+                                        font-size: 3.4rem;
+                                        line-height: 3.6rem;
+                                    } */
 
             /* p {
-                            font-size: 1.7rem;
-                            line-height: 2.5rem;
-                        } */
+                                    font-size: 1.7rem;
+                                    line-height: 2.5rem;
+                                } */
 
             .site-wrap {
                 padding: 6rem 1rem;

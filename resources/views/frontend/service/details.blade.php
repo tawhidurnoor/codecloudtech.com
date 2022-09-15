@@ -69,7 +69,7 @@
                 <h2>{{ $service->title }}</h2>
                 <ul>
                     <li>
-                        <a href="index.html">
+                        <a href="{{ route('index') }}">
                             Home
                         </a>
                     </li>

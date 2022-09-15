@@ -4,8 +4,9 @@
             <div class="col-lg-4 col-md-6">
                 <div class="content">
                     <div class="logo">
-                        <a href="index.html"><img data-cfsrc="{{ asset('uploads/images/' . getSettings('logo_light')) }}"
-                                alt="logo" style="display:none;visibility:hidden;" /><noscript><img
+                        <a href="{{ route('index') }}"><img
+                                data-cfsrc="{{ asset('uploads/images/' . getSettings('logo_light')) }}" alt="logo"
+                                style="display:none;visibility:hidden;" /><noscript><img
                                     src="{{ asset('uploads/images/' . getSettings('logo_light')) }}"
                                     alt="logo" /></noscript></a>
                     </div>

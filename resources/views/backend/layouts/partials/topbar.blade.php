@@ -12,7 +12,7 @@
             <!-- Logo -->
             <!-- ============================================================== -->
             <div class="navbar-brand">
-                <a href="index.html" class="logo">
+                <a href="{{ route('index') }}" class="logo">
 
                     <!-- Logo icon -->
                     {{-- <b class="logo-icon">
