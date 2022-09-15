@@ -10,6 +10,14 @@
         padding: 0px 0px 0px 0px !important;
     }
 </style>
+
+<style>
+    .navbar-area {
+        box-shadow: 1px 6px 20px 1px rgba(0, 0, 0, 0.72);
+        -webkit-box-shadow: 1px 6px 20px 1px rgba(0, 0, 0, 0.72);
+        -moz-box-shadow: 1px 6px 20px 1px rgba(0, 0, 0, 0.72);
+    }
+</style>
 <div class="navbar-area">
     <div class="mobile-nav">
         <a href="{{ route('index') }}" class="logo">
