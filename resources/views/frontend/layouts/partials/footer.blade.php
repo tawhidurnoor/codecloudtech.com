@@ -45,10 +45,10 @@
                 <div class="content ml-15">
                     <h3>Our Service</h3>
                     <ul class="footer-list">
-                        @foreach (getServices() as $service)
+                        @foreach (getServices()->take(3) as $service)
                             <li><a href="{{ route('slug.details', $service->slug) }}">{{ $service->title }}</a></li>
                         @endforeach
-
+                        <li><a href="{{ route('service.index') }}">More Services</a></li>
                     </ul>
                 </div>
             </div>
@@ -56,10 +56,6 @@
                 <div class="content">
                     <h3>Quick Links</h3>
                     <ul class="footer-list">
-                        <li><a href="/about">About Us</a></li>
-                        {{-- <li><a href="/about">Our Clients</a></li> --}}
-                        <li><a href="/portfolio">Portfolio</a></li>
-                        <li><a href="{{ route('blog.index') }}">Blog</a></li>
                         <li><a href="/privacy-policy">Privacy & Policy</a></li>
                         <li><a href="/terms-conditions">Terms & Conditions</a></li>
                         <li><a href="/copyright-policy">Copyright Policy</a></li>
@@ -90,7 +86,7 @@
             </div>
         </div>
     </div>
-    <div class="copy-area">
+    <div class="copy-area" style="margin-top: 0px;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">

@@ -80,14 +80,14 @@
 
         @media (max-width: 600px) {
             /* h1 {
-                                        font-size: 3.4rem;
-                                        line-height: 3.6rem;
-                                    } */
+                                            font-size: 3.4rem;
+                                            line-height: 3.6rem;
+                                        } */
 
             /* p {
-                                    font-size: 1.7rem;
-                                    line-height: 2.5rem;
-                                } */
+                                        font-size: 1.7rem;
+                                        line-height: 2.5rem;
+                                    } */
 
             .site-wrap {
                 padding: 6rem 1rem;
@@ -177,7 +177,7 @@
         <div class="container">
             <div class="section-title">
                 <span>Our Services and Solutions</span>
-                <h2>What Do You Need? </h2>
+                <h2 class="linear-wipe">What Do You Need? </h2>
                 <p>We use an Iterative Agile Software & Web Development Process with Strategically Planned Development
                     Cycles that Adapt to Customer's Changing Needs. We Specialized in Manufacturing Customized Software
                     Solutions & Development service.
@@ -213,7 +213,7 @@
     <section class="home-process-area pt-100 pb-70" data-scroll>
         <div class="container">
             <div class="section-title">
-                <h2>How We Work?</h2>
+                <h2 class="linear-wipe">How We Work?</h2>
                 <h3>In our process we always focus on quality, testing and want to deliver good product & service on time.
                 </h3>
 
@@ -311,7 +311,7 @@
         <div class="container">
             <div class="section-title">
 
-                <h2>Why Choose Us</h2>
+                <h2 class="linear-wipe">Why Choose Us</h2>
                 <h3>We Achieved People’s Trust by Our Great Service</h3>
                 <p> We have highly skilled developer with excellent technical knowledge and experience in using the latest
                     software standards. We have built a large pool of knowledge that we apply to deliver solutions that meet
