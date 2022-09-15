@@ -80,14 +80,14 @@
 
         @media (max-width: 600px) {
             /* h1 {
-                                            font-size: 3.4rem;
-                                            line-height: 3.6rem;
-                                        } */
+                                                                                                    font-size: 3.4rem;
+                                                                                                    line-height: 3.6rem;
+                                                                                                } */
 
             /* p {
-                                        font-size: 1.7rem;
-                                        line-height: 2.5rem;
-                                    } */
+                                                                                                font-size: 1.7rem;
+                                                                                                line-height: 2.5rem;
+                                                                                            } */
 
             .site-wrap {
                 padding: 6rem 1rem;
@@ -129,9 +129,11 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="banner-img">
-                                <img data-cfsrc="assets_frontend/images/home-bg-1-img.png" alt="banner-img"
-                                    style="display:none;visibility:hidden;" /><noscript><img
-                                        src="assets_frontend/images/home-bg-1-img.png" alt="banner-img" /></noscript>
+                                <img id="banner" src="assets_frontend/images/p1.png" alt="banner-img"
+                                    style="display:none;visibility:hidden;" />
+                                <noscript>
+                                    <img src="assets_frontend/images/p1.png" alt="banner-img" />
+                                </noscript>
                             </div>
                         </div>
                     </div>
@@ -438,6 +440,7 @@
             </div>
         </div>
     </section> --}}
+    {{-- animation --}}
     <script src='https://unpkg.com/splitting@1.0.0/dist/splitting.js'></script>
     <script src='https://unpkg.com/scroll-out@2.2.3/dist/scroll-out.min.js'></script>
     <script>
@@ -447,5 +450,23 @@
             threshold: .2,
             once: true
         });
+    </script>
+
+    {{-- image change --}}
+    <script>
+        const image = document.getElementById("banner");
+        let images = [
+                "assets_frontend/images/p1.png",
+                "assets_frontend/images/p2.png",
+                "assets_frontend/images/p3.png",
+                "assets_frontend/images/p1.png",
+            ],
+            i = 0;
+
+        function volgendefoto() {
+            i < images.length - 1 ? i += 1 : i = 0;
+            image.src = images[i];
+        }
+        setInterval(volgendefoto, 3000);
     </script>
 @endsection

@@ -56,7 +56,18 @@
                         </li>
 
                         <li class="nav-item" style="padding-top: 20px !important;">
-                            <a href="{{ route('service.index') }}" class="nav-link">Services</a>
+                            <a href="#" class="nav-link dropdown-toggle">Services</a>
+                            <ul class="dropdown-menu">
+                                @foreach (getServices() as $service)
+                                    <li class="nav-item">
+                                        <a href="{{ route('slug.details', $service->slug) }}"
+                                            class="nav-link">{{ $service->title }}</a>
+                                    </li>
+                                @endforeach
+                                <li class="nav-item">
+                                    <a href="{{ route('service.index') }}" class="nav-link">All Services</a>
+                                </li>
+                            </ul>
                         </li>
 
                         <li class="nav-item" style="padding-top: 20px !important;">
