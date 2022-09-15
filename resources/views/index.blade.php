@@ -1,6 +1,8 @@
 @extends('frontend.layouts.full.mainlayout')
 
 @section('styles')
+    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"> --}}
+    {{-- <link rel='stylesheet' href='https://unpkg.com/splitting@1.0.0/dist/splitting.css'> --}}
     <style>
         .banner-area .banner-content h1 {
             color: #fff;
@@ -11,6 +13,92 @@
             font-size: 45px;
         }
     </style>
+    {{-- gradient animatin --}}
+    <style>
+        .linear-wipe {
+            /* text-align: center; */
+            background: linear-gradient(to right, #FFF 20%, #FF0 40%, #FF0 60%, #FFF 80%);
+            background-size: 200% auto;
+            color: #000;
+            background-clip: text;
+            text-fill-color: transparent;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -webkit-animation: shine 1s linear infinite;
+            animation: shine 1s linear infinite reverse;
+        }
+
+        @-webkit-keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+        }
+    </style>
+
+
+    {{-- scroll animatin --}}
+    <style>
+        section {}
+
+        section:last-child {}
+
+        [data-scroll] {
+            opacity: 0;
+            will-change: transform, scale, opacity;
+            transform: translateY(6rem) scale(0.93);
+            transition: all 1.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        [data-scroll=in] {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .splitting .char {
+            color: transparent;
+        }
+
+        .splitting .char:after {
+            visibility: visible;
+            color: #204754;
+            opacity: 0;
+            transform: translateY(30%);
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition-delay: calc(.2s + (.04s * var(--char-index)));
+        }
+
+        [data-scroll=in] .char:after {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 600px) {
+            /* h1 {
+                                font-size: 3.4rem;
+                                line-height: 3.6rem;
+                            } */
+
+            /* p {
+                            font-size: 1.7rem;
+                            line-height: 2.5rem;
+                        } */
+
+            .site-wrap {
+                padding: 6rem 1rem;
+            }
+
+            section {
+                margin-bottom: 6rem;
+                padding: 2.4rem;
+            }
+        }
+    </style>
 @endsection
 
 @section('title')
@@ -18,7 +106,7 @@
 @endsection
 
 @section('body')
-    <section class="banner-area">
+    <section class="banner-area" data-scroll>
         <div class="d-table">
             <div class="d-table-cell">
                 <div class="container">
@@ -28,7 +116,7 @@
                                 <h1>
                                     A Custom Software Development Company
                                 </h1>
-                                <h2>for Your Business Growth</h2>
+                                <h2 class="linear-wipe">for Your Business Growth</h2>
                                 <p>
                                     Since our inception in 2012, Codecloud Technology has been Delivering Software
                                     Development and related IT services in the world. And slowly established as one of the
@@ -85,7 +173,7 @@
     </section>
 
 
-    <section id="home-service-area" class="home-service-area pt-100 pb-70">
+    <section id="home-service-area" class="home-service-area pt-100 pb-70" data-scroll>
         <div class="container">
             <div class="section-title">
                 <span>Our Services and Solutions</span>
@@ -122,7 +210,7 @@
     </section>
 
 
-    <section class="home-process-area pt-100 pb-70">
+    <section class="home-process-area pt-100 pb-70" data-scroll>
         <div class="container">
             <div class="section-title">
                 <h2>How We Work?</h2>
@@ -219,7 +307,7 @@
         </div>
     </section>
 
-    <section class="choose-area ptb-100">
+    <section class="choose-area ptb-100" data-scroll>
         <div class="container">
             <div class="section-title">
 
@@ -350,4 +438,14 @@
             </div>
         </div>
     </section> --}}
+    <script src='https://unpkg.com/splitting@1.0.0/dist/splitting.js'></script>
+    <script src='https://unpkg.com/scroll-out@2.2.3/dist/scroll-out.min.js'></script>
+    <script>
+        Splitting();
+
+        ScrollOut({
+            threshold: .2,
+            once: true
+        });
+    </script>
 @endsection
