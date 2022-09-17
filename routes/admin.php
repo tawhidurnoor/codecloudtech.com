@@ -32,6 +32,8 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
 
     Route::resource('blog', App\Http\Controllers\Backend\BlogController::class);
 
+    Route::resource('service_group', App\Http\Controllers\Backend\ServiceGroupController::class);
+
     Route::resource('service', App\Http\Controllers\Backend\ServiceController::class);
 
     Route::resource('page', App\Http\Controllers\Backend\PageController::class);

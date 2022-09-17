@@ -70,6 +70,12 @@
 
                 <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                        href="{{ route('admin.service_group.index') }}" aria-expanded="false"><i
+                            class="mdi mdi-google-circles-group"></i><span class="hide-menu">Service Group</span></a>
+                </li>
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link"
                         href="{{ route('admin.service.index') }}" aria-expanded="false"><i
                             class="mdi mdi-mouse-variant"></i><span class="hide-menu">Services</span></a>
                 </li>
