@@ -1,11 +1,14 @@
 @import "https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&amp;display=swap";
 @import "https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&amp;display=swap";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 body {
     padding: 0;
     margin: 0;
     font-size: 14px;
     line-height: 1.8;
-    font-family: open sans, sans-serif;
+    /* font-family: open sans, sans-serif; */
+    font-family: 'Poppins', sans-serif;
     color: #7a7e9a
 }
 
@@ -50,7 +53,8 @@ h4,
 h5,
 h6 {
     color: #293a5c;
-    font-family: catamaran, sans-serif;
+    /* font-family: catamaran, sans-serif; */
+    font-family: 'Poppins', sans-serif;
     font-weight: 700
 }
 
@@ -5915,7 +5919,8 @@ textarea.form-control {
 
 .single-pricing span {
     font-size: 30px;
-    font-family: catamaran, sans-serif;
+    /* font-family: catamaran, sans-serif; */
+    font-family: 'Poppins', sans-serif;
     color: #293a5c;
     font-weight: 700;
     display: block;
@@ -6002,7 +6007,8 @@ textarea.form-control {
 .tab.quote-list-tab .tabs li {
     display: inline-block;
     padding: 0 10px;
-    font-family: catamaran, sans-serif;
+    /* font-family: catamaran, sans-serif; */
+    font-family: 'Poppins', sans-serif;
     color: #293a5c;
     font-size: 20px;
     font-weight: 700

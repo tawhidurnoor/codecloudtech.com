@@ -88,14 +88,14 @@
 
         @media (max-width: 600px) {
             /* h1 {
-                                                                                                                font-size: 3.4rem;
-                                                                                                                line-height: 3.6rem;
-                                                                                                            } */
+                                                                                                                                                            font-size: 3.4rem;
+                                                                                                                                                            line-height: 3.6rem;
+                                                                                                                                                        } */
 
             /* p {
-                                                                                                            font-size: 1.7rem;
-                                                                                                            line-height: 2.5rem;
-                                                                                                        } */
+                                                                                                                                                        font-size: 1.7rem;
+                                                                                                                                                        line-height: 2.5rem;
+                                                                                                                                                    } */
 
             .site-wrap {
                 padding: 6rem 1rem;
@@ -121,9 +121,7 @@
                     <div class="row align-items-center">
                         <div class="col-lg-6">
                             <div class="banner-content">
-                                <h1>
-                                    A Custom Software Development Company
-                                </h1>
+                                <h1>A Custom Software Development Company</h1>
                                 <h2 class="linear-wipe">for Your Business Growth</h2>
                                 <p>
                                     Since our inception in 2012, Codecloud Technology has been Delivering Software
@@ -206,11 +204,9 @@
                                 <h3>{{ $service->title }}
                                 </h3>
                                 <p>
-                                    {!! Str::limit($service->short_description, 100) !!}
+                                    {!! Str::limit($service->short_description, 70) !!}
+                                    <a href="{{ route('slug.details', $service->slug) }}" class="line-bnt">Read More</a>
                                 </p>
-                                <a href="{{ route('slug.details', $service->slug) }}" class="line-bnt">
-                                    Read More
-                                </a>
                             </div>
                         </div>
                     </div>
