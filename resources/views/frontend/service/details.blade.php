@@ -1,5 +1,13 @@
 @extends('frontend.layouts.full.mainlayout')
 
+@section('meta')
+    <meta name="keywords" content="{{ $service->keywords }}">
+    <meta property="og:image" content="{{ URL::asset('uploads/images/' . getMetaImage()) }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ $service->meta_title }} | {{ getSettings('website_name') }}" />
+    <meta property="og:description" content="{{ $service->meta_description }}" />
+@endsection
+
 @section('styles')
     <style>
         .main-div {
@@ -59,7 +67,7 @@
 @endsection
 
 @section('title')
-    <title>{{ $service->title }} | Code CLoud Technology</title>
+    <title>{{ $service->title }} | {{ getSettings('website_name') }}</title>
 @endsection
 
 @section('body')

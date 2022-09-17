@@ -132,9 +132,9 @@ class SetupController extends Controller
 
         if ($request->hasFile('meta_image')) {
 
-            if (File::exists(public_path('uploads/' . $meta->meta_image))) {
+            if (File::exists(public_path('uploads/images/' . $meta->meta_image))) {
                 // dd('File does exists.');
-                File::delete(public_path('uploads/' . $meta->meta_image));
+                File::delete(public_path('uploads/images/' . $meta->meta_image));
             } else {
                 // dd('File does not exists.');
             }
@@ -144,7 +144,7 @@ class SetupController extends Controller
 
             //naming file
             $filename = time() . '.' . $extention;
-            $file->move('uploads/', $filename);
+            $file->move('uploads/images/', $filename);
 
             $meta->meta_image = $filename;
         }

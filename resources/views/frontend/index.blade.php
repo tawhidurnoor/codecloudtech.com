@@ -1,5 +1,13 @@
 @extends('frontend.layouts.full.mainlayout')
 
+@section('meta')
+    <meta name="keywords" content="{{ getMetaKeywords() }}">
+    <meta property="og:image" content="{{ URL::asset('uploads/images/' . getMetaImage()) }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ getMetaMetaTitle() }}" />
+    <meta property="og:description" content="{{ getMetaDescription() }}" />
+@endsection
+
 @section('styles')
     {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"> --}}
     {{-- <link rel='stylesheet' href='https://unpkg.com/splitting@1.0.0/dist/splitting.css'> --}}
@@ -80,14 +88,14 @@
 
         @media (max-width: 600px) {
             /* h1 {
-                                                                                                    font-size: 3.4rem;
-                                                                                                    line-height: 3.6rem;
-                                                                                                } */
+                                                                                                                font-size: 3.4rem;
+                                                                                                                line-height: 3.6rem;
+                                                                                                            } */
 
             /* p {
-                                                                                                font-size: 1.7rem;
-                                                                                                line-height: 2.5rem;
-                                                                                            } */
+                                                                                                            font-size: 1.7rem;
+                                                                                                            line-height: 2.5rem;
+                                                                                                        } */
 
             .site-wrap {
                 padding: 6rem 1rem;
@@ -102,7 +110,7 @@
 @endsection
 
 @section('title')
-    <title>Code CLoud Technology</title>
+    <title>{{ getSettings('website_name') }} | {{ getSettings('motto') }}</title>
 @endsection
 
 @section('body')

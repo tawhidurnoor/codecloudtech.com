@@ -5,6 +5,8 @@
 
     @include('frontend.layouts.partials.meta')
 
+    @yield('meta')
+
     @include('frontend.layouts.partials.styles')
 
     @yield('styles')

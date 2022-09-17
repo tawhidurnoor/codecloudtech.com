@@ -4,6 +4,14 @@ use App\Models\Meta;
 use App\Models\Script;
 use App\Models\Service;
 use App\Models\Setting;
+use Illuminate\Support\Facades\URL;
+
+if (!function_exists('geteURL')) {
+    function getURL()
+    {
+        return  URL::current();
+    }
+}
 
 if (!function_exists('getBaseURL')) {
     function getBaseURL()
@@ -25,6 +33,15 @@ if (!function_exists('getFileBaseURL')) {
         }
     }
 }
+
+if (!function_exists('getMetaMetaTitle')) {
+    function getMetaMetaTitle()
+    {
+        $meta = Meta::findOrFail(1);
+        return $meta->meta_title;
+    }
+}
+
 
 if (!function_exists('getMetaDescription')) {
     function getMetaDescription()
@@ -76,6 +93,12 @@ if (!function_exists('getSettings')) {
             return $setting->logo_light;
         } elseif ($setting_name == 'logo_dark') {
             return $setting->logo_dark;
+        } elseif ($setting_name == 'website_name') {
+            return $setting->website_name;
+        } elseif ($setting_name == 'motto') {
+            return $setting->motto;
+        } elseif ($setting_name == 'favicon') {
+            return $setting->favicon;
         }
     }
 }

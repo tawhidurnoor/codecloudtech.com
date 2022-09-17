@@ -1,5 +1,13 @@
 @extends('frontend.layouts.full.mainlayout')
 
+@section('meta')
+    <meta name="keywords" content="{{ $blog->keywords }}">
+    <meta property="og:image" content="{{ URL::asset('uploads/images/' . $blog->banner) }}" />
+    <meta property="og:type" content="article:{{ $blog->updated_at }}" />
+    <meta property="og:title" content="{{ $blog->meta_title }} | {{ getSettings('website_name') }}" />
+    <meta property="og:description" content="{{ $blog->meta_description }}" />
+@endsection
+
 @section('styles')
 @endsection
 

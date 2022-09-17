@@ -1,14 +1,22 @@
 @extends('frontend.layouts.full.mainlayout')
 
+@section('meta')
+    <meta name="keywords" content="{{ $page->keywords }}">
+    <meta property="og:image" content="{{ URL::asset('uploads/images/' . getMetaImage()) }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ $page->meta_title }} | {{ getSettings('website_name') }}" />
+    <meta property="og:description" content="{{ $page->meta_description }}" />
+@endsection
+
 @section('styles')
 @endsection
 
 @section('title')
-    <title>{{ $page->title }} | Code CLoud Technology</title>
+    <title>{{ $page->title }} | {{ getSettings('website_name') }}</title>
 @endsection
 
 @section('body')
-    <style>
+    {{-- <style>
         /*
      * CKEditor 5 (v35.1.0) content styles.
      * Generated on Fri, 09 Sep 2022 11:25:21 GMT.
@@ -497,7 +505,7 @@
                 display: none;
             }
         }
-    </style>
+    </style> --}}
     <div class="page-title-area">
         <div class="container">
             <div class="page-title-content">
