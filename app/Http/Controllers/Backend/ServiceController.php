@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Service;
+use App\Models\ServiceGroup;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
@@ -30,7 +31,10 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        return view('backend.service.create');
+        $serviceGroup = ServiceGroup::all();
+        return view('backend.service.create', [
+            'serviceGroup' => $serviceGroup,
+        ]);
     }
 
     /**
@@ -43,6 +47,7 @@ class ServiceController extends Controller
     {
         $service = new Service();
         $service->title = $request->title;
+        $service->service_group_id = $request->service_group_id;
         $service->meta_title = $request->meta_title;
         $service->meta_description = $request->meta_description;
         $service->keywords = $request->keywords;
@@ -117,8 +122,10 @@ class ServiceController extends Controller
      */
     public function edit(Service $service)
     {
+        $serviceGroup = ServiceGroup::all();
         return view('backend.service.edit', [
             'service' => $service,
+            'serviceGroup' => $serviceGroup,
         ]);
     }
 
@@ -132,6 +139,7 @@ class ServiceController extends Controller
     public function update(Request $request, Service $service)
     {
         $service->title = $request->title;
+        $service->service_group_id = $request->service_group_id;
         $service->meta_title = $request->meta_title;
         $service->meta_description = $request->meta_description;
         $service->keywords = $request->keywords;

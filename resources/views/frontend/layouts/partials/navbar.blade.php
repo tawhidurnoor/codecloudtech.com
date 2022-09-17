@@ -55,7 +55,7 @@
                             <a href="{{ route('index') }}" class="nav-link active">Home</a>
                         </li>
 
-                        <li class="nav-item" style="padding-top: 20px !important;">
+                        {{-- <li class="nav-item" style="padding-top: 20px !important;">
                             <a href="#" class="nav-link dropdown-toggle">Services</a>
                             <ul class="dropdown-menu">
                                 @foreach (getServices() as $service)
@@ -68,11 +68,25 @@
                                     <a href="{{ route('service.index') }}" class="nav-link">All Services</a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> --}}
 
-                        <li class="nav-item" style="padding-top: 20px !important;">
-                            <a href="#" class="nav-link">Products</a>
-                        </li>
+
+                        @foreach (getServiceGroups() as $serviceGroup)
+                            <li class="nav-item" style="padding-top: 20px !important;">
+                                <a href="#" class="nav-link dropdown-toggle">{{ $serviceGroup->name }}</a>
+                                <ul class="dropdown-menu">
+                                    @foreach (getServicesByServiceGroup($serviceGroup->id) as $service_list)
+                                        <li class="nav-item">
+                                            <a href="{{ route('slug.details', $service_list->slug) }}"
+                                                class="nav-link">{{ $service_list->title }}</a>
+                                        </li>
+                                    @endforeach
+                                    <li class="nav-item">
+                                        <a href="{{ route('service.index') }}" class="nav-link">All Services</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        @endforeach
 
                         <li class="nav-item" style="padding-top: 20px !important;">
                             <a href="{{ route('blog.index') }}" class="nav-link">Blog</a>

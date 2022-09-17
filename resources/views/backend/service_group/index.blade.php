@@ -121,6 +121,7 @@
                 </div>
                 <form action="{{ route('admin.service_group.store') }}" id="edit-form" method="POST">
                     @csrf
+                    @method('PUT')
                     <div class="modal-body">
                         <div class="mb-3">
                             <label>Service Group Namew</label>

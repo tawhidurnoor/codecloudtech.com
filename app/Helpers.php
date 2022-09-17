@@ -3,6 +3,7 @@
 use App\Models\Meta;
 use App\Models\Script;
 use App\Models\Service;
+use App\Models\ServiceGroup;
 use App\Models\Setting;
 use Illuminate\Support\Facades\URL;
 
@@ -103,6 +104,22 @@ if (!function_exists('getSettings')) {
     }
 }
 
+
+if (!function_exists('getServiceGroups')) {
+    function getServiceGroups()
+    {
+        $service_group = ServiceGroup::all();
+        return $service_group;
+    }
+}
+
+if (!function_exists('getServicesByServiceGroup')) {
+    function getServicesByServiceGroup($service_group_id)
+    {
+        $services = Service::where('service_group_id', $service_group_id);
+        return $services;
+    }
+}
 
 if (!function_exists('getServices')) {
     function getServices()

@@ -40,6 +40,18 @@
                             </div>
 
                             <div class="mb-3">
+                                <label>Service Type</label>
+                                <select name="service_group_id" class="form-select mr-sm-2" required>
+                                    <option>Choose...</option>
+                                    @foreach ($serviceGroup as $sG)
+                                        <option {{ $sG->id == $service->service_group_id ? 'selected' : '' }}
+                                            value="{{ $sG->id }}">
+                                            {{ $sG->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
                                 <label>Meta Title</label>
                                 <input type="text" name="meta_title" value="{{ $service->meta_title }}"
                                     class="form-control" required>

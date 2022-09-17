@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $services = Service::all();
+        $services = Service::limit(6)->get();
         return view('frontend.index', [
             'services' => $services,
         ]);

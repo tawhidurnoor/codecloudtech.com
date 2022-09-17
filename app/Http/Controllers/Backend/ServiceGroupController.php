@@ -39,12 +39,12 @@ class ServiceGroupController extends Controller
      */
     public function store(Request $request)
     {
-        $service_group = new ServiceGroup();
-        $service_group->name = $request->name;
-        $service_group->service_type = $request->service_type;
+        $serviceGroup = new ServiceGroup();
+        $serviceGroup->name = $request->name;
+        $serviceGroup->service_type = $request->service_type;
 
-        if ($service_group->save()) {
-            session()->flash('success', 'Service group succesfully!');
+        if ($serviceGroup->save()) {
+            session()->flash('success', 'Service group added succesfully!');
         } else {
             session()->flash('warning', 'Error creating service group!');
         }
@@ -83,7 +83,16 @@ class ServiceGroupController extends Controller
      */
     public function update(Request $request, ServiceGroup $serviceGroup)
     {
-        //
+        $serviceGroup->name = $request->name;
+        $serviceGroup->service_type = $request->service_type;
+
+        if ($serviceGroup->save()) {
+            session()->flash('success', 'Service group updated succesfully!');
+        } else {
+            session()->flash('warning', 'Error updating service group!');
+        }
+
+        return redirect()->back();
     }
 
     /**

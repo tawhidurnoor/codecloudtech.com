@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->bigInteger('service_group_id');
             $table->string('meta_title');
             $table->string('meta_description');
             $table->string('keywords');
