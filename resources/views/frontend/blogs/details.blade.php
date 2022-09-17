@@ -3,9 +3,14 @@
 @section('meta')
     <meta name="keywords" content="{{ $blog->keywords }}">
     <meta property="og:image" content="{{ URL::asset('uploads/images/' . $blog->banner) }}" />
-    <meta property="og:type" content="article:{{ $blog->updated_at }}" />
+    <meta property="og:type" content="article" />
     <meta property="og:title" content="{{ $blog->meta_title }} | {{ getSettings('website_name') }}" />
     <meta property="og:description" content="{{ $blog->meta_description }}" />
+
+    <meta property="og:site_name" content="{{ getSettings('website_name') }}" />
+    {{-- <meta property="article:publisher" content="https://www.facebook.com/techcrunch" /> --}}
+    <meta property="article:published_time" content="{{ $blog->created_at }}" />
+    <meta property="article:modified_time" content="{{ $blog->updated_at }}" />
 @endsection
 
 @section('styles')
@@ -67,9 +72,10 @@
                 <div class="col-lg-12 col-md-12">
                     <div class="blog-details-desc">
                         <div class="article-image">
-                            <img data-cfsrc="{{ asset('uploads/images/' . $blog->banner) }}" alt="image"
-                                style="display:none;visibility:hidden;"><noscript><img
-                                    src="{{ asset('uploads/images/' . $blog->banner) }}" alt="image"></noscript>
+                            <img src="{{ asset('uploads/images/' . $blog->banner) }}" alt="image">
+                            <noscript>
+                                <img src="{{ asset('uploads/images/' . $blog->banner) }}" alt="image">
+                            </noscript>
                         </div>
                         <div class="article-content">
                             <div class="entry-meta">
@@ -80,6 +86,7 @@
                                     <li><span>Posted By:</span> <a href="#">Admin</a></li>
                                 </ul>
                             </div>
+                            <br><br>
                             {!! $blog->content !!}
                         </div>
                         <div class="article-footer">

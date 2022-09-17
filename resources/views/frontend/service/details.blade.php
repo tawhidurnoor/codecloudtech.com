@@ -15,6 +15,7 @@
             border-radius: 50px;
             margin-top: 20px;
             margin-bottom: 30px;
+            padding: 30px;
         }
     </style>
 
