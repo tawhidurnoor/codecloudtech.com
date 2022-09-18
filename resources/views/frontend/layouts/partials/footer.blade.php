@@ -92,7 +92,7 @@
                 <div class="col-lg-12">
                     <center>
                         <p>
-                            Copyright @2022 CodeCloud Technology Ltd.
+                            Copyright @ 2012-2022 CodeCloud Technology Ltd.
                         </p>
                     </center>
                 </div>

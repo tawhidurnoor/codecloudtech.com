@@ -88,14 +88,14 @@
 
         @media (max-width: 600px) {
             /* h1 {
-                                                                                                                                                                font-size: 3.4rem;
-                                                                                                                                                                line-height: 3.6rem;
-                                                                                                                                                            } */
+                                                                                                                                                                                    font-size: 3.4rem;
+                                                                                                                                                                                    line-height: 3.6rem;
+                                                                                                                                                                                } */
 
             /* p {
-                                                                                                                                                            font-size: 1.7rem;
-                                                                                                                                                            line-height: 2.5rem;
-                                                                                                                                                        } */
+                                                                                                                                                                                font-size: 1.7rem;
+                                                                                                                                                                                line-height: 2.5rem;
+                                                                                                                                                                            } */
 
             .site-wrap {
                 padding: 6rem 1rem;
@@ -340,11 +340,11 @@
                                     <div class="icon">
                                         <i class="flaticon-friends"></i>
                                     </div>
-                                    <a class="accordion-title active" href="javascript:void(0)">
-                                        <i class="bx bx-plus"></i>RESEARCH &
+                                    <a class="accordion-title" href="javascript:void(0)">
+                                        <i class='bx bxs-hand-up'></i>RESEARCH &
                                         PLANNING
                                     </a>
-                                    <p class="accordion-content show">
+                                    <p class="accordion-content">
                                         Doing what has never been done before is common practice at CodeCloud Technology. We
                                         develop solutions by analyzing and synthesizing R&D (Research and Development),
                                         defining business and audience goals, establishing a clear vision and identifying
@@ -358,7 +358,7 @@
                                         <i class="flaticon-chip"></i>
                                     </div>
                                     <a class="accordion-title" href="javascript:void(0)">
-                                        <i class="bx bx-plus"></i>Update Technology
+                                        <i class='bx bxs-hand-up'></i>Update Technology
                                     </a>
                                     <p class="accordion-content">
                                         Our code crafters plan for progressive solutions placed on the right platforms to
@@ -371,7 +371,7 @@
                                         <i class="flaticon-like"></i>
                                     </div>
                                     <a class="accordion-title" href="javascript:void(0)">
-                                        <i class="bx bx-plus"></i>Experienced Team
+                                        <i class='bx bxs-hand-up'></i>Experienced Team
                                     </a>
                                     <p class="accordion-content">
                                         Solve complex problems with digital solutions. We provide scalable software,
@@ -385,7 +385,7 @@
                                         <i class="flaticon-award"></i>
                                     </div>
                                     <a class="accordion-title" href="javascript:void(0)">
-                                        <i class="bx bx-plus"></i>Worldwide Clients
+                                        <i class='bx bxs-hand-up'></i>Worldwide Clients
                                     </a>
                                     <p class="accordion-content">
                                         We are trusted by 100+ clients from worldwide.
@@ -394,10 +394,10 @@
 
                                 <li class="accordion-item">
                                     <div class="icon">
-                                        <i class="flaticon-award"></i>
+                                        <i class="bx bx-support"></i>
                                     </div>
                                     <a class="accordion-title" href="javascript:void(0)">
-                                        <i class="bx bx-plus"></i>Support
+                                        <i class='bx bxs-hand-up'></i>Support
                                     </a>
                                     <p class="accordion-content">
                                         24*7 support from our expertise to your business.

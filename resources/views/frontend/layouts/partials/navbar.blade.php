@@ -18,12 +18,19 @@
         -moz-box-shadow: 1px 6px 20px 1px rgba(0, 0, 0, 0.72);
     }
 </style>
+<style>
+    @media (max-width: 768px) {
+        .logo_visibility {
+            display: none;
+        }
+    }
+</style>
 <div class="navbar-area">
     <div class="mobile-nav">
         <a href="{{ route('index') }}" class="logo">
             <img data-cfsrc="{{ asset('uploads/images/' . getSettings('logo_dark')) }}" alt="logo"
-                style="display:none;visibility:hidden;" /><noscript><img
-                    src="{{ asset('uploads/images/' . getSettings('logo_dark')) }}" alt="logo" /></noscript>
+                style="display:none;visibility:hidden;" />
+            <noscript><img src="{{ asset('uploads/images/' . getSettings('logo_dark')) }}" alt="logo" /></noscript>
         </a>
     </div>
     <div class="main-nav">
@@ -43,9 +50,11 @@
                                         //]]>
                                     </script>
 
-                                    <img data-cfsrc="{{ asset('uploads/images/' . getSettings('logo_dark')) }}"
-                                        alt="logo" style="display:none;visibility:hidden;" /><noscript><img
-                                            src="{{ asset('uploads/images/' . getSettings('logo_dark')) }}"
+                                    <img class="logo_visibility"
+                                        src="{{ asset('uploads/images/' . getSettings('logo_dark')) }}" alt="logo"
+                                        style="display:none;visibility:hidden;" />
+
+                                    <noscript><img src="{{ asset('uploads/images/' . getSettings('logo_dark')) }}"
                                             alt="logo" /></noscript>
                                 </a>
                             </div>
@@ -81,10 +90,10 @@
                                                 class="nav-link">{{ $service_list->title }}</a>
                                         </li>
                                     @endforeach
-                                    <li class="nav-item">
+                                    {{-- <li class="nav-item">
                                         <a href="{{ route('service.index') }}" class="nav-link">All
                                             {{ $serviceGroup->name }}</a>
-                                    </li>
+                                    </li> --}}
                                 </ul>
                             </li>
                         @endforeach
