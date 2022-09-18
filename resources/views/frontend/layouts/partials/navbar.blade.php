@@ -82,7 +82,8 @@
                                         </li>
                                     @endforeach
                                     <li class="nav-item">
-                                        <a href="{{ route('service.index') }}" class="nav-link">All Services</a>
+                                        <a href="{{ route('service.index') }}" class="nav-link">All
+                                            {{ $serviceGroup->name }}</a>
                                     </li>
                                 </ul>
                             </li>

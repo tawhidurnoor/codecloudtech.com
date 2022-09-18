@@ -116,7 +116,7 @@ if (!function_exists('getServiceGroups')) {
 if (!function_exists('getServicesByServiceGroup')) {
     function getServicesByServiceGroup($service_group_id)
     {
-        $services = Service::where('service_group_id', $service_group_id);
+        $services = Service::where('service_group_id', $service_group_id)->get();
         return $services;
     }
 }
