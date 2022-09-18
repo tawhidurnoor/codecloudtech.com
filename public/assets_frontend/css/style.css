@@ -19,6 +19,11 @@ a {
     text-decoration: none
 }
 
+/* p{
+    text-align: justify;
+    text-justify: inter-word;
+} */
+
 a:hover {
     text-decoration: none;
     color: #293a5c

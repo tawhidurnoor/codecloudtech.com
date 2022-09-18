@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('keywords');
             $table->string('slug');
             $table->longText('content');
+            $table->longText('gjs_data');
             $table->boolean('is_published')->default(true);
             $table->timestamps();
         });

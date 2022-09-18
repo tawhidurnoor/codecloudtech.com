@@ -6,9 +6,12 @@ use App\Http\Controllers\Controller;
 use App\Models\Page;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Dotlogics\Grapesjs\App\Traits\EditorTrait;
 
 class PageController extends Controller
 {
+    use EditorTrait;
+
     /**
      * Display a listing of the resource.
      *
@@ -80,6 +83,11 @@ class PageController extends Controller
         return view('backend.page.edit', [
             'page' => $page,
         ]);
+    }
+
+    public function editor(Request $request, Page $page)
+    {
+        return $this->show_gjs_editor($request, $page);
     }
 
     /**

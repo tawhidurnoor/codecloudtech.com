@@ -37,4 +37,5 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('service', App\Http\Controllers\Backend\ServiceController::class);
 
     Route::resource('page', App\Http\Controllers\Backend\PageController::class);
+    Route::get('pages/{page}/editor', [App\Http\Controllers\Backend\PageController::class, 'editor'])->name('page.editor');
 });

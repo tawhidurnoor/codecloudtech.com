@@ -88,14 +88,14 @@
 
         @media (max-width: 600px) {
             /* h1 {
-                                                                                                                                                            font-size: 3.4rem;
-                                                                                                                                                            line-height: 3.6rem;
-                                                                                                                                                        } */
+                                                                                                                                                                font-size: 3.4rem;
+                                                                                                                                                                line-height: 3.6rem;
+                                                                                                                                                            } */
 
             /* p {
-                                                                                                                                                        font-size: 1.7rem;
-                                                                                                                                                        line-height: 2.5rem;
-                                                                                                                                                    } */
+                                                                                                                                                            font-size: 1.7rem;
+                                                                                                                                                            line-height: 2.5rem;
+                                                                                                                                                        } */
 
             .site-wrap {
                 padding: 6rem 1rem;

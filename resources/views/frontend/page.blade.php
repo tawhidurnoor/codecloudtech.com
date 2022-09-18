@@ -9,6 +9,9 @@
 @endsection
 
 @section('styles')
+    <style type="text/css">
+        {!! $page->css !!}
+    </style>
 @endsection
 
 @section('title')
@@ -546,7 +549,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    {!! $page->content !!}
+                    {{-- {!! $page->content !!} --}}
+                    {!! $page->html !!}
                 </div>
             </div>
         </div>
