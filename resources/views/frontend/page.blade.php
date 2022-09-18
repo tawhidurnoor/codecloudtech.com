@@ -549,8 +549,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    {{-- {!! $page->content !!} --}}
-                    {!! $page->html !!}
+                    {!! $page->content !!}
+                    {{-- {!! $page->html !!} --}}
                 </div>
             </div>
         </div>
