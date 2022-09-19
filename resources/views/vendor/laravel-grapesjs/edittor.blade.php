@@ -18,6 +18,7 @@
             padding: 0;
         }
     </style>
+
     <script>
         window.editorConfig = @json($editorConfig ?? []);
 

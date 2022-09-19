@@ -1,36 +1,56 @@
-<section class="contact-area pt-100 pb-70">
-    <div class="container">
-        <div class="row row-eq-height">
-            <div class="col-lg-4 col-sm-6">
-                <div class="single-contact" style="height: 750px;">
-                    <div class="content">
-                        <h3>Who we are</h3>
-                        <p align="justify">
-                            Paragraph 1
-                        </p>
-                    </div>
-                </div>
+<div class="row">
+    <div class="col-lg-4 col-sm-6">
+        <div class="single-service">
+            <div class="service-img">
+                <img src="https://templates.hibootstrap.com/paso/default/assets/images/service/s2.png" alt="service"
+                    style="display:none;visibility:hidden;"><noscript><img
+                        src="https://templates.hibootstrap.com/paso/default/assets/images/service/s2.png"
+                        alt="service" /></noscript>
             </div>
-            <div class="col-lg-4 col-sm-6">
-                <div class="single-contact" style="height: 750px;">
-                    <div class="content">
-                        <h3>Our Mission</h3>
-                        <p align="justify">
-                            Paragraph 2
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-12">
-                <div class="single-contact" style="height: 750px;">
-                    <div class="content">
-                        <h3>Our Goals</h3>
-                        <p align="justify">
-                            Paragraph 3
-                        </p>
-                    </div>
-                </div>
+            <div class="service-content">
+                <h3>Visual Design</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque vel sit maxime assumenda. maiores,
+                    magnam</p>
+                <a href="" class="line-bnt">
+                    Read More
+                </a>
             </div>
         </div>
     </div>
-</section>
+    <div class="col-lg-4 col-sm-6">
+        <div class="single-service">
+            <div class="service-img">
+                <img src="https://templates.hibootstrap.com/paso/default/assets/images/service/s2.png" alt="service"
+                    style="display:none;visibility:hidden;"><noscript><img
+                        src="https://templates.hibootstrap.com/paso/default/assets/images/service/s2.png"
+                        alt="service" /></noscript>
+            </div>
+            <div class="service-content">
+                <h3>Visual Design</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque vel sit maxime assumenda. maiores,
+                    magnam</p>
+                <a href="" class="line-bnt">
+                    Read More
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-sm-6">
+        <div class="single-service">
+            <div class="service-img">
+                <img src="https://templates.hibootstrap.com/paso/default/assets/images/service/s2.png" alt="service"
+                    style="display:none;visibility:hidden;"><noscript><img
+                        src="https://templates.hibootstrap.com/paso/default/assets/images/service/s2.png"
+                        alt="service" /></noscript>
+            </div>
+            <div class="service-content">
+                <h3>Visual Design</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque vel sit maxime assumenda. maiores,
+                    magnam</p>
+                <a href="" class="line-bnt">
+                    Read More
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
