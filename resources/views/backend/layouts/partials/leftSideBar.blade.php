@@ -74,7 +74,7 @@
                     <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)"
                         aria-expanded="false">
                         <i class="mdi mdi-settings"></i>
-                        <span class="hide-menu">Website Setup </span>
+                        <span class="hide-menu">Setup & Configaration </span>
                     </a>
                     <ul aria-expanded="false" class="collapse first-level">
                         <li class="sidebar-item">

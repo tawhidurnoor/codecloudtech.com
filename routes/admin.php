@@ -14,9 +14,7 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
 
     Route::get('/home', [App\Http\Controllers\Backend\DashboardController::class, 'index'])->name('home');
 
-    Route::get('/general_information', [App\Http\Controllers\Backend\SetupController::class, 'generalInformation'])->name('setup.general.index');
-    Route::put('/general_information', [App\Http\Controllers\Backend\SetupController::class, 'updateGeneralInformation'])->name('setup.general.update');
-    Route::put('/logo_favicon_information', [App\Http\Controllers\Backend\SetupController::class, 'updateLogoAndFavicon'])->name('setup.logo.favicon.update');
+    Route::get('/cache_clear', [App\Http\Controllers\Backend\DashboardController::class, 'clear'])->name('cache.clear');
 
     Route::get('/meta_information', [App\Http\Controllers\Backend\SetupController::class, 'metaInformation'])->name('setup.meta.index');
     Route::put('/meta_information', [App\Http\Controllers\Backend\SetupController::class, 'updateMetaInformation'])->name('setup.meta.update');
@@ -35,5 +33,12 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('service', App\Http\Controllers\Backend\ServiceController::class);
 
     Route::resource('page', App\Http\Controllers\Backend\PageController::class);
+
     Route::get('pages/{page}/editor', [App\Http\Controllers\Backend\PageController::class, 'editor'])->name('page.editor');
+
+    Route::get('/general_information', [App\Http\Controllers\Backend\SetupController::class, 'generalInformation'])->name('setup.general.index');
+    Route::put('/general_information', [App\Http\Controllers\Backend\SetupController::class, 'updateGeneralInformation'])->name('setup.general.update');
+    Route::put('/logo_favicon_information', [App\Http\Controllers\Backend\SetupController::class, 'updateLogoAndFavicon'])->name('setup.logo.favicon.update');
+
+    Route::resource('header', App\Http\Controllers\Backend\HeaderController::class);
 });

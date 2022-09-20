@@ -11,7 +11,7 @@
     <meta name="description"
         content="Nice is powerful and clean admin dashboard template, inpired from Google's Material Design" />
     <meta name="robots" content="noindex,nofollow" />
-    <title>Nice Template by WrapPixel</title>
+    <title>Loging | Code Cloud CMS</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/niceadmin/" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="assets_backend/images/favicon.png" />
