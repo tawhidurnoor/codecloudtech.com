@@ -12,9 +12,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     //all route name has a prefix of admin.
 
-    Route::get('/home', function () {
-        return view('backend.dashboard');
-    })->name('home');
+    Route::get('/home', [App\Http\Controllers\Backend\DashboardController::class, 'index'])->name('home');
 
     Route::get('/general_information', [App\Http\Controllers\Backend\SetupController::class, 'generalInformation'])->name('setup.general.index');
     Route::put('/general_information', [App\Http\Controllers\Backend\SetupController::class, 'updateGeneralInformation'])->name('setup.general.update');
