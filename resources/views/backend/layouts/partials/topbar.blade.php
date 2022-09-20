@@ -12,7 +12,7 @@
             <!-- Logo -->
             <!-- ============================================================== -->
             <div class="navbar-brand">
-                <a href="{{ route('index') }}" class="logo">
+                <a href="{{ route('admin.home') }}" class="logo">
 
                     <!-- Logo icon -->
                     {{-- <b class="logo-icon">

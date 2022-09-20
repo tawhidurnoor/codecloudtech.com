@@ -49,15 +49,25 @@
                 </li>
 
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                        href="{{ route('admin.service_group.index') }}" aria-expanded="false"><i
-                            class="mdi mdi-google-circles-group"></i><span class="hide-menu">Service Group</span></a>
-                </li>
-
-                <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                        href="{{ route('admin.service.index') }}" aria-expanded="false"><i
-                            class="mdi mdi-mouse-variant"></i><span class="hide-menu">Services</span></a>
+                    <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)"
+                        aria-expanded="false">
+                        <i class="mdi mdi-mouse-variant"></i>
+                        <span class="hide-menu">Service </span>
+                    </a>
+                    <ul aria-expanded="false" class="collapse first-level">
+                        <li class="sidebar-item">
+                            <a href="{{ route('admin.service_group.index') }}" class="sidebar-link">
+                                <i class="mdi mdi-adjust"></i>
+                                <span class="hide-menu"> Service Group </span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="{{ route('admin.service.index') }}" class="sidebar-link">
+                                <i class="mdi mdi-adjust"></i>
+                                <span class="hide-menu"> Services </span>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
 
                 <li class="sidebar-item">
