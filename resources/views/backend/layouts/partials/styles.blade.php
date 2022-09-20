@@ -10,3 +10,5 @@
 
 <!-- Toastr CSS -->
 <link href="{{ asset('assets_backend/extra-libs/toastr/dist/build/toastr.min.css') }}" rel="stylesheet" />
+
+<link rel="icon" type="image/png" href="{{ asset('uploads/images/' . getSettings('favicon')) }}" />
