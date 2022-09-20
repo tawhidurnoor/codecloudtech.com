@@ -29,7 +29,7 @@
                     <div class="row el-element-overlay">
 
                         @foreach ($uploads as $upload)
-                            <div class="col-lg-3 col-md-6">
+                            <div class="col-lg-2 col-md-2">
                                 <div class="card">
                                     <div class="el-card-item pb-3">
                                         <div
