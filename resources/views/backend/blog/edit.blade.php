@@ -61,7 +61,14 @@
                             <div class="mb-3">
                                 <label>Blog Title</label>
                                 <input type="text" name="title" class="form-control" value="{{ $blog->title }}"
-                                    required>
+                                    onkeyup="makeSlug(this.value)" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label>Blog Slug</label>
+                                <input type="text" name="slug" id="slug" value="{{ $blog->slug }}"
+                                    onkeyup="checkSlug(this.value)" class="form-control" required>
+                                <p id="slug_status"></p>
                             </div>
 
                             <div class="mb-3">
@@ -85,7 +92,7 @@
 
                             <div class="mb-3">
                                 <label>Banner</label>
-                                <input type="file" name="banner" accept="image/*" class="form-control" required>
+                                <input type="file" name="banner" accept="image/*" class="form-control">
                             </div>
 
                             <div class="mb-3">
@@ -131,5 +138,59 @@
 
     <script>
         CKEDITOR.replace('editor');
+    </script>
+
+    {{-- making slug and checking avalablity --}}
+    <script>
+        function makeSlug(val) {
+            let str = val;
+            let output = str.replace(/\s+/g, '-').toLowerCase();
+            $('#slug').val(output);
+            checkSlug(output);
+        }
+
+        function checkSlug(val) {
+            if (val.length >= 1) {
+
+
+                // $("#slug_status").html('<img src="../../assets_backend/images/loading.gif"> Checking..');
+                $("#slug_status").html('<span class="text-info">Checking...</span>');
+
+                $.ajax({
+                    type: "GET",
+                    url: "../../../admin/check_blog_slug",
+                    data: "slug=" + val + "&id=" + "{{ $blog->id }}",
+                    success: function(msg) {
+
+                        if (msg == 'OK') {
+                            $("#slug_status").html('<span class="text-success">Available!</span>');
+                        } else {
+                            $("#slug_status").html('<span class="text-danger">Not Available!</span>');
+                        }
+                        // $("#statuspass").ajaxComplete(function(event, request, settings) {
+
+                        //     if (msg == 'OK') {
+                        //         $("#name").removeClass('object_error');
+                        //         $("#name").addClass("object_ok");
+                        //         $(this).html(
+                        //             '<img src="images/success.png" align="absmiddle"> OK<'
+                        //         );
+                        //     } else {
+                        //         $("#name").removeClass('object_ok');
+                        //         $("#name").addClass("object_error");
+                        //         $(this).html(msg);
+                        //     }
+
+                        // });
+
+                    }
+
+                });
+
+
+            } else {
+                $("#slug_status").html('');
+            }
+        }
     </script>
 @endsection

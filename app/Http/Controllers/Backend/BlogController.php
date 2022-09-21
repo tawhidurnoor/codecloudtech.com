@@ -59,7 +59,8 @@ class BlogController extends Controller
         $blog->meta_title = $request->meta_title;
         $blog->meta_description = $request->meta_description;
         $blog->keywords = $request->keywords;
-        $blog->slug = Str::slug($request->title, '-');
+        // $blog->slug = Str::slug($request->title, '-');
+        $blog->slug = $request->slug;
         $blog->summary = $request->summary;
         $blog->content = $request->content;
         $blog->is_published = 1;
@@ -123,6 +124,7 @@ class BlogController extends Controller
         }
 
         $blog->meta_title = $request->meta_title;
+        $blog->slug = $request->slug;
         $blog->meta_description = $request->meta_description;
         $blog->keywords = $request->keywords;
         $blog->summary = $request->summary;

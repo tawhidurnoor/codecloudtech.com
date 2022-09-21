@@ -6,15 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="keywords"
-        content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, nice admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, " />
-    <meta name="description"
-        content="Nice is powerful and clean admin dashboard template, inpired from Google's Material Design" />
-    <meta name="robots" content="noindex,nofollow" />
-    <title>Loging | Code Cloud CMS</title>
-    <link rel="canonical" href="https://www.wrappixel.com/templates/niceadmin/" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="app-url" content="{{ getURL() }}">
+    <meta name="file-base-url" content="{{ getFileBaseURL() }}">
+
+    {{-- <meta name="description" content="{{ getMetaDescription() }}" /> --}}
+
+    <meta property="og:url" content="{{ getURL() }}" />
+    <title>Login | Code Cloud CMS</title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="assets_backend/images/favicon.png" />
+    <link rel="icon" type="image/png" href="{{ asset('uploads/images/' . getSettings('favicon')) }}" />
     <!-- Custom CSS -->
     <link href="assets_backend/dist/css/style.min.css" rel="stylesheet" />
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
