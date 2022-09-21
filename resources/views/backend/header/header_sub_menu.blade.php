@@ -1,7 +1,7 @@
 @extends('backend.layouts.full.mainlayout')
 
 @section('title')
-    <title>Headers | CodeCloud Technology CMS</title>
+    <title>Header Submenu | CodeCloud Technology CMS</title>
 @endsection
 
 @section('styles')
@@ -9,7 +9,7 @@
 @endsection
 
 @section('page-title')
-    Headers
+    Header Submenu
 @endsection
 
 @section('body')
@@ -46,8 +46,8 @@
                                             <td>{{ $header->text }}</td>
                                             <td>{{ getBaseURL() . $header->link }}</td>
                                             <td>
-                                                <a href="{{ route('admin.header.edit', $header->id) }}"
-                                                    class="btn btn-info">Submenu</a>
+                                                <button class="btn btn-info edit-button"
+                                                    data-id="{{ $header->id }}">Edit</button>
 
                                                 <button class="btn waves-effect waves-light btn-danger delete-button"
                                                     data-id="{{ $header->id }}">

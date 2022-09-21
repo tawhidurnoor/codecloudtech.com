@@ -83,7 +83,7 @@
                                 <span class="hide-menu"> Header </span>
                             </a>
                         </li>
-                        <li class="sidebar-item">
+                        {{-- <li class="sidebar-item">
                             <a href="{{ route('admin.setup.meta.index') }}" class="sidebar-link">
                                 <i class="mdi mdi-adjust"></i>
                                 <span class="hide-menu"> Footer </span>
@@ -94,7 +94,7 @@
                                 <i class="mdi mdi-adjust"></i>
                                 <span class="hide-menu"> Appearance </span>
                             </a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </li>
 

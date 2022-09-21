@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Header;
+use App\Models\HeaderSubMenu;
 use Illuminate\Http\Request;
 
 class HeaderController extends Controller
@@ -75,7 +76,10 @@ class HeaderController extends Controller
      */
     public function edit(Header $header)
     {
-        //
+        $sub_menus = HeaderSubMenu::where('header_id', $header->id)->get();
+        return view('backend.header.header_sub_menu', [
+            'headers' => $sub_menus,
+        ]);
     }
 
     /**

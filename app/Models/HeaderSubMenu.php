@@ -8,9 +8,4 @@ use Illuminate\Database\Eloquent\Model;
 class HeaderSubMenu extends Model
 {
     use HasFactory;
-
-    // public function subMenue()
-    // {
-    //     return $this->hasMany(Header::class);
-    // }
 }
