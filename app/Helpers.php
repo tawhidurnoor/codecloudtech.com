@@ -1,7 +1,7 @@
 <?php
 
 use App\Models\Header;
-use App\Model\HeaderSubMenu;
+use App\Models\HeaderSubMenu;
 use App\Models\Meta;
 use App\Models\Script;
 use App\Models\Service;

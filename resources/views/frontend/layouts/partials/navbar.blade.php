@@ -91,8 +91,17 @@
                         </li> --}}
 
                         @foreach (getHeader() as $header)
-                            @if ()
-                                
+                            @if ( count(getSubMenu($header->id)) > 0)
+                                <li class="nav-item" style="padding-top: 20px !important;">
+                                    <a href="#" class="nav-link dropdown-toggle">{{ $header->text }}</a>
+                                    <ul class="dropdown-menu">
+                                        @foreach (getSubMenu($header->id) as $submenu)
+                                            <li class="nav-item">
+                                                <a href="{{ getBaseUrl() . $submenu->link }}" class="nav-link">{{ $submenu->text }}</a>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </li>
                             @else
                                 <li class="nav-item" style="padding-top: 20px !important;">
                                     <a href="{{ getBaseUrl() . $header->link }}" class="nav-link">{{ $header->text }}</a>
