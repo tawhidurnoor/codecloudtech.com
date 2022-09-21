@@ -140,6 +140,7 @@ class ServiceController extends Controller
     public function update(Request $request, Service $service)
     {
         $service->title = $request->title;
+        $service->slug = $request->slug;
         $service->service_group_id = $request->service_group_id;
         $service->meta_title = $request->meta_title;
         $service->meta_description = $request->meta_description;
