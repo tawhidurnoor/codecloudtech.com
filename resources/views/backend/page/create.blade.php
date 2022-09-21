@@ -35,7 +35,15 @@
                             @csrf
                             <div class="mb-3">
                                 <label>Page Title</label>
-                                <input type="text" name="title" class="form-control" required>
+                                <input type="text" name="title" onkeyup="makeSlug(this.value)" class="form-control"
+                                    required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label>Blog Slug</label>
+                                <input type="text" name="slug" id="slug" onkeyup="checkSlug(this.value)"
+                                    class="form-control" required>
+                                <p id="slug_status"></p>
                             </div>
 
                             <div class="mb-3">
@@ -63,7 +71,7 @@
 
 
                             <br><br>
-                            <button class="btn btn-success" type="submit" type="button">
+                            <button class="btn btn-success" type="submit" id="submit_button" type="button">
                                 <i class="ri-save-fill fs-5 align-middle"></i> Save
                             </button>
                         </form>
@@ -138,5 +146,48 @@
 
     <script>
         CKEDITOR.replace('editor');
+    </script>
+
+    {{-- making slug and checking avalablity --}}
+    <script>
+        function makeSlug(val) {
+            let str = val;
+            let output = str.replace(/\s+/g, '-').toLowerCase();
+            $('#slug').val(output);
+            checkSlug(output);
+        }
+
+        function checkSlug(val) {
+            if (val.length >= 1) {
+
+
+                // $("#slug_status").html('<img src="../../assets_backend/images/loading.gif"> Checking..');
+                $("#slug_status").html('<span class="text-info">Checking...</span>');
+
+                const button = document.getElementById('submit_button');
+
+                $.ajax({
+                    type: "GET",
+                    url: "../../admin/check_slug",
+                    data: "slug=" + val,
+                    success: function(msg) {
+
+                        if (msg == 'OK') {
+                            $("#slug_status").html('<span class="text-success">Available!</span>');
+                            button.disabled = false;
+                        } else {
+                            $("#slug_status").html('<span class="text-danger">Not Available!</span>');
+                            button.disabled = true;
+                        }
+
+                    }
+
+                });
+
+
+            } else {
+                $("#slug_status").html('');
+            }
+        }
     </script>
 @endsection

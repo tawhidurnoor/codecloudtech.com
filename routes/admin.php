@@ -43,4 +43,6 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('header', App\Http\Controllers\Backend\HeaderController::class);
 
     Route::get('/check_blog_slug', [App\Http\Controllers\Backend\SlugController::class, 'checkBlogSlug']);
+
+    Route::get('/check_slug', [App\Http\Controllers\Backend\SlugController::class, 'checkSlug']);
 });
