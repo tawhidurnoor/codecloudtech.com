@@ -73,12 +73,13 @@
             <div class="modal-content">
                 <div class="modal-header d-flex align-items-center">
                     <h4 class="modal-title" id="myModalLabel">
-                        Add service group
+                        Add Header Submenu
                     </h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="{{ route('admin.header.store') }}" method="POST">
+                <form action="{{ route('admin.header.submenu.store') }}" method="POST">
                     @csrf
+                    <input type="hidden" name="header_id" value="{{$header->id}}">
                     <div class="modal-body">
                         <div class="mb-3">
                             <label>Text</label>

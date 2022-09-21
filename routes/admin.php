@@ -40,6 +40,7 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::put('/general_information', [App\Http\Controllers\Backend\SetupController::class, 'updateGeneralInformation'])->name('setup.general.update');
     Route::put('/logo_favicon_information', [App\Http\Controllers\Backend\SetupController::class, 'updateLogoAndFavicon'])->name('setup.logo.favicon.update');
 
+    Route::post('/header/sub_menu/store', [App\Http\Controllers\Backend\HeaderController::class, 'subMenuStore'])->name('header.submenu.store');
     Route::resource('header', App\Http\Controllers\Backend\HeaderController::class);
 
     Route::get('/check_blog_slug', [App\Http\Controllers\Backend\SlugController::class, 'checkBlogSlug']);

@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Header;
+use App\Model\HeaderSubMenu;
 use App\Models\Meta;
 use App\Models\Script;
 use App\Models\Service;
@@ -73,6 +74,13 @@ if (!function_exists('getHeader')) {
     function getHeader()
     {
         return Header::all();
+    }
+}
+
+if (!function_exists('getSubMenu')) {
+    function getSubMenu($id)
+    {
+        return HeaderSubMenu::where('header_id', $id)->get();
     }
 }
 

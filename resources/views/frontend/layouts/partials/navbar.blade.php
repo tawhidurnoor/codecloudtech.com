@@ -91,9 +91,13 @@
                         </li> --}}
 
                         @foreach (getHeader() as $header)
-                            <li class="nav-item" style="padding-top: 20px !important;">
-                                <a href="{{ getBaseUrl() . $header->link }}" class="nav-link">{{ $header->text }}</a>
-                            </li>
+                            @if ()
+                                
+                            @else
+                                <li class="nav-item" style="padding-top: 20px !important;">
+                                    <a href="{{ getBaseUrl() . $header->link }}" class="nav-link">{{ $header->text }}</a>
+                                </li>
+                            @endif
                         @endforeach
 
                     </ul>

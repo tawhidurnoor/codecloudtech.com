@@ -57,6 +57,27 @@ class HeaderController extends Controller
         return redirect()->back();
     }
 
+    public function subMenuStore(Request $request)
+    {
+        $header_sub_menu = new HeaderSubMenu();
+
+        $header_sub_menu->header_id = $request->header_id;
+        $header_sub_menu->text = $request->text;
+        if ($request->link == null) {
+            $header_sub_menu->link = "";
+        } else {
+            $header_sub_menu->link = $request->link;
+        }
+
+        if ($header_sub_menu->save()) {
+            session()->flash('success', 'Header submenu created succesfully!');
+        } else {
+            session()->flash('warning', 'Error creating header submenu!');
+        }
+
+        return redirect()->back();
+    }
+
     /**
      * Display the specified resource.
      *
@@ -79,6 +100,7 @@ class HeaderController extends Controller
         $sub_menus = HeaderSubMenu::where('header_id', $header->id)->get();
         return view('backend.header.header_sub_menu', [
             'headers' => $sub_menus,
+            'header' => $header,
         ]);
     }
 
