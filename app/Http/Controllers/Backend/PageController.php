@@ -102,6 +102,7 @@ class PageController extends Controller
     public function update(Request $request, Page $page)
     {
         $page->title = $request->title;
+        $page->slug = $request->slug;
         $page->meta_title = $request->meta_title;
         $page->meta_description = $request->meta_description;
         $page->keywords = $request->keywords;

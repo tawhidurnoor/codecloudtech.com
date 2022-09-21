@@ -40,7 +40,7 @@
                             </div>
 
                             <div class="mb-3">
-                                <label>Blog Slug</label>
+                                <label>Page Slug</label>
                                 <input type="text" name="slug" id="slug" onkeyup="checkSlug(this.value)"
                                     class="form-control" required>
                                 <p id="slug_status"></p>

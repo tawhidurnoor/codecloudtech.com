@@ -33,8 +33,8 @@ class SlugController extends Controller
 
         $page_counter = Page::where('slug', $request->slug);
 
-        if (isset($request->paege_id)) {
-            $page_counter = $page_counter->where('id', '!=', $request->paege_id);
+        if (isset($request->page_id)) {
+            $page_counter = $page_counter->where('id', '!=', $request->page_id);
         }
 
         $page_counter = $page_counter->count();
