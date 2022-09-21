@@ -51,7 +51,8 @@ class ServiceController extends Controller
         $service->meta_title = $request->meta_title;
         $service->meta_description = $request->meta_description;
         $service->keywords = $request->keywords;
-        $service->slug = Str::slug($request->title, '-');
+        // $service->slug = Str::slug($request->title, '-');
+        $service->slug = $request->slug;
 
         if ($request->hasFile('icon')) {
 

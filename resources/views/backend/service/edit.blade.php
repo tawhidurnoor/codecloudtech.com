@@ -35,8 +35,15 @@
                             @method('put')
                             <div class="mb-3">
                                 <label>Service Title</label>
-                                <input type="text" name="title" value="{{ $service->title }}" class="form-control"
-                                    required>
+                                <input type="text" name="title" onkeyup="makeSlug(this.value)"
+                                    value="{{ $service->title }}" class="form-control" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label>Page Slug</label>
+                                <input type="text" name="slug" id="slug" onkeyup="checkSlug(this.value)"
+                                    value="{{ $service->slug }}" class="form-control" required>
+                                <p id="slug_status"></p>
                             </div>
 
                             <div class="mb-3">
@@ -130,12 +137,14 @@
                                 <div class="col-md-8 col-xl-9">
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input success" type="radio" name="is_bottom_div_button_1"
-                                            value="1" {{ $service->is_bottom_div_button_1 == 1 ? 'checked=""' : '' }}>
+                                            value="1"
+                                            {{ $service->is_bottom_div_button_1 == 1 ? 'checked=""' : '' }}>
                                         <label class="form-check-label">Yes</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input danger" type="radio" name="is_bottom_div_button_1"
-                                            value="0" {{ $service->is_bottom_div_button_1 == 0 ? 'checked=""' : '' }}>
+                                        <input class="form-check-input danger" type="radio"
+                                            name="is_bottom_div_button_1" value="0"
+                                            {{ $service->is_bottom_div_button_1 == 0 ? 'checked=""' : '' }}>
                                         <label class="form-check-label">No</label>
                                     </div>
                                 </div>
@@ -216,7 +225,7 @@
 
 
                             <br><br>
-                            <button class="btn btn-success" type="submit" type="button">
+                            <button class="btn btn-success" type="submit" id="submit_button" type="button">
                                 <i class="ri-save-fill fs-5 align-middle"></i> Save
                             </button>
                         </form>
@@ -247,12 +256,46 @@
         CKEDITOR.replace('editor_bottom_div_2');
     </script>
 
+    {{-- making slug and checking avalablity --}}
     <script>
-        // CKEDITOR.plugins.add('example', {
-        //     init: function(editor) {
-        //         var pluginDirectory = this.path;
-        //         editor.addContentsCss(pluginDirectory + 'https://127.0.0.1:8000/assets_frontend/css/style.css');
-        //     }
-        // });
+        function makeSlug(val) {
+            let str = val;
+            let output = str.replace(/\s+/g, '-').toLowerCase();
+            $('#slug').val(output);
+            checkSlug(output);
+        }
+
+        function checkSlug(val) {
+            if (val.length >= 1) {
+
+
+                // $("#slug_status").html('<img src="../../assets_backend/images/loading.gif"> Checking..');
+                $("#slug_status").html('<span class="text-info">Checking...</span>');
+
+                const button = document.getElementById('submit_button');
+
+                $.ajax({
+                    type: "GET",
+                    url: "../../../admin/check_slug",
+                    data: "slug=" + val + "&service_id=" + "{{ $service->id }}",
+                    success: function(msg) {
+
+                        if (msg == 'OK') {
+                            $("#slug_status").html('<span class="text-success">Available!</span>');
+                            button.disabled = false;
+                        } else {
+                            $("#slug_status").html('<span class="text-danger">Not Available!</span>');
+                            button.disabled = true;
+                        }
+
+                    }
+
+                });
+
+
+            } else {
+                $("#slug_status").html('');
+            }
+        }
     </script>
 @endsection

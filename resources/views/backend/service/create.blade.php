@@ -33,7 +33,15 @@
                             @csrf
                             <div class="mb-3">
                                 <label>Service Title</label>
-                                <input type="text" name="title" class="form-control" required>
+                                <input type="text" name="title" onkeyup="makeSlug(this.value)" class="form-control"
+                                    required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label>Service Slug</label>
+                                <input type="text" name="slug" id="slug" onkeyup="checkSlug(this.value)"
+                                    class="form-control" required>
+                                <p id="slug_status"></p>
                             </div>
 
                             <div class="mb-3">
@@ -130,8 +138,8 @@
                                         <label class="form-check-label">Yes</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input danger" type="radio" name="is_bottom_div_button_1"
-                                            value="0">
+                                        <input class="form-check-input danger" type="radio"
+                                            name="is_bottom_div_button_1" value="0">
                                         <label class="form-check-label">No</label>
                                     </div>
                                 </div>
@@ -235,5 +243,48 @@
         CKEDITOR.replace('editor');
         CKEDITOR.replace('editor_bottom_div_1');
         CKEDITOR.replace('editor_bottom_div_2');
+    </script>
+
+    {{-- making slug and checking avalablity --}}
+    <script>
+        function makeSlug(val) {
+            let str = val;
+            let output = str.replace(/\s+/g, '-').toLowerCase();
+            $('#slug').val(output);
+            checkSlug(output);
+        }
+
+        function checkSlug(val) {
+            if (val.length >= 1) {
+
+
+                // $("#slug_status").html('<img src="../../assets_backend/images/loading.gif"> Checking..');
+                $("#slug_status").html('<span class="text-info">Checking...</span>');
+
+                const button = document.getElementById('submit_button');
+
+                $.ajax({
+                    type: "GET",
+                    url: "../../admin/check_slug",
+                    data: "slug=" + val,
+                    success: function(msg) {
+
+                        if (msg == 'OK') {
+                            $("#slug_status").html('<span class="text-success">Available!</span>');
+                            button.disabled = false;
+                        } else {
+                            $("#slug_status").html('<span class="text-danger">Not Available!</span>');
+                            button.disabled = true;
+                        }
+
+                    }
+
+                });
+
+
+            } else {
+                $("#slug_status").html('');
+            }
+        }
     </script>
 @endsection
