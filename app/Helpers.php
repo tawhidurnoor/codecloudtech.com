@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Header;
 use App\Models\Meta;
 use App\Models\Script;
 use App\Models\Service;
@@ -65,6 +66,13 @@ if (!function_exists('getMetaImage')) {
     {
         $meta = Meta::findOrFail(1);
         return $meta->meta_image;
+    }
+}
+
+if (!function_exists('getHeader')) {
+    function getHeader()
+    {
+        return Header::all();
     }
 }
 

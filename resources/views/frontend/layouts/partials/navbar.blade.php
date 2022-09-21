@@ -60,25 +60,9 @@
                             </div>
                         </li>
 
-                        <li class="nav-item" style="padding-top: 20px !important;">
+                        {{-- <li class="nav-item" style="padding-top: 20px !important;">
                             <a href="{{ route('index') }}" class="nav-link active">Home</a>
                         </li>
-
-                        {{-- <li class="nav-item" style="padding-top: 20px !important;">
-                            <a href="#" class="nav-link dropdown-toggle">Services</a>
-                            <ul class="dropdown-menu">
-                                @foreach (getServices() as $service)
-                                    <li class="nav-item">
-                                        <a href="{{ route('slug.details', $service->slug) }}"
-                                            class="nav-link">{{ $service->title }}</a>
-                                    </li>
-                                @endforeach
-                                <li class="nav-item">
-                                    <a href="{{ route('service.index') }}" class="nav-link">All Services</a>
-                                </li>
-                            </ul>
-                        </li> --}}
-
 
                         @foreach (getServiceGroups() as $serviceGroup)
                             <li class="nav-item" style="padding-top: 20px !important;">
@@ -90,10 +74,6 @@
                                                 class="nav-link">{{ $service_list->title }}</a>
                                         </li>
                                     @endforeach
-                                    {{-- <li class="nav-item">
-                                        <a href="{{ route('service.index') }}" class="nav-link">All
-                                            {{ $serviceGroup->name }}</a>
-                                    </li> --}}
                                 </ul>
                             </li>
                         @endforeach
@@ -108,7 +88,13 @@
 
                         <li class="nav-item" style="padding-top: 20px !important;">
                             <a href="{{ route('contact') }}" class="nav-link">Contact</a>
-                        </li>
+                        </li> --}}
+
+                        @foreach (getHeader() as $header)
+                            <li class="nav-item" style="padding-top: 20px !important;">
+                                <a href="{{ getBaseUrl() . $header->link }}" class="nav-link">{{ $header->text }}</a>
+                            </li>
+                        @endforeach
 
                     </ul>
                 </div>

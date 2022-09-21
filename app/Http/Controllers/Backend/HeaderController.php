@@ -15,7 +15,10 @@ class HeaderController extends Controller
      */
     public function index()
     {
-        //
+        $headers = Header::all();
+        return view('backend.header.index', [
+            'headers' => $headers,
+        ]);
     }
 
     /**
@@ -36,7 +39,21 @@ class HeaderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $header = new Header();
+        $header->text = $request->text;
+        if ($request->link == null) {
+            $header->link = "";
+        } else {
+            $header->link = $request->link;
+        }
+
+        if ($header->save()) {
+            session()->flash('success', 'Header created succesfully!');
+        } else {
+            session()->flash('warning', 'Error creating header!');
+        }
+
+        return redirect()->back();
     }
 
     /**

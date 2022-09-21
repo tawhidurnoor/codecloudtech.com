@@ -78,7 +78,7 @@
                     </a>
                     <ul aria-expanded="false" class="collapse first-level">
                         <li class="sidebar-item">
-                            <a href="{{ route('admin.setup.general.index') }}" class="sidebar-link">
+                            <a href="{{ route('admin.header.index') }}" class="sidebar-link">
                                 <i class="mdi mdi-adjust"></i>
                                 <span class="hide-menu"> Header </span>
                             </a>
