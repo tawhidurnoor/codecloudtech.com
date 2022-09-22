@@ -41,16 +41,16 @@
                                     <!-- end row -->
                                 </thead>
                                 <tbody>
-                                    @foreach ($headers as $header)
+                                    @foreach ($headers as $head)
                                         <tr>
-                                            <td>{{ $header->text }}</td>
-                                            <td>{{ getBaseURL() . $header->link }}</td>
+                                            <td>{{ $head->text }}</td>
+                                            <td>{{ getBaseURL() . $head->link }}</td>
                                             <td>
                                                 <button class="btn btn-info edit-button"
-                                                    data-id="{{ $header->id }}">Edit</button>
+                                                    data-id="{{ $head->id }}">Edit</button>
 
                                                 <button class="btn waves-effect waves-light btn-danger delete-button"
-                                                    data-id="{{ $header->id }}">
+                                                    data-id="{{ $head->id }}">
                                                     Delete
                                                 </button>
                                             </td>
@@ -79,7 +79,7 @@
                 </div>
                 <form action="{{ route('admin.header.submenu.store') }}" method="POST">
                     @csrf
-                    <input type="hidden" name="header_id" value="{{$header->id}}">
+                    <input type="hidden" name="header_id" value="{{ $header->id }}">
                     <div class="modal-body">
                         <div class="mb-3">
                             <label>Text</label>
