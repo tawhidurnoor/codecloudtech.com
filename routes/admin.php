@@ -43,6 +43,9 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::post('/header/sub_menu/store', [App\Http\Controllers\Backend\HeaderController::class, 'subMenuStore'])->name('header.submenu.store');
     Route::resource('header', App\Http\Controllers\Backend\HeaderController::class);
 
+    Route::resource('footer', App\Http\Controllers\Backend\FooterController::class);
+    Route::get('footer/{footer}/editor', [App\Http\Controllers\Backend\FooterController::class, 'editor'])->name('footer.editor');
+
     Route::get('/check_blog_slug', [App\Http\Controllers\Backend\SlugController::class, 'checkBlogSlug']);
 
     Route::get('/check_slug', [App\Http\Controllers\Backend\SlugController::class, 'checkSlug']);

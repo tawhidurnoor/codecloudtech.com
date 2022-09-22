@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Footer;
 use App\Models\Header;
 use App\Models\HeaderSubMenu;
 use App\Models\Meta;
@@ -81,6 +82,13 @@ if (!function_exists('getSubMenu')) {
     function getSubMenu($id)
     {
         return HeaderSubMenu::where('header_id', $id)->get();
+    }
+}
+
+if (!function_exists('getFooter')) {
+    function getFooter()
+    {
+        return Footer::where('is_active', 1)->first();
     }
 }
 

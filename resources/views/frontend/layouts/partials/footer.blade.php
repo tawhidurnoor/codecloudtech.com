@@ -1,4 +1,4 @@
-<footer class="footer-area pt-100">
+{{-- <footer class="footer-area pt-100">
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-md-6">
@@ -11,9 +11,6 @@
                                     alt="logo" /></noscript></a>
                     </div>
                     <br>
-                    {{-- <p>
-                        Lorem ipsum dolor sit amet, mattetur adipiscing elit, sed do eiusmod.
-                    </p> --}}
                     <div class="subscribe">
                         <h4>Join Newsletter</h4>
                         <form class="newsletter-form" data-toggle="validator">
@@ -99,8 +96,11 @@
             </div>
         </div>
     </div>
-</footer>
-
+</footer> --}}
+<style type="text/css">
+    {!! getFooter()->css !!}
+</style>
+{!! getFooter()->html !!}
 
 <div class="go-top">
     <i class='bx bx-chevrons-up'></i>
