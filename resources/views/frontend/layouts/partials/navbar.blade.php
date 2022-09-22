@@ -60,7 +60,7 @@
                             </div>
                         </li>
 
-                        {{-- <li class="nav-item" style="padding-top: 20px !important;">
+                        <li class="nav-item" style="padding-top: 20px !important;">
                             <a href="{{ route('index') }}" class="nav-link active">Home</a>
                         </li>
 
@@ -78,6 +78,29 @@
                             </li>
                         @endforeach
 
+                        @if (count(getHardwareProducts()) > 0)
+                            {{-- <li class="nav-item" style="padding-top: 20px !important;">
+                                <a href="#" class="nav-link dropdown-toggle">Hardware Products</a>
+                                <ul class="dropdown-menu">
+                                    @foreach (getHardwareProducts() as $hardware)
+                                        <li class="nav-item">
+                                            <a href="{{ route('slug.details', $hardware->slug) }}"
+                                                class="nav-link">{{ $hardware->title }}</a>
+                                        </li>
+                                    @endforeach
+
+                                    <li class="nav-item">
+                                        <a href="{{ route('hardware_products') }}"
+                                            class="nav-link">All Products</a>
+                                    </li>
+                                </ul>
+                            </li> --}}
+
+                            <li class="nav-item" style="padding-top: 20px !important;">
+                                <a href="{{ route('hardware_products') }}" class="nav-link">Hardware Products</a>
+                            </li>
+                        @endif
+
                         <li class="nav-item" style="padding-top: 20px !important;">
                             <a href="{{ route('blog.index') }}" class="nav-link">Blog</a>
                         </li>
@@ -88,10 +111,10 @@
 
                         <li class="nav-item" style="padding-top: 20px !important;">
                             <a href="{{ route('contact') }}" class="nav-link">Contact</a>
-                        </li> --}}
+                        </li>
 
-                        @foreach (getHeader() as $header)
-                            @if ( count(getSubMenu($header->id)) > 0)
+                        {{-- @foreach (getHeader() as $header)
+                            @if (count(getSubMenu($header->id)) > 0)
                                 <li class="nav-item" style="padding-top: 20px !important;">
                                     <a href="#" class="nav-link dropdown-toggle">{{ $header->text }}</a>
                                     <ul class="dropdown-menu">
@@ -107,7 +130,7 @@
                                     <a href="{{ getBaseUrl() . $header->link }}" class="nav-link">{{ $header->text }}</a>
                                 </li>
                             @endif
-                        @endforeach
+                        @endforeach --}}
 
                     </ul>
                 </div>

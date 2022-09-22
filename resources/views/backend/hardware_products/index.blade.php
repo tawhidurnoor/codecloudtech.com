@@ -1,7 +1,7 @@
 @extends('backend.layouts.full.mainlayout')
 
 @section('title')
-    <title>Headers | CodeCloud Technology CMS</title>
+    <title>Hardware Products | CodeCloud Technology CMS</title>
 @endsection
 
 @section('styles')
@@ -9,7 +9,7 @@
 @endsection
 
 @section('page-title')
-    Headers
+    Hardware Products
 @endsection
 
 @section('body')
@@ -18,14 +18,14 @@
             <div class="col-12">
                 <div class="card">
                     <div class="border-bottom title-part-padding">
-                        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#add-modal">
+                        <a href="{{ route('admin.hardware.create') }}" class="btn btn-success">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" class="feather feather-plus feather-sm">
                                 <line x1="12" y1="5" x2="12" y2="19"></line>
                                 <line x1="5" y1="12" x2="19" y2="12"></line>
                             </svg> Add
-                        </button>
+                        </a>
                     </div>
                     <div class="card-body">
                         {{-- <h6 class="card-subtitle mb-3">Data table example</h6> --}}
@@ -34,30 +34,29 @@
                                 <thead>
                                     <!-- start row -->
                                     <tr>
-                                        <th>Position</th>
-                                        <th>Text</th>
-                                        <th>Link</th>
+                                        <th>Image</th>
+                                        <th>Product Name</th>
+                                        <th>Price</th>
                                         <th>Action</th>
                                     </tr>
                                     <!-- end row -->
                                 </thead>
                                 <tbody>
-                                    @foreach ($headers as $header)
+                                    @foreach ($hardware_products as $hardware_product)
                                         <tr>
-                                            <td>{{ $header->id }}</td>
-                                            <td>{{ $header->text }}</td>
-                                            <td>{{ getBaseURL() . $header->link }}</td>
+                                            <td><img src="{{ asset('uploads/images/' . $hardware_product->image) }}"
+                                                    width="150px"></td>
+                                            <td>{{ $hardware_product->title }}</td>
+                                            <td>{{ $hardware_product->slug }}</td>
+                                            <td>{{ $hardware_product->price }}</td>
                                             <td>
                                                 <button class="btn waves-effect waves-light btn-primary edit-button"
-                                                    data-id="{{ $header->id }}">
+                                                    data-id="{{ $hardware_product->id }}">
                                                     Edit
                                                 </button>
 
-                                                <a href="{{ route('admin.header.edit', $header->id) }}"
-                                                    class="btn btn-info">Submenu</a>
-
                                                 <button class="btn waves-effect waves-light btn-danger delete-button"
-                                                    data-id="{{ $header->id }}">
+                                                    data-id="{{ $hardware_product->id }}">
                                                     Delete
                                                 </button>
                                             </td>

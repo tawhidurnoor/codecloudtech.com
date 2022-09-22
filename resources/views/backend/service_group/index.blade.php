@@ -205,7 +205,7 @@
                 e.preventDefault();
                 $('#danger-header-modal').modal('show');
                 var id = $(this).data('id');
-                document.getElementById("delete-form").action = "../admin/service/" + id;
+                document.getElementById("delete-form").action = "../admin/service_group/" + id;
             });
         });
 

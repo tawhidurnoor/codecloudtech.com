@@ -103,6 +103,12 @@ class ServiceGroupController extends Controller
      */
     public function destroy(ServiceGroup $serviceGroup)
     {
-        //
+        if ($serviceGroup->delete()) {
+            session()->flash('success', 'Service group deleted succesfully!');
+        } else {
+            session()->flash('warning', 'Error deleting service group!');
+        }
+
+        return redirect()->back();
     }
 }

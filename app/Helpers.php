@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Footer;
+use App\Models\HardwareProduct;
 use App\Models\Header;
 use App\Models\HeaderSubMenu;
 use App\Models\Meta;
@@ -150,5 +151,13 @@ if (!function_exists('getServices')) {
     {
         $services = Service::all();
         return $services;
+    }
+}
+
+
+if (!function_exists('getHardwareProducts')) {
+    function getHardwareProducts()
+    {
+        return HardwareProduct::all();
     }
 }

@@ -34,6 +34,7 @@
                                 <thead>
                                     <!-- start row -->
                                     <tr>
+                                        <th>Position</th>
                                         <th>Text</th>
                                         <th>Link</th>
                                         <th>Action</th>
@@ -43,6 +44,7 @@
                                 <tbody>
                                     @foreach ($headers as $head)
                                         <tr>
+                                            <td>{{ $head->id }}</td>
                                             <td>{{ $head->text }}</td>
                                             <td>{{ getBaseURL() . $head->link }}</td>
                                             <td>

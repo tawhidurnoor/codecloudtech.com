@@ -545,18 +545,18 @@
     </div>
 
 
-    {{-- <section class="services-details-area ptb-100">
+    <section class="services-details-area ptb-100">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     {!! $page->content !!}
-                    {!! $page->html !!}
+                    {{-- {!! $page->html !!} --}}
                 </div>
             </div>
         </div>
-    </section> --}}
-
-    <section class="container">
-        {!! $page->html !!}
     </section>
+
+    {{-- <section class="container">
+        {!! $page->html !!}
+    </section> --}}
 @endsection
