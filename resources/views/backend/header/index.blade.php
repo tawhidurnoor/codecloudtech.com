@@ -46,6 +46,11 @@
                                             <td>{{ $header->text }}</td>
                                             <td>{{ getBaseURL() . $header->link }}</td>
                                             <td>
+                                                <button class="btn waves-effect waves-light btn-primary edit-button"
+                                                    data-id="{{ $header->id }}">
+                                                    Edit
+                                                </button>
+
                                                 <a href="{{ route('admin.header.edit', $header->id) }}"
                                                     class="btn btn-info">Submenu</a>
 
@@ -116,20 +121,20 @@
                     </h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="{{ route('admin.service_group.store') }}" id="edit-form" method="POST">
+                <form action="" id="edit-form" method="POST">
                     @csrf
                     @method('PUT')
                     <div class="modal-body">
-                        {{-- <div class="mb-3">
+                        <div class="mb-3">
                             <label>Text</label>
-                            <input type="text" name="text" class="form-control" required>
+                            <input type="text" name="text" id="text" class="form-control" required>
                         </div>
                         <div class="mb-3">
                             <label>Link</label>
-                            <input type="text" name="link" onkeyup="getLink(this.value)" class="form-control"
-                                required>
-                            <p id="link"></p>
-                        </div> --}}
+                            <input type="text" name="link" id="linktext" onkeyup="getLink(this.value)"
+                                class="form-control">
+                            <p id="link2"></p>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-success">
@@ -192,6 +197,7 @@
             let str = val;
             let output = "{{ getBaseURL() }}" + str;
             $("#link").html('Your link will be ' + output);
+            $("#link2").html('Your link will be ' + output);
         }
     </script>
     <script>
@@ -215,14 +221,15 @@
         function getEditDetails(id) {
             $.ajax({
                 type: 'GET',
-                url: '../admin/service_group/' + id,
+                url: '../admin/header/' + id,
                 dataType: 'json',
                 success: function(response) {
-                    $('#name').val(response.name);
-                    $('#service_type').val(response.service_type);
+                    console.table(response);
+                    $('#text').val(response.text);
+                    $('#linktext').val(response.link);
                 }
             });
-            document.getElementById("edit-form").action = "../admin/service_group/" + id;
+            document.getElementById("edit-form").action = "../admin/header/" + id;
         }
     </script>
 @endsection

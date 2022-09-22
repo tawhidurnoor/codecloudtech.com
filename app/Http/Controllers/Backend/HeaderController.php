@@ -86,7 +86,7 @@ class HeaderController extends Controller
      */
     public function show(Header $header)
     {
-        //
+        return $header;
     }
 
     /**
@@ -113,7 +113,20 @@ class HeaderController extends Controller
      */
     public function update(Request $request, Header $header)
     {
-        //
+        $header->text = $request->text;
+        if ($request->link == null) {
+            $header->link = "";
+        } else {
+            $header->link = $request->link;
+        }
+
+        if ($header->save()) {
+            session()->flash('success', 'Header updated succesfully!');
+        } else {
+            session()->flash('warning', 'Error updating header!');
+        }
+
+        return redirect()->back();
     }
 
     /**
