@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\HardwareProduct;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class HardwareProductController extends Controller
 {
@@ -46,9 +47,7 @@ class HardwareProductController extends Controller
 
         if ($request->hasFile('image')) {
             $file = $request->file('image');
-            $file_original_name = $file->getClientOriginalName();
             $file_extension = $file->getClientOriginalExtension();
-            $file_size = $file->getSize();
 
             //naming file
             $filename = time() . '.' . $file_extension;
@@ -77,6 +76,7 @@ class HardwareProductController extends Controller
      */
     public function show(HardwareProduct $hardwareProduct)
     {
+        return $hardwareProduct;
         //
     }
 
@@ -86,9 +86,12 @@ class HardwareProductController extends Controller
      * @param  \App\Models\HardwareProduct  $hardwareProduct
      * @return \Illuminate\Http\Response
      */
-    public function edit(HardwareProduct $hardwareProduct)
+    public function edit($hardwareProduct)
     {
-        //
+        $hardwareProduct = HardwareProduct::findOrFail($hardwareProduct);
+        return view('backend.hardware_products.edit', [
+            'hardwareProduct' => $hardwareProduct,
+        ]);
     }
 
     /**
@@ -100,7 +103,40 @@ class HardwareProductController extends Controller
      */
     public function update(Request $request, HardwareProduct $hardwareProduct)
     {
-        //
+        $hardwareProduct = HardwareProduct::findOrFail($request->id);
+        $hardwareProduct->title = $request->title;
+        $hardwareProduct->price = $request->price;
+        $hardwareProduct->content = $request->content;
+
+        if ($request->hasFile('image')) {
+
+            if (File::exists(public_path('uploads/images/' . $hardwareProduct->image))) {
+                // dd('File does exists.');
+                File::delete(public_path('uploads/images/' . $hardwareProduct->image));
+            } else {
+                // dd('File does not exists.');
+            }
+
+            $file = $request->file('image');
+            $file_extension = $file->getClientOriginalExtension();
+
+            //naming file
+            $filename = time() . '.' . $file_extension;
+            $file->move('uploads/images/', $filename);
+
+
+            $hardwareProduct->image = $filename;
+        }
+
+        $hardwareProduct->slug = $request->slug;
+
+        if ($hardwareProduct->save()) {
+            session()->flash('success', 'Product updated succesfully!');
+        } else {
+            session()->flash('warning', 'Error updating page!');
+        }
+
+        return redirect()->back();
     }
 
     /**

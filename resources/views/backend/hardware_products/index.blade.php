@@ -50,10 +50,10 @@
                                             <td>{{ $hardware_product->slug }}</td>
                                             <td>{{ $hardware_product->price }}</td>
                                             <td>
-                                                <button class="btn waves-effect waves-light btn-primary edit-button"
-                                                    data-id="{{ $hardware_product->id }}">
+                                                <a href="{{ route('admin.hardware.edit', $hardware_product->id) }}"
+                                                    class="btn waves-effect waves-light btn-primary">
                                                     Edit
-                                                </button>
+                                                </a>
 
                                                 <button class="btn waves-effect waves-light btn-danger delete-button"
                                                     data-id="{{ $hardware_product->id }}">
@@ -73,85 +73,6 @@
 @endsection
 
 @section('modals')
-    {{-- add modal --}}
-    <div id="add-modal" class="modal fade" tabindex="-1" aria-labelledby="add-modal" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header d-flex align-items-center">
-                    <h4 class="modal-title" id="myModalLabel">
-                        Add Header Item
-                    </h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <form action="{{ route('admin.header.store') }}" method="POST">
-                    @csrf
-                    <div class="modal-body">
-                        <div class="mb-3">
-                            <label>Text</label>
-                            <input type="text" name="text" class="form-control" required>
-                        </div>
-                        <div class="mb-3">
-                            <label>Link</label>
-                            <input type="text" name="link" onkeyup="getLink(this.value)" class="form-control">
-                            <p id="link"></p>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-success">
-                            Save
-                        </button>
-                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
-                            Close
-                        </button>
-                    </div>
-                </form>
-            </div>
-            <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-    </div>
-
-
-    {{-- edit modal --}}
-    <div id="edit-modal" class="modal fade" tabindex="-1" aria-labelledby="add-modal" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header d-flex align-items-center">
-                    <h4 class="modal-title" id="myModalLabel">
-                        Add Header
-                    </h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <form action="" id="edit-form" method="POST">
-                    @csrf
-                    @method('PUT')
-                    <div class="modal-body">
-                        <div class="mb-3">
-                            <label>Text</label>
-                            <input type="text" name="text" id="text" class="form-control" required>
-                        </div>
-                        <div class="mb-3">
-                            <label>Link</label>
-                            <input type="text" name="link" id="linktext" onkeyup="getLink(this.value)"
-                                class="form-control">
-                            <p id="link2"></p>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-success">
-                            Save
-                        </button>
-                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
-                            Close
-                        </button>
-                    </div>
-                </form>
-            </div>
-            <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-    </div>
-
     {{-- delete modal --}}
     <div id="danger-header-modal" class="modal fade" tabindex="-1" aria-labelledby="danger-header-modalLabel"
         aria-hidden="true">
@@ -193,23 +114,9 @@
     <script src="{{ asset('assets_backend/dist/js/pages/datatable/custom-datatable.js') }}"></script>
     <script src="{{ asset('assets_backend/dist/js/pages/datatable/datatable-basic.init.js') }}"></script>
 
-    <script>
-        function getLink(val) {
-            let str = val;
-            let output = "{{ getBaseURL() }}" + str;
-            $("#link").html('Your link will be ' + output);
-            $("#link2").html('Your link will be ' + output);
-        }
-    </script>
+
     <script>
         $(function() {
-            $(document).on('click', '.edit-button', function(e) {
-                e.preventDefault();
-                $('#edit-modal').modal('show');
-                var id = $(this).data('id');
-                getEditDetails(id);
-            });
-
             $(document).on('click', '.delete-button', function(e) {
                 e.preventDefault();
                 $('#danger-header-modal').modal('show');
@@ -217,20 +124,5 @@
                 document.getElementById("delete-form").action = "../admin/service/" + id;
             });
         });
-
-
-        function getEditDetails(id) {
-            $.ajax({
-                type: 'GET',
-                url: '../admin/header/' + id,
-                dataType: 'json',
-                success: function(response) {
-                    console.table(response);
-                    $('#text').val(response.text);
-                    $('#linktext').val(response.link);
-                }
-            });
-            document.getElementById("edit-form").action = "../admin/header/" + id;
-        }
     </script>
 @endsection

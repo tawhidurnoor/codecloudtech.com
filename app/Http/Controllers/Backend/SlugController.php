@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
+use App\Models\HardwareProduct;
 use App\Models\Page;
 use App\Models\Service;
 use Illuminate\Http\Request;
@@ -31,6 +32,7 @@ class SlugController extends Controller
     {
         $slug_counter = 0;
 
+        //page
         $page_counter = Page::where('slug', $request->slug);
 
         if (isset($request->page_id)) {
@@ -41,6 +43,7 @@ class SlugController extends Controller
         $slug_counter += $page_counter;
 
 
+        //service
         $service_counter = Service::where('slug', $request->slug);
 
         if (isset($request->service_id)) {
@@ -49,6 +52,18 @@ class SlugController extends Controller
 
         $service_counter = $service_counter->count();
         $slug_counter += $service_counter;
+
+
+        //hardware product
+        $product_counter = HardwareProduct::where('slug', $request->slug);
+
+        if (isset($request->product_id)) {
+            $product_counter = $product_counter->where('id', '!=', $request->product_id);
+        }
+
+        $product_counter = $product_counter->count();
+        $slug_counter += $product_counter;
+
 
         if ($slug_counter == 0) {
             return "OK";

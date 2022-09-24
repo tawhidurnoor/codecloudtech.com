@@ -32,11 +32,16 @@ class HomeController extends Controller
         ]);
     }
 
-    public function hardwareProducts()
+    public function hardwareProducts(Request $request)
     {
-        $hardware_products = HardwareProduct::all();
+        if (isset($request->min) && isset($request->max)) {
+            $hardware_products = HardwareProduct::where('price', '>=', $request->min)->where('price', '<=', $request->max)->get();
+        } else {
+            $hardware_products = HardwareProduct::all();
+        }
         return view('frontend.hardware_products', [
-            'hardware_products' => $hardware_products
+            'hardware_products' => $hardware_products,
+            'request' => $request,
         ]);
     }
 
