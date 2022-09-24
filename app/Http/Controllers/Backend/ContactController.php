@@ -86,6 +86,12 @@ class ContactController extends Controller
      */
     public function destroy(Contact $contact)
     {
-        //
+        if ($contact->delete()) {
+            session()->flash('success', 'Query deleted succesfully!');
+        } else {
+            session()->flash('warning', 'Error deleting query!');
+        }
+
+        return redirect()->back();
     }
 }

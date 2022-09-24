@@ -67,24 +67,20 @@
     <div id="details-modal" class="modal fade" tabindex="-1" aria-labelledby="details-modal" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form action="" id="delete-form" method="POST">
-                    @csrf
-                    @method('DELETE')
-                    <div class="modal-header modal-colored-header bg-info text-white">
-                        <h4 class="modal-title" id="details-modal">
-                            Query Details
-                        </h4>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p id="details"></p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">
-                            Close
-                        </button>
-                    </div>
-                </form>
+                <div class="modal-header modal-colored-header bg-info text-white">
+                    <h4 class="modal-title" id="details-modal">
+                        Query Details
+                    </h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="details"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                </div>
             </div>
             <!-- /.modal-content -->
         </div>
@@ -146,7 +142,8 @@
                 e.preventDefault();
                 $('#danger-header-modal').modal('show');
                 var id = $(this).data('id');
-                document.getElementById("delete-form").action = "../admin/service/" + id;
+                document.getElementById("delete-form").action = "../admin/contact/" + id;
+                console.log("../admin/contact/" + id);
             });
         });
 
