@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Contact;
 use App\Models\Footer;
 use App\Models\HardwareProduct;
 use App\Models\Header;
@@ -159,5 +160,12 @@ if (!function_exists('getHardwareProducts')) {
     function getHardwareProducts()
     {
         return HardwareProduct::all();
+    }
+}
+
+if (!function_exists('unreadQueryCount')) {
+    function unreadQueryCount()
+    {
+        return Contact::where('is_opened', 0)->count();
     }
 }

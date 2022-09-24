@@ -15,7 +15,10 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
+        $contacts = Contact::all();
+        return view('backend.contact.index', [
+            'contacts' => $contacts,
+        ]);
     }
 
     /**
@@ -47,7 +50,9 @@ class ContactController extends Controller
      */
     public function show(Contact $contact)
     {
-        //
+        $contact->is_opened = 1;
+        $contact->save();
+        return $contact;
     }
 
     /**
