@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
 use App\Models\HardwareProduct;
 use App\Models\Page;
 use App\Models\Service;
@@ -67,8 +68,24 @@ class HomeController extends Controller
         }
     }
 
-    public function contact()
+    public function contact(Request $request)
     {
-        return view('frontend.contact');
+        if (isset($request->name)) {
+            $contact = new Contact();
+            $contact->name = $request->name;
+            $contact->email = $request->email;
+            $contact->phone = $request->phone;
+            $contact->subject = $request->subject;
+            $contact->message = $request->message;
+            $contact->save();
+
+            // $saved = 1;
+            // return view('frontend.contact', [
+            //     'saved' => $saved,
+            // ]);
+            return 'success';
+        } else {
+            return view('frontend.contact');
+        }
     }
 }
