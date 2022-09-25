@@ -65,6 +65,18 @@
             overflow: hidden;
             position: relative;
         }
+
+        .img-fit {
+            max-height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .img-same-size {
+            width: 200px !important;
+            height: 200px !important;
+            object-fit: cover !important;
+        }
     </style>
 @endsection
 
@@ -127,8 +139,8 @@
                                 <figure class="card card-product-grid">
                                     <div class="img-wrap">
                                         <span class="badge badge-danger"> NEW </span>
-                                        <img src="{{ asset('uploads/images/' . $hardware_product->image) }}" height="150px"
-                                            class="img-fluid">
+                                        <img src="{{ asset('uploads/images/' . $hardware_product->image) }}"
+                                            class="img-same-size">
                                     </div> <!-- img-wrap.// -->
                                     <figcaption class="info-wrap">
                                         <div class="fix-height">
