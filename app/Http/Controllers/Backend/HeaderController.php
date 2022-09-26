@@ -16,9 +16,10 @@ class HeaderController extends Controller
      */
     public function index()
     {
-        $headers = Header::all();
+        // $headers = Header::all();
+        $header = Header::findOrFail(1);
         return view('backend.header.index', [
-            'headers' => $headers,
+            'header' => $header,
         ]);
     }
 
@@ -47,6 +48,9 @@ class HeaderController extends Controller
         } else {
             $header->link = $request->link;
         }
+
+        $header = Header::findOrFail(1);
+        $header->header_content = $request->header_content;
 
         if ($header->save()) {
             session()->flash('success', 'Header created succesfully!');
@@ -120,6 +124,8 @@ class HeaderController extends Controller
             $header->link = $request->link;
         }
 
+        $header->header_content = $request->header_content;
+
         if ($header->save()) {
             session()->flash('success', 'Header updated succesfully!');
         } else {
@@ -127,6 +133,27 @@ class HeaderController extends Controller
         }
 
         return redirect()->back();
+    }
+
+    public function updateHeaderContent(Request $request)
+    {
+        $header_content = $request->header_content;
+        $header = Header::findOrFail(1);
+        $header->header_content = $header_content;
+
+        if ($header->save()) {
+            session()->flash('success', 'Header created succesfully!');
+        } else {
+            session()->flash('warning', 'Error creating header!');
+        }
+
+        return redirect()->back();
+    }
+
+    public function getdateHeaderContent()
+    {
+        $header = Header::findOrFail(1);
+        return json_encode($header->header_content);
     }
 
     /**

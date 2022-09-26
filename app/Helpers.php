@@ -76,7 +76,8 @@ if (!function_exists('getMetaImage')) {
 if (!function_exists('getHeader')) {
     function getHeader()
     {
-        return Header::all();
+        // return Header::all();
+        return json_encode(Header::findOrFail(1)->header_content);
     }
 }
 

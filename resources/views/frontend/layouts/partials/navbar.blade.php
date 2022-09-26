@@ -60,43 +60,7 @@
                             </div>
                         </li>
 
-                        {{-- <li class="nav-item" style="padding-top: 20px !important;">
-                            <a href="{{ route('index') }}" class="nav-link active">Home</a>
-                        </li>
-
-                        @foreach (getServiceGroups() as $serviceGroup)
-                            <li class="nav-item" style="padding-top: 20px !important;">
-                                <a href="#" class="nav-link dropdown-toggle">{{ $serviceGroup->name }}</a>
-                                <ul class="dropdown-menu">
-                                    @foreach (getServicesByServiceGroup($serviceGroup->id) as $service_list)
-                                        <li class="nav-item">
-                                            <a href="{{ route('slug.details', $service_list->slug) }}"
-                                                class="nav-link">{{ $service_list->title }}</a>
-                                        </li>
-                                    @endforeach
-                                </ul>
-                            </li>
-                        @endforeach
-
-                        @if (count(getHardwareProducts()) > 0)
-
-                            <li class="nav-item" style="padding-top: 20px !important;">
-                                <a href="{{ route('hardware_products') }}" class="nav-link">Hardware Products</a>
-                            </li>
-                        @endif
-
-                        <li class="nav-item" style="padding-top: 20px !important;">
-                            <a href="{{ route('blog.index') }}" class="nav-link">Blog</a>
-                        </li>
-
-                        <li class="nav-item" style="padding-top: 20px !important;">
-                            <a href="/about" class="nav-link">About</a>
-                        </li>
-
-                        <li class="nav-item" style="padding-top: 20px !important;">
-                            <a href="{{ route('contact') }}" class="nav-link">Contact</a>
-                        </li> --}}
-
+                        {{-- 
                         @foreach (getHeader() as $header)
                             @if (count(getSubMenu($header->id)) > 0)
                                 <li class="nav-item" style="padding-top: 20px !important;">
@@ -116,7 +80,8 @@
                                         class="nav-link">{{ $header->text }}</a>
                                 </li>
                             @endif
-                        @endforeach
+                        @endforeach --}}
+
 
                     </ul>
                 </div>

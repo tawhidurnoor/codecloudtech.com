@@ -43,6 +43,8 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::put('/logo_favicon_information', [App\Http\Controllers\Backend\SetupController::class, 'updateLogoAndFavicon'])->name('setup.logo.favicon.update');
 
     Route::post('/header/sub_menu/store', [App\Http\Controllers\Backend\HeaderController::class, 'subMenuStore'])->name('header.submenu.store');
+    Route::get('/header/get_header_content', [App\Http\Controllers\Backend\HeaderController::class, 'getdateHeaderContent'])->name('header.get_content');
+    Route::get('/header/update_header_content', [App\Http\Controllers\Backend\HeaderController::class, 'updateHeaderContent'])->name('header.update_content');
     Route::resource('header', App\Http\Controllers\Backend\HeaderController::class);
 
     Route::resource('footer', App\Http\Controllers\Backend\FooterController::class);

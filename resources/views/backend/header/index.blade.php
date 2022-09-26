@@ -5,7 +5,30 @@
 @endsection
 
 @section('styles')
-    <link href="{{ asset('assets_backend/libs/datatables.net-bs4/css/dataTables.bootstrap4.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet"
+        href="{{ asset('assets_backend/Drag-Drop-Menu-Builder-For-Bootstrap/bootstrap-iconpicker/css/bootstrap-iconpicker.min.css') }}">
+
+    <style type="text/css">
+        .container {
+            margin: 150px auto;
+        }
+
+        body {
+            background-color: #fafafa;
+        }
+
+        ol.example li.placeholder:before {
+            position: absolute;
+        }
+
+        .list-group-item>div {
+            margin-bottom: 5px;
+        }
+    </style>
+    <script src="{{ asset('assets_backend/Drag-Drop-Menu-Builder-For-Bootstrap/jquery-3.6.0.js') }}"></script>
 @endsection
 
 @section('page-title')
@@ -17,55 +40,100 @@
         <div class="row">
             <div class="col-12">
                 <div class="card">
-                    <div class="border-bottom title-part-padding">
-                        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#add-modal">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="feather feather-plus feather-sm">
-                                <line x1="12" y1="5" x2="12" y2="19"></line>
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                            </svg> Add
-                        </button>
-                    </div>
                     <div class="card-body">
                         {{-- <h6 class="card-subtitle mb-3">Data table example</h6> --}}
-                        <div class="table-responsive m-t-40">
-                            <table id="config-table" class="table display table-bordered table-striped no-wrap">
-                                <thead>
-                                    <!-- start row -->
-                                    <tr>
-                                        <th>Position</th>
-                                        <th>Text</th>
-                                        <th>Link</th>
-                                        <th>Action</th>
-                                    </tr>
-                                    <!-- end row -->
-                                </thead>
-                                <tbody>
-                                    @foreach ($headers as $header)
-                                        <tr>
-                                            <td>{{ $header->id }}</td>
-                                            <td>{{ $header->text }}</td>
-                                            <td>{{ getBaseURL() . $header->link }}</td>
-                                            <td>
-                                                <button class="btn waves-effect waves-light btn-primary edit-button"
-                                                    data-id="{{ $header->id }}">
-                                                    Edit
-                                                </button>
 
-                                                <a href="{{ route('admin.header.edit', $header->id) }}"
-                                                    class="btn btn-info">Submenu</a>
 
-                                                <button class="btn waves-effect waves-light btn-danger delete-button"
-                                                    data-id="{{ $header->id }}">
-                                                    Delete
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
+
+
+
+
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="card mb-3">
+                                    <div class="card-header">
+                                        <h5 class="float-left">Menu</h5>
+                                        <div class="float-right">
+                                            <button id="btnReload" type="button" class="btn btn-outline-secondary">
+                                                <i class="fa fa-play"></i> Reset</button>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <ul id="myEditor" class="sortableLists list-group">
+                                        </ul>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="float-left">
+                                    <button id="btnOutput" type="button" class="btn btn-success"><i
+                                            class="fas fa-check-square"></i> Save</button>
+                                </div>
+                                {{-- <div class="card">
+                                    <div class="card-header">JSON Output
+                                        <div class="float-right">
+                                            <button id="btnOutput" type="button" class="btn btn-success"><i
+                                                    class="fas fa-check-square"></i> Output</button>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <textarea id="out" class="form-control" cols="50" rows="10"></textarea>
+                                        </div>
+                                    </div>
+                                </div> --}}
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card border-primary mb-3">
+                                    <div class="card-header bg-primary text-white">Edit item</div>
+                                    <div class="card-body">
+                                        <form id="frmEdit" class="form-horizontal">
+                                            <div class="form-group">
+                                                <label for="text">Text</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control item-menu" name="text"
+                                                        id="text" placeholder="Text">
+                                                    <div class="input-group-append">
+                                                        <button type="button" id="myEditor_icon"
+                                                            class="btn btn-outline-secondary"></button>
+                                                    </div>
+                                                </div>
+                                                <input type="hidden" name="icon" class="item-menu">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="href">URL</label>
+                                                <input type="text" class="form-control item-menu" id="href"
+                                                    name="href" placeholder="URL">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="target">Target</label>
+                                                <select name="target" id="target" class="form-control item-menu">
+                                                    <option value="_self">Self</option>
+                                                    <option value="_blank">Blank</option>
+                                                    <option value="_top">Top</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="title">Tooltip</label>
+                                                <input type="text" name="title" class="form-control item-menu"
+                                                    id="title" placeholder="Tooltip">
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="card-footer">
+                                        <button type="button" id="btnUpdate" class="btn btn-primary" disabled><i
+                                                class="fas fa-sync-alt"></i> Update</button>
+                                        <button type="button" id="btnAdd" class="btn btn-success"><i
+                                                class="fas fa-plus"></i>
+                                            Add</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
+
+
+
+
                     </div>
                 </div>
             </div>
@@ -74,126 +142,9 @@
 @endsection
 
 @section('modals')
-    {{-- add modal --}}
-    <div id="add-modal" class="modal fade" tabindex="-1" aria-labelledby="add-modal" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header d-flex align-items-center">
-                    <h4 class="modal-title" id="myModalLabel">
-                        Add Header Item
-                    </h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <form action="{{ route('admin.header.store') }}" method="POST">
-                    @csrf
-                    <div class="modal-body">
-                        <div class="mb-3">
-                            <label>Text</label>
-                            <input type="text" name="text" class="form-control" required>
-                        </div>
-                        <div class="mb-3">
-                            <label>Link</label>
-                            <input type="text" name="link" onkeyup="getLink(this.value)" class="form-control">
-                            <p id="link"></p>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-success">
-                            Save
-                        </button>
-                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
-                            Close
-                        </button>
-                    </div>
-                </form>
-            </div>
-            <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-    </div>
-
-
-    {{-- edit modal --}}
-    <div id="edit-modal" class="modal fade" tabindex="-1" aria-labelledby="add-modal" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header d-flex align-items-center">
-                    <h4 class="modal-title" id="myModalLabel">
-                        Add Header
-                    </h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <form action="" id="edit-form" method="POST">
-                    @csrf
-                    @method('PUT')
-                    <div class="modal-body">
-                        <div class="mb-3">
-                            <label>Text</label>
-                            <input type="text" name="text" id="text" class="form-control" required>
-                        </div>
-                        <div class="mb-3">
-                            <label>Link</label>
-                            <input type="text" name="link" id="linktext" onkeyup="getLink(this.value)"
-                                class="form-control">
-                            <p id="link2"></p>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-success">
-                            Save
-                        </button>
-                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
-                            Close
-                        </button>
-                    </div>
-                </form>
-            </div>
-            <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-    </div>
-
-    {{-- delete modal --}}
-    <div id="danger-header-modal" class="modal fade" tabindex="-1" aria-labelledby="danger-header-modalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form action="" id="delete-form" method="POST">
-                    @csrf
-                    @method('DELETE')
-                    <div class="modal-header modal-colored-header bg-danger text-white">
-                        <h4 class="modal-title" id="danger-header-modalLabel">
-                            Are you sure?
-                        </h4>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <h5 class="mt-0">Are you sure want to delete this record?</h5>
-                        <p>
-                            You are about to delete something This process can't be undone.
-                        </p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">
-                            Close
-                        </button>
-                        <button type="submit" class="btn btn-light-danger text-danger font-weight-medium">
-                            Delete
-                        </button>
-                    </div>
-                </form>
-            </div>
-            <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-    </div>
 @endsection
 
 @section('scripts')
-    <script src="{{ asset('assets_backend/libs/datatables/media/js/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('assets_backend/dist/js/pages/datatable/custom-datatable.js') }}"></script>
-    <script src="{{ asset('assets_backend/dist/js/pages/datatable/datatable-basic.init.js') }}"></script>
-
     <script>
         function getLink(val) {
             let str = val;
@@ -202,36 +153,176 @@
             $("#link2").html('Your link will be ' + output);
         }
     </script>
+
+
+
+    <script src='{{ asset('assets_backend/Drag-Drop-Menu-Builder-For-Bootstrap/jquery-menu-editor.js') }}'></script>
+    <script type="text/javascript"
+        src="{{ asset('assets_backend/Drag-Drop-Menu-Builder-For-Bootstrap/bootstrap-iconpicker/js/iconset/fontawesome5-3-1.min.js') }}">
+    </script>
+    <script type="text/javascript"
+        src="{{ asset('assets_backend/Drag-Drop-Menu-Builder-For-Bootstrap/bootstrap-iconpicker/js/bootstrap-iconpicker.min.js') }}">
+    </script>
     <script>
-        $(function() {
-            $(document).on('click', '.edit-button', function(e) {
-                e.preventDefault();
-                $('#edit-modal').modal('show');
-                var id = $(this).data('id');
-                getEditDetails(id);
-            });
-
-            $(document).on('click', '.delete-button', function(e) {
-                e.preventDefault();
-                $('#danger-header-modal').modal('show');
-                var id = $(this).data('id');
-                document.getElementById("delete-form").action = "../admin/service/" + id;
-            });
-        });
-
-
-        function getEditDetails(id) {
+        jQuery(document).ready(function() {
+            // menu items
+            var arrayjson = null;
+            //getting menu items from database
             $.ajax({
+                url: "{{ route('admin.header.get_content') }}",
                 type: 'GET',
-                url: '../admin/header/' + id,
-                dataType: 'json',
-                success: function(response) {
-                    console.table(response);
-                    $('#text').val(response.text);
-                    $('#linktext').val(response.link);
+                dataType: 'json', // added data type
+                success: function(res) {
+                    console.log(res);
+                    arrayjson = res;
                 }
             });
-            document.getElementById("edit-form").action = "../admin/header/" + id;
+
+            // var arrayjson = [{
+            //     "href": "http://home.com",
+            //     "icon": "fas fa-home",
+            //     "text": "Home",
+            //     "target": "_top",
+            //     "title": "My Home"
+            // }, {
+            //     "icon": "fas fa-chart-bar",
+            //     "text": "Opcion2"
+            // }, {
+            //     "icon": "fas fa-bell",
+            //     "text": "Opcion3"
+            // }, {
+            //     "icon": "fas fa-crop",
+            //     "text": "Opcion4"
+            // }, {
+            //     "icon": "fas fa-flask",
+            //     "text": "Opcion5"
+            // }, {
+            //     "icon": "fas fa-map-marker",
+            //     "text": "Opcion6"
+            // }, {
+            //     "icon": "fas fa-search",
+            //     "text": "Opcion7",
+            //     "children": [{
+            //         "icon": "fas fa-plug",
+            //         "text": "Opcion7-1",
+            //         "children": [{
+            //             "icon": "fas fa-filter",
+            //             "text": "Opcion7-1-1"
+            //         }]
+            //     }]
+            // }];
+
+            // icon picker options
+            var iconPickerOptions = {
+                searchText: "Buscar...",
+                labelHeader: "{0}/{1}"
+            };
+            // sortable list options
+            var sortableListOptions = {
+                placeholderCss: {
+                    'background-color': "#cccccc"
+                }
+            };
+
+            var editor = new MenuEditor('myEditor', {
+                listOptions: sortableListOptions,
+                iconPicker: iconPickerOptions
+            });
+            editor.setForm($('#frmEdit'));
+            editor.setUpdateButton($('#btnUpdate'));
+
+
+
+            $('#btnReload').on('click', function() {
+                editor.setData(arrayjson);
+            });
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': "{{ csrf_token() }}"
+                }
+            });
+
+            $('#btnOutput').on('click', function() {
+                var str = editor.getString();
+                $("#out").text(str);
+
+                $.ajax({
+                    url: "{{ route('admin.header.update_content') }}",
+                    type: 'GET',
+                    data: {
+                        "header_content": str
+                    },
+                    // dataType: 'json', // added data type
+                    success: function(res) {
+                        console.log(res);
+                        toastr.success(
+                            "Header saved successfully!",
+                            "Success!", {
+                                showMethod: "slideDown",
+                                hideMethod: "slideUp",
+                                timeOut: 3000
+                            }
+                        );
+                    }
+                });
+
+
+                // const xhr = new XMLHttpRequest();
+
+                // xhr.open('GET', '{{ route('admin.header.update_content') }}');
+                // xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                // console.log('csrf-token={{ csrf_token() }}&header_content=' + str);
+                // xhr.send('header_content=' + str + '&csrf-token={{ csrf_token() }}');
+            });
+
+            $("#btnUpdate").click(function() {
+                editor.update();
+            });
+
+            $('#btnAdd').click(function() {
+                editor.add();
+            });
+            /* ====================================== */
+
+            /** PAGE ELEMENTS **/
+            $('[data-toggle="tooltip"]').tooltip();
+            $.getJSON("https://api.github.com/repos/davicotico/jQuery-Menu-Editor", function(data) {
+                $('#btnStars').html(data.stargazers_count);
+                $('#btnForks').html(data.forks_count);
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-36251023-1']);
+        _gaq.push(['_setDomainName', 'jqueryscript.net']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') +
+                '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <script>
+        try {
+            fetch(new Request("https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js", {
+                method: 'HEAD',
+                mode: 'no-cors'
+            })).then(function(response) {
+                return true;
+            }).catch(function(e) {
+                var carbonScript = document.createElement("script");
+                carbonScript.src = "//cdn.carbonads.com/carbon.js?serve=CK7DKKQU&placement=wwwjqueryscriptnet";
+                carbonScript.id = "_carbonads_js";
+                document.getElementById("carbon-block").appendChild(carbonScript);
+            });
+        } catch (error) {
+            console.log(error);
         }
     </script>
 @endsection
