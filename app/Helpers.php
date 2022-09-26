@@ -77,7 +77,7 @@ if (!function_exists('getHeader')) {
     function getHeader()
     {
         // return Header::all();
-        return json_encode(Header::findOrFail(1)->header_content);
+        return json_decode(Header::findOrFail(1)->header_content, true);
     }
 }
 

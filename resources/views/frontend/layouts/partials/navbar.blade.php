@@ -60,6 +60,30 @@
                             </div>
                         </li>
 
+                        @foreach (getHeader() as $header)
+                            @isset($header['children'])
+                          
+                            <li class="nav-item" style="padding-top: 20px !important;">
+                                <a href="{{ getBaseUrl() . $header['href'] }}" class="nav-link dropdown-toggle">{{$header['text']}}</a>
+                                <ul class="dropdown-menu">
+                                    @foreach ($header['children'] as $header_children)
+                                        <li class="nav-item">
+                                            <a href="{{ getBaseUrl() . $header_children['href'] }}"
+                                                class="nav-link">{{$header_children['text']}}</a>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </li>
+
+
+                            @else
+                            <li class="nav-item" style="padding-top: 20px !important;">
+                                <a href="{{ getBaseUrl() . $header['href'] }}"
+                                    class="nav-link">{{$header['text']}}</a>
+                            </li>
+                            @endisset
+                        @endforeach
+
                         {{-- 
                         @foreach (getHeader() as $header)
                             @if (count(getSubMenu($header->id)) > 0)
