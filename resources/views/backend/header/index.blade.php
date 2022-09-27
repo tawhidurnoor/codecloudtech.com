@@ -55,7 +55,7 @@
                                         <h5 class="float-left">Menu</h5>
                                         <div class="float-right">
                                             <button id="btnReload" type="button" class="btn btn-outline-secondary">
-                                                <i class="fa fa-play"></i> Reset</button>
+                                                <i class="fa fa-play"></i> Reload</button>
                                         </div>
                                     </div>
                                     <div class="card-body">
@@ -165,6 +165,14 @@
     </script>
     <script>
         jQuery(document).ready(function() {
+
+            var editor = new MenuEditor('myEditor', {
+                listOptions: sortableListOptions,
+                iconPicker: iconPickerOptions
+            });
+            editor.setForm($('#frmEdit'));
+            editor.setUpdateButton($('#btnUpdate'));
+
             // menu items
             var arrayjson = null;
             //getting menu items from database
@@ -175,6 +183,7 @@
                 success: function(res) {
                     console.log(res);
                     arrayjson = res;
+                    editor.setData(arrayjson);
                 }
             });
 
@@ -223,14 +232,6 @@
                     'background-color': "#cccccc"
                 }
             };
-
-            var editor = new MenuEditor('myEditor', {
-                listOptions: sortableListOptions,
-                iconPicker: iconPickerOptions
-            });
-            editor.setForm($('#frmEdit'));
-            editor.setUpdateButton($('#btnUpdate'));
-
 
 
             $('#btnReload').on('click', function() {

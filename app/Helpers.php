@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\URL;
 if (!function_exists('geteURL')) {
     function getURL()
     {
-        return  URL::current();
+        return URL::current();
     }
 }
 
