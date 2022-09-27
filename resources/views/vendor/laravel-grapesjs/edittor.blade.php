@@ -82,6 +82,7 @@
     @foreach ($editorConfig->getScripts() as $script)
         <script src="{{ $script }}"></script>
     @endforeach
+
 </body>
 
 </html>

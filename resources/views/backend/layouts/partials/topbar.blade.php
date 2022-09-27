@@ -100,7 +100,7 @@
                         href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <img src="{{ asset('assets_backend/images/users/2.jpg') }}" alt="user"
                             class="rounded-circle" width="40" />
-                        <span class="ms-1 font-weight-medium d-none d-sm-inline-block">Jonathan Doe
+                        <span class="ms-1 font-weight-medium d-none d-sm-inline-block">{{ auth()->user()->name }}
                             <i data-feather="chevron-down" class="feather-sm"></i></span>
                     </a>
                     <div
@@ -128,11 +128,11 @@
                                     class="rounded-circle" width="60" />
                             </div>
                             <div class="ms-2">
-                                <h4 class="mb-0 text-white">Marken Doe</h4>
-                                <p class="mb-0">deo@gmail.com</p>
+                                <h4 class="mb-0 text-white">{{ auth()->user()->name }}</h4>
+                                <p class="mb-0">{{ auth()->user()->email }}</p>
                             </div>
                         </div>
-                        <a class="dropdown-item" href="#"><i data-feather="user"
+                        {{-- <a class="dropdown-item" href="#"><i data-feather="user"
                                 class="feather-sm text-info me-1 ms-1"></i>
                             My Profile</a>
                         <a class="dropdown-item" href="#"><i data-feather="credit-card"
@@ -153,7 +153,7 @@
                         <div class="p-2">
                             <a href="#" class="btn d-block w-100 btn-primary rounded-pill">View
                                 Profile</a>
-                        </div>
+                        </div> --}}
                     </div>
                 </li>
                 <!-- ============================================================== -->

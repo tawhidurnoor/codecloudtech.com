@@ -556,7 +556,7 @@
         </div>
     </section>
 
-    {{-- <section class="container">
+    <section class="container">
         {!! $page->html !!}
-    </section> --}}
+    </section>
 @endsection
