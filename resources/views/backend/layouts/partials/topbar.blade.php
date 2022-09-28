@@ -132,10 +132,15 @@
                                 <p class="mb-0">{{ auth()->user()->email }}</p>
                             </div>
                         </div>
-                        {{-- <a class="dropdown-item" href="#"><i data-feather="user"
-                                class="feather-sm text-info me-1 ms-1"></i>
-                            My Profile</a>
-                        <a class="dropdown-item" href="#"><i data-feather="credit-card"
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+                            <i data-feather="log-out" class="feather-sm text-danger me-1 ms-1"></i>
+                            Logout</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                        {{-- <a class="dropdown-item" href="#"><i data-feather="credit-card"
                                 class="feather-sm text-info me-1 ms-1"></i>
                             My Balance</a>
                         <a class="dropdown-item" href="#"><i data-feather="mail"
