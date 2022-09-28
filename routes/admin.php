@@ -54,5 +54,9 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
 
     Route::get('/check_slug', [App\Http\Controllers\Backend\SlugController::class, 'checkSlug']);
 
+    Route::get('/profile', [App\Http\Controllers\Backend\ProfileController::class, 'index'])->name('profile.index');
+    Route::put('/profile/update', [App\Http\Controllers\Backend\ProfileController::class, 'update'])->name('profile.update');
+    Route::put('/profile/password/update', [App\Http\Controllers\Backend\ProfileController::class, 'passwordUpdate'])->name('profile.password.update');
+
     Route::resource('contact', App\Http\Controllers\Backend\ContactController::class);
 });

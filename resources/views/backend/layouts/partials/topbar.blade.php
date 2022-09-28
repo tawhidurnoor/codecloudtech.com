@@ -132,6 +132,9 @@
                                 <p class="mb-0">{{ auth()->user()->email }}</p>
                             </div>
                         </div>
+
+
+
                         <a class="dropdown-item" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
@@ -140,25 +143,10 @@
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
                         </form>
-                        {{-- <a class="dropdown-item" href="#"><i data-feather="credit-card"
-                                class="feather-sm text-info me-1 ms-1"></i>
-                            My Balance</a>
-                        <a class="dropdown-item" href="#"><i data-feather="mail"
-                                class="feather-sm text-success me-1 ms-1"></i>
-                            Inbox</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#"><i data-feather="settings"
-                                class="feather-sm text-warning me-1 ms-1"></i>
-                            Account Setting</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#"><i data-feather="log-out"
-                                class="feather-sm text-danger me-1 ms-1"></i>
-                            Logout</a>
-                        <div class="dropdown-divider"></div>
-                        <div class="p-2">
-                            <a href="#" class="btn d-block w-100 btn-primary rounded-pill">View
-                                Profile</a>
-                        </div> --}}
+
+                        <a href="{{ route('admin.profile.index') }}"
+                            class="btn d-block w-100 btn-primary rounded-pill">View
+                            Profile</a>
                     </div>
                 </li>
                 <!-- ============================================================== -->
