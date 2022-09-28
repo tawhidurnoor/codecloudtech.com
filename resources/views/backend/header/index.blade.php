@@ -239,6 +239,7 @@
             $('#btnReload').on('click', function() {
                 editor.setData(arrayjson);
             });
+            
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': "{{ csrf_token() }}"

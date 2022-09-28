@@ -99,6 +99,12 @@ class PageController extends Controller
         ]);
     }
 
+    public function editor2Update(Request $request, Page $page)
+    {
+        $page->content = $request->content;
+        $page->save();
+    }
+
     /**
      * Update the specified resource in storage.
      *
