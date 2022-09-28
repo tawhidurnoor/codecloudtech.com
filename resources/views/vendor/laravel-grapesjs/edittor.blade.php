@@ -12,10 +12,29 @@
         <link rel="stylesheet" href="{{ $style }}">
     @endforeach
 
-    <style>
+    {{-- <style>
         * {
             margin: 0;
             padding: 0;
+        }
+    </style> --}}
+
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            overflow: scroll;
+            overflow-x: hidden;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
         }
     </style>
 
@@ -74,10 +93,12 @@
             }
         })
     </script>
+
 </head>
 
 <body>
     <div id="{{ str_replace('#', '', $editorConfig->container ?? 'editor') }}"></div>
+
 
     @foreach ($editorConfig->getScripts() as $script)
         <script src="{{ $script }}"></script>

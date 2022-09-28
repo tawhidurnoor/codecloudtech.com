@@ -48,8 +48,8 @@
                                         <tr>
                                             <td><img src="{{ asset('uploads/images/' . $blog->banner) }}" width="150px">
                                             </td>
-                                            <td>{{ $blog->title }}</td>
-                                            <td>{{ $blog->slug }}</td>
+                                            <td>{!! Str::limit($blog->title, 20) !!}</td>
+                                            <td>{!! Str::limit($blog->slug, 10) !!}</td>
                                             <td>
                                                 @if ($blog->is_published = 1)
                                                     <span class="mb-1 badge rounded-pill bg-success">Published</span>
