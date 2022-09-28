@@ -21,7 +21,7 @@
 <!--This page JavaScript -->
 <script src="{{ asset('assets_backend/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js') }}"></script>
 <script src="{{ asset('assets_backend/extra-libs/jvector/jquery-jvectormap-world-mill-en.js') }}"></script>
-<script src="{{ asset('assets_backend/libs/apexcharts/dist/apexcharts.min.js') }}"></script>
+{{-- <script src="{{ asset('assets_backend/libs/apexcharts/dist/apexcharts.min.js') }}"></script> --}}
 <script src="{{ asset('assets_backend/dist/js/pages/dashboards/dashboard1.js') }}"></script>
 
 
