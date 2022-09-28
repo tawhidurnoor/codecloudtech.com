@@ -92,6 +92,13 @@ class PageController extends Controller
         return $this->show_gjs_editor($request, $page);
     }
 
+    public function editor2(Page $page)
+    {
+        return view('backend.page.edit2',[
+            'page' => $page,
+        ]);
+    }
+
     /**
      * Update the specified resource in storage.
      *

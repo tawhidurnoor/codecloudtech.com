@@ -38,6 +38,8 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
 
     Route::get('pages/{page}/editor', [App\Http\Controllers\Backend\PageController::class, 'editor'])->name('page.editor');
 
+    Route::get('pages/{page}/editor2', [App\Http\Controllers\Backend\PageController::class, 'editor2'])->name('page.editor2');
+
     Route::get('/general_information', [App\Http\Controllers\Backend\SetupController::class, 'generalInformation'])->name('setup.general.index');
     Route::put('/general_information', [App\Http\Controllers\Backend\SetupController::class, 'updateGeneralInformation'])->name('setup.general.update');
     Route::put('/logo_favicon_information', [App\Http\Controllers\Backend\SetupController::class, 'updateLogoAndFavicon'])->name('setup.logo.favicon.update');
