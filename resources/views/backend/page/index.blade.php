@@ -54,8 +54,8 @@
                                                     class="btn btn-success">Edit</a>
                                                 <a href="{{ route('admin.page.editor', $page->id) }}"
                                                     class="btn btn-info">Page Editor</a>
-                                                    <a href="{{ route('admin.page.editor2', $page->id) }}"
-                                                        class="btn btn-info">Page Editor 2</a>
+                                                <a href="{{ route('admin.page.editor2', $page->id) }}"
+                                                    class="btn btn-info">Page Editor 2</a>
                                             </td>
                                         </tr>
                                     @endforeach
