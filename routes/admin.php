@@ -39,7 +39,7 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::get('pages/{page}/editor', [App\Http\Controllers\Backend\PageController::class, 'editor'])->name('page.editor');
 
     Route::get('pages/{page}/editor2', [App\Http\Controllers\Backend\PageController::class, 'editor2'])->name('page.editor2');
-    Route::get('pages/{page}/update', [App\Http\Controllers\Backend\PageController::class, 'editor2Update'])->name('page.editor2.update');
+    Route::post('pages/{page}/update', [App\Http\Controllers\Backend\PageController::class, 'editor2Update'])->name('page.editor2.update');
 
     Route::get('/general_information', [App\Http\Controllers\Backend\SetupController::class, 'generalInformation'])->name('setup.general.index');
     Route::put('/general_information', [App\Http\Controllers\Backend\SetupController::class, 'updateGeneralInformation'])->name('setup.general.update');

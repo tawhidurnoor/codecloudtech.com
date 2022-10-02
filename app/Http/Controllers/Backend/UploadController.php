@@ -11,7 +11,7 @@ class UploadController extends Controller
 {
     public function index()
     {
-        $uploads = Upload::all();
+        $uploads = Upload::orderBy('id', 'desc')->get();
         return view('backend.file_manager.index', [
             'uploads' => $uploads,
         ]);

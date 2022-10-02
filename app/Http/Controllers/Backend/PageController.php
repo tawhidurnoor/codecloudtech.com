@@ -94,7 +94,7 @@ class PageController extends Controller
 
     public function editor2(Page $page)
     {
-        return view('backend.page.edit2',[
+        return view('backend.page.edit2', [
             'page' => $page,
         ]);
     }

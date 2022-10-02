@@ -77,7 +77,7 @@
                 var content = $('#content-area').keditor('getContent');
                 $.ajax({
                     url: "{{ route('admin.page.editor2.update', $page->id) }}",
-                    type: 'GET',
+                    type: 'POST',
                     data: {
                         "content": content
                     },
