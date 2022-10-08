@@ -6,6 +6,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="{{ $service->meta_title }} | {{ getSettings('website_name') }}" />
     <meta property="og:description" content="{{ $service->meta_description }}" />
+    <meta name="description" content="{{ $service->meta_description }}">
 @endsection
 
 @section('styles')

@@ -6,6 +6,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Contact | {{ getSettings('website_name') }}" />
     <meta property="og:description" content="{{ getMetaDescription() }}" />
+    <meta name="description" content="{{ getMetaDescription() }}">
 @endsection
 
 @section('styles')

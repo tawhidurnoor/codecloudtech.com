@@ -6,6 +6,7 @@
     <meta property="og:type" content="article" />
     <meta property="og:title" content="{{ $blog->meta_title }} | {{ getSettings('website_name') }}" />
     <meta property="og:description" content="{{ $blog->meta_description }}" />
+    <meta name="description" content="{{ $blog->meta_description }}">
 
     <meta property="og:site_name" content="{{ getSettings('website_name') }}" />
     {{-- <meta property="article:publisher" content="https://www.facebook.com/techcrunch" /> --}}

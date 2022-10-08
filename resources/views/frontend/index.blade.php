@@ -6,6 +6,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="{{ getMetaMetaTitle() }}" />
     <meta property="og:description" content="{{ getMetaDescription() }}" />
+    <meta name="description" content="{{ getMetaDescription() }}">
 @endsection
 
 @section('styles')
@@ -114,7 +115,7 @@
 @endsection
 
 @section('body')
-    <section class="banner-area" data-scroll>
+    <section class="banner-area" title="Top Software Company in the World" data-scroll>
         <div class="d-table">
             <div class="d-table-cell">
                 <div class="container">
@@ -232,9 +233,9 @@
                 <div class="col-lg-3 col-sm-6">
                     <div class="single-process">
                         <div class="icon">
-                            <img data-cfsrc="assets_frontend/images/process/p1.png" alt="process"
+                            <img data-cfsrc="https://www.codecloudtech.com/uploads/images/1665227643.webp" alt="Top Software Company in the World"
                                 style="display:none;visibility:hidden;" /><noscript><img
-                                    src="assets_frontend/images/process/p1.png" alt="process" /></noscript>
+                                    src="https://www.codecloudtech.com/uploads/images/1665227643.webp" alt="Top Software Company in the World" /></noscript>
                             <span>
                                 <img data-cfsrc="assets_frontend/images/process/next.png" alt="shape"
                                     style="display:none;visibility:hidden;" /><noscript><img
@@ -460,10 +461,10 @@
     <script>
         const image = document.getElementById("banner");
         let images = [
-                "assets_frontend/images/p1.png",
-                "assets_frontend/images/p2.png",
-                "assets_frontend/images/p3.png",
-                "assets_frontend/images/p1.png",
+                "https://www.codecloudtech.com/uploads/images/1665227643.webp",
+                "https://www.codecloudtech.com/uploads/images/1665227642.webp",
+                "https://www.codecloudtech.com/uploads/images/1665227642.webp",
+                "https://www.codecloudtech.com/uploads/images/1665227643.webp",
             ],
             i = 0;
 

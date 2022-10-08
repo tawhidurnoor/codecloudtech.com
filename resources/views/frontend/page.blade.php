@@ -6,11 +6,22 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="{{ $page->meta_title }} | {{ getSettings('website_name') }}" />
     <meta property="og:description" content="{{ $page->meta_description }}" />
+    <meta name="description" content="{{ $page->meta_description }}">
 @endsection
 
 @section('styles')
     <style type="text/css">
         {!! $page->css !!}
+    </style>
+    
+        <style>
+        ul {
+            list-style-type: circle;
+        }
+
+        ul li::before {
+            content: "\200B";
+        }
     </style>
 @endsection
 
@@ -545,18 +556,22 @@
     </div>
 
 
+    
+    
+    @if(request()->segment(1) == 'softwares' || request()->segment(1) == 'hrms-software' || request()->segment(1) == 'pos-software')
+        <section class="container">
+            {!! $page->html !!}
+        </section>
+    @else
     <section class="services-details-area ptb-100">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     {!! $page->content !!}
-                    {{-- {!! $page->html !!} --}}
                 </div>
             </div>
         </div>
     </section>
-
-    <section class="container">
-        {!! $page->html !!}
-    </section>
+    @endif
+    
 @endsection
