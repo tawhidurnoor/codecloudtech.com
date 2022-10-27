@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('file_name');
             $table->Integer('file_size')->default(0);
             $table->string('file_extension');
+            $table->string('alt');
             $table->timestamps();
         });
     }
