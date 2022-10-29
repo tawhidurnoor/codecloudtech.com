@@ -63,6 +63,7 @@ class BlogController extends Controller
         $blog->slug = $request->slug;
         $blog->summary = $request->summary;
         $blog->content = $request->content;
+        $blog->links = $request->links;
         $blog->is_published = 1;
 
         if ($blog->save()) {
@@ -129,6 +130,7 @@ class BlogController extends Controller
         $blog->keywords = $request->keywords;
         $blog->summary = $request->summary;
         $blog->content = $request->content;
+        $blog->links = $request->links;
         $blog->is_published = 1;
 
         if ($blog->save()) {

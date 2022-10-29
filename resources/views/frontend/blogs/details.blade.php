@@ -69,6 +69,7 @@
 
     <section class="blog-details-area ptb-100">
         <div class="container">
+
             <div class="row">
                 <div class="col-lg-12 col-md-12">
                     <div class="blog-details-desc">
@@ -123,6 +124,19 @@
                     </div>
                 </div>
             </div>
+
+            <br>
+
+            <div class="row">
+                <div class="col-lg-12 col-sm-12">
+                    <div class="single-contact" style="background-color: #f5f5f5; padding: 10px">
+                        <div class="content">
+                            {!! $blog->links !!}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 @endsection

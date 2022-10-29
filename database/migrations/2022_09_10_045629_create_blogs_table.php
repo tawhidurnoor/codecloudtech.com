@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('slug');
             $table->longText('summary');
             $table->longText('content');
+            $table->longText('links');
             $table->boolean('is_published')->default(true);
             $table->timestamps();
         });

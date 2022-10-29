@@ -102,6 +102,13 @@
                                 <textarea id="editor" name="content"></textarea>
                             </div>
 
+                            <div class="mb-3">
+                                <label>Links</label>
+                                {{-- <textarea class="summernote" name="content"></textarea> --}}
+                                <textarea id="links" name="links"></textarea>
+                            </div>
+
+
 
 
                             <br><br>
@@ -180,6 +187,7 @@
 
     <script>
         CKEDITOR.replace('editor');
+        CKEDITOR.replace('links');
     </script>
 
     {{-- making slug and checking avalablity --}}
