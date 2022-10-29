@@ -107,7 +107,7 @@
                             </div>
 
                             <div class="mb-3">
-                                <label>Links</label>
+                                <label>Tags</label>
                                 {{-- <textarea class="summernote" name="content"></textarea> --}}
                                 <textarea id="links" name="links">{{ $blog->links }}</textarea>
                             </div>
