@@ -6,6 +6,10 @@
 
 @section('styles')
     <link href="{{ asset('assets_backend/libs/datatables.net-bs4/css/dataTables.bootstrap4.css') }}" rel="stylesheet" />
+
+    <!-- This Page CSS -->
+    {{-- <link rel="stylesheet" type="text/css"
+        href="{{ asset('assets_backend/libs/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css') }}" /> --}}
 @endsection
 
 @section('page-title')
@@ -30,7 +34,7 @@
                     <div class="card-body">
                         {{-- <h6 class="card-subtitle mb-3">Data table example</h6> --}}
                         <div class="table-responsive m-t-40">
-                            <table id="config-table" class="table display table-bordered table-striped no-wrap">
+                            <table id="blog-table" class="table display table-bordered table-striped no-wrap">
                                 <thead>
                                     <!-- start row -->
                                     <tr>
@@ -51,11 +55,21 @@
                                             <td>{!! Str::limit($blog->title, 20) !!}</td>
                                             <td>{!! Str::limit($blog->slug, 10) !!}</td>
                                             <td>
-                                                @if ($blog->is_published = 1)
+                                                {{-- @if ($blog->is_published = 1)
                                                     <span class="mb-1 badge rounded-pill bg-success">Published</span>
                                                 @else
                                                     <span class="mb-1 badge rounded-pill bg-danger">Unpublished</span>
-                                                @endif
+                                                @endif --}}
+
+
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" id="changeStatusSwitch"
+                                                        data-id="{{ $blog->id }}"
+                                                        {{ $blog->is_published == 1 ? 'checked' : '' }}>
+                                                </div>
+
+
+
                                             </td>
                                             <td>{{ \Carbon\Carbon::parse($blog->updated_at)->diffForHumans() }}</td>
                                             <td>
@@ -122,15 +136,76 @@
     <script src="{{ asset('assets_backend/dist/js/pages/datatable/custom-datatable.js') }}"></script>
     <script src="{{ asset('assets_backend/dist/js/pages/datatable/datatable-basic.init.js') }}"></script>
 
+    <!-- This Page JS -->
+    <script src="{{ asset('assets_backend/libs/bootstrap-switch/dist/js/bootstrap-switch.min.js') }}"></script>
+
+    <script>
+        $(function() {
+            $("#blog-table").DataTable({
+                responsive: true,
+            });
+        });
+    </script>
+
     <script>
         $(function() {
             $(document).on('click', '.delete-button', function(e) {
                 e.preventDefault();
                 $('#danger-header-modal').modal('show');
                 var id = $(this).data('id');
-                console.log(id);
+                // console.log(id);
                 //$('#del_id').val(id);
                 document.getElementById("delete-form").action = "../admin/blog/" + id;
+            });
+        });
+    </script>
+
+    <script>
+        var final_response;
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': "{{ csrf_token() }}"
+            }
+        });
+
+        $(function() {
+            $(document).on('click', '#changeStatusSwitch', function(e) {
+                // e.preventDefault();
+                var id = $(this).data('id');
+                $.ajax({
+                    type: 'POST',
+                    url: '../admin/blog/change_status/' + id,
+                    dataType: 'json',
+                    success: function(response) {
+                        // final_response = response;
+
+
+                        if (response == 0) {
+                            toastr.warning(
+                                "Error changing page status",
+                                "Error!", {
+                                    showMethod: "slideDown",
+                                    hideMethod: "slideUp",
+                                    timeOut: 3000
+                                }
+                            );
+                        } else {
+                            toastr.success(
+                                response.message,
+                                "Success!", {
+                                    showMethod: "slideDown",
+                                    hideMethod: "slideUp",
+                                    timeOut: 3000
+                                }
+                            );
+                        }
+
+
+
+                    }
+                });
+
             });
         });
     </script>
